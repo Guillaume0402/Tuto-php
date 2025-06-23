@@ -18,6 +18,12 @@ Point d'entrée central qui importe tous les fichiers CSS modulaires
 /* Coloration syntaxique du code */
 @import "syntax-highlighting.css";
 
+/* Footer responsive */
+@import "footer.css";
+
+/* Styles des pages légales et contact */
+@import "pages.css";
+
 /* Styles pour les formulaires */
 @import "forms.css";
 

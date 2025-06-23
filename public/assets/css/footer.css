@@ -1,0 +1,110 @@
+/* 
+ * Styles pour le footer du site Tuto-PHP
+ * Ce fichier contient tous les styles spécifiques au footer
+ */
+
+.main-footer {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    padding: 2rem 0 0.5rem;
+    margin-top: 3rem;
+    font-family: var(--font-main, "Open Sans", sans-serif);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 2rem;
+    padding-right: 1.5rem;
+}
+
+.footer-section h3 {
+    color: #cbd5e0;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #4a5568;
+}
+
+.footer-section ul,
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li,
+.footer-nav ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-section a,
+.footer-nav a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.footer-section a:hover,
+.footer-nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.author-credits {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.author-credits p {
+    margin: 0.3rem 0;
+}
+
+.footer-bottom {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #4a5568;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+.footer-bottom .copyright,
+.footer-bottom .version {
+    margin: 0.3rem 0;
+}
+
+.footer-bottom a {
+    color: #cbd5e0;
+    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+/* Responsive design pour les écrans mobiles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        padding-right: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-bottom {
+        padding: 1rem 0.5rem;
+    }
+}
