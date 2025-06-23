@@ -1,0 +1,240 @@
+/*
+STYLES PRINCIPAUX
+Point d'entrée central qui importe tous les fichiers CSS modulaires
+*/
+
+/* Variables globales */
+@import "variables.css";
+
+/* Styles de base et reset */
+@import "base.css";
+
+/* En-tête professionnel */
+@import "header-pro.css";
+
+/* Composants réutilisables */
+@import "components.css";
+
+/* Coloration syntaxique du code */
+@import "syntax-highlighting.css";
+
+/* Styles pour les formulaires */
+@import "forms.css";
+
+/* Styles pour la Programmation Orientée Objet */
+@import "poo.css";
+
+/* Styles pour la page d'index */
+@import "index-page-new.css";
+
+/* Styles pour les explications du routeur PHP */
+@import "routeur-explanations.css";
+
+/* Styles pour les tableaux et les listes */
+@import "db-diagram.css";
+
+/* Styles pour les sorties et résultats PHP */
+@import "output-results.css";
+
+/* Styles spécifiques aux modules */
+@import "module-specific.css";
+
+/* Corrections pour les méthodes HTTP et tableaux */
+@import "http-methods-fix.css";
+@import "routeur-fix.css";
+@import "tables-relations-fix.css";
+@import "syntax-highlighting-fix.css";
+
+/* Styles responsifs */
+@import "responsive.css";
+
+/*
+Ce fichier centralisé simplifie la gestion des styles du projet.
+Pour les styles spécifiques à un module, vous pouvez :
+
+1. Continuer à utiliser des fichiers CSS séparés qui importent ce fichier
+(recommandé pour les gros modules avec beaucoup de styles spécifiques)
+
+2. Ajouter des styles spécifiques au module directement dans ce fichier
+à l'aide des préfixes de module (pour les petits modules)
+
+Exemple:
+
+.module3-header { ... }
+*/
+
+/* Styles globaux additionnels */
+body.module1 {
+    --primary-color: var(--module1-color);
+    --primary-dark: var(--module1-dark);
+    --primary-light: var(--module1-light);
+}
+body.module2 {
+    --primary-color: var(--module2-color);
+    --primary-dark: var(--module2-dark);
+    --primary-light: var(--module2-light);
+}
+body.module3 {
+    --primary-color: var(--module3-color);
+    --primary-dark: var(--module3-dark);
+    --primary-light: var(--module3-light);
+}
+body.module4 {
+    --primary-color: var(--module4-color);
+    --primary-dark: var(--module4-dark);
+    --primary-light: var(--module4-light);
+}
+body.module5 {
+    --primary-color: var(--module5-color);
+    --primary-dark: var(--module5-dark);
+    --primary-light: var(--module5-light);
+}
+body.module6 {
+    --primary-color: var(--module6-color);
+    --primary-dark: var(--module6-dark);
+    --primary-light: var(--module6-light);
+}
+body.module7 {
+    --primary-color: var(--module7-color);
+    --primary-dark: var(--module7-dark);
+    --primary-light: var(--module7-light);
+}
+body.module8 {
+    --primary-color: var(--module8-color);
+    --primary-dark: var(--module8-dark);
+    --primary-light: var(--module8-light);
+}
+body.module9 {
+    --primary-color: var(--module9-color);
+    --primary-dark: var(--module9-dark);
+    --primary-light: var(--module9-light);
+}
+body.module10 {
+    --primary-color: var(--module10-color);
+    --primary-dark: var(--module10-dark);
+    --primary-light: var(--module10-light);
+}
+body.module11 {
+    --primary-color: var(--module11-color);
+    --primary-dark: var(--module11-dark);
+    --primary-light: var(--module11-light);
+}
+body.module12 {
+    --primary-color: var(--module12-color);
+    --primary-dark: var(--module12-dark);
+    --primary-light: var(--module12-light);
+}
+body.module13 {
+    --primary-color: var(--module13-color);
+    --primary-dark: var(--module13-dark);
+    --primary-light: var(--module13-light);
+}
+body.module14 {
+    --primary-color: var(--module14-color);
+    --primary-dark: var(--module14-dark);
+    --primary-light: var(--module14-light);
+}
+body.module15 {
+    --primary-color: var(--module15-color);
+    --primary-dark: var(--module15-dark);
+    --primary-light: var(--module15-light);
+}
+body.module16 {
+    --primary-color: var(--module16-color);
+    --primary-dark: var(--module16-dark);
+    --primary-light: var(--module16-light);
+}
+body.module17 {
+    --primary-color: var(--module17-color);
+    --primary-dark: var(--module17-dark);
+    --primary-light: var(--module17-light);
+}
+
+/* Style pour l'en-tête des pages */
+.page-header {
+    background: var(--primary-color, #3a86ff);
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.page-header h1 {
+    margin-top: 0;
+    color: white;
+}
+
+.page-header p {
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* Ce contenu a été déplacé vers module-specific.css */
+
+/* Style pour l'en-tête des pages */
+.page-header {
+    background: var(--primary-color, #3a86ff);
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.page-header h1 {
+    margin-top: 0;
+    color: white;
+}
+
+.page-header p {
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* Configuration des variables primaires pour les modules 18 à 23 */
+.module18 {
+    --primary-color: var(--module18-color);
+    --primary-dark: var(--module18-dark);
+    --primary-light: var(--module18-light);
+}
+
+.module19 {
+    --primary-color: var(--module19-color);
+    --primary-dark: var(--module19-dark);
+    --primary-light: var(--module19-light);
+}
+
+.module20 {
+    --primary-color: var(--module20-color);
+    --primary-dark: var(--module20-dark);
+    --primary-light: var(--module20-light);
+}
+
+.module21 {
+    --primary-color: var(--module21-color);
+    --primary-dark: var(--module21-dark);
+    --primary-light: var(--module21-light);
+}
+
+.module22 {
+    --primary-color: var(--module22-color);
+    --primary-dark: var(--module22-dark);
+    --primary-light: var(--module22-light);
+}
+
+.module23 {
+    --primary-color: var(--module23-color);
+    --primary-dark: var(--module23-dark);
+    --primary-light: var(--module23-light);
+}
+
+.module24 {
+    --primary-color: var(--module24-color);
+    --primary-dark: var(--module24-dark);
+    --primary-light: var(--module24-light);
+}
+
+/* Les styles spécifiques aux modules ont été déplacés vers module-specific.css */
+
+/* Les styles responsifs ont été déplacés vers responsive.css */

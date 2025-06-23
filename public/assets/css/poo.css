@@ -1,0 +1,395 @@
+/* 
+   STYLES POUR LA PROGRAMMATION ORIENTÉE OBJET
+   Composants et styles pour la coloration syntaxique des classes et objets
+*/
+
+/* Styles spécifiques pour la coloration syntaxique de la POO */
+.class-keyword {
+    color: var(--keyword-color);
+    font-weight: bold;
+}
+
+.class-name {
+    color: var(--class-color, #9c6644);
+    font-weight: bold;
+}
+
+.method {
+    color: var(--method-color, #4361ee);
+}
+
+.property {
+    color: var(--property-color, #5e60ce);
+}
+
+.extends-keyword {
+    color: var(--keyword-color);
+    font-weight: bold;
+}
+
+.implements-keyword {
+    color: var(--keyword-color);
+    font-weight: bold;
+}
+
+/* Styles pour les diagrammes de classes */
+.class-diagram {
+    border: 2px solid var(--primary-color);
+    background-color: #f8f9fa;
+    border-radius: var(--radius);
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.class-diagram-header {
+    background-color: var(--primary-light);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid var(--primary-color);
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin: -15px -15px 15px -15px;
+}
+
+.class-diagram-properties,
+.class-diagram-methods {
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.class-diagram-properties h4,
+.class-diagram-methods h4 {
+    color: var(--primary-dark);
+    margin-top: 0;
+}
+
+/* Styles pour les exemples de POO */
+.inheritance-arrow {
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    font-size: 24px;
+    color: var(--inheritance-color, #7209b7);
+}
+
+/* Styles spécifiques pour les entêtes des exemples de POO */
+.constructor-header {
+    color: var(--method-color, #4361ee);
+}
+
+.inheritance-header {
+    color: var(--inheritance-color, #7209b7);
+}
+
+.interface-header {
+    color: var(--interface-color, #f77f00);
+}
+
+.access-header {
+    color: var(--keyword-color);
+}
+
+/* Styles pour les infobulles des termes POO */
+.poo-term {
+    border-bottom: 1px dotted var(--primary-color);
+    cursor: help;
+    position: relative;
+    display: inline-block;
+}
+
+.poo-term:hover::after {
+    content: attr(data-definition);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-dark);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    width: 200px;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour les connexions entre diagrammes de classes */
+.class-relationship {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.relationship-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--inheritance-color, #7209b7);
+}
+
+.relationship-type {
+    padding: 3px 10px;
+    margin: 0 10px;
+    background-color: var(--primary-light);
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Styles pour la POO avancée */
+.abstract-keyword {
+    color: var(--abstract-color, #9d4edd);
+    font-weight: bold;
+}
+
+.interface-keyword {
+    color: var(--interface-color, #5390d9);
+    font-weight: bold;
+}
+
+.trait-keyword {
+    color: var(--trait-color, #ffbd00);
+    font-weight: bold;
+}
+
+.final-keyword {
+    color: var(--final-color, #f15bb5);
+    font-weight: bold;
+}
+
+.static-keyword {
+    color: var(--static-color, #ff5400);
+    font-weight: bold;
+}
+
+/* Headers pour les concepts de POO avancée */
+.abstract-header {
+    color: var(--abstract-color, #9d4edd);
+}
+
+.interface-header {
+    color: var(--interface-color, #5390d9);
+}
+
+.trait-header {
+    color: var(--trait-color, #ffbd00);
+}
+
+.static-header {
+    color: var(--static-color, #ff5400);
+}
+
+.final-header {
+    color: var(--final-color, #f15bb5);
+}
+
+/* Diagrammes spécifiques */
+.interface-diagram {
+    border: 2px solid var(--interface-color, #5390d9);
+    background-color: #f8f9fa;
+    border-radius: var(--radius);
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.interface-diagram-header {
+    background-color: rgba(83, 144, 217, 0.2);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 1px solid var(--interface-color, #5390d9);
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin: -15px -15px 15px -15px;
+}
+
+.abstract-diagram {
+    border: 2px solid var(--abstract-color, #9d4edd);
+    background-color: #f8f9fa;
+    border-radius: var(--radius);
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.abstract-diagram-header {
+    background-color: rgba(157, 78, 221, 0.2);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 1px solid var(--abstract-color, #9d4edd);
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin: -15px -15px 15px -15px;
+}
+
+/* Boîtes d'information pour les patterns */
+.pattern-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.pattern-title {
+    color: var(--primary-dark);
+    font-weight: bold;
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.pattern-description {
+    margin-bottom: 10px;
+}
+
+/* Diagramme UML simplifié */
+.uml-diagram {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: var(--font-mono);
+}
+
+.uml-class,
+.uml-interface,
+.uml-abstract {
+    border: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.uml-header {
+    border-bottom: 1px solid #333;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.uml-properties,
+.uml-methods {
+    padding: 8px;
+    text-align: left;
+}
+
+.uml-interface .uml-header::before {
+    content: "«interface»";
+    display: block;
+    font-size: 0.9em;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.uml-abstract .uml-header::before {
+    content: "«abstract»";
+    display: block;
+    font-size: 0.9em;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.uml-connection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.uml-arrow {
+    height: 20px;
+    width: 0;
+    border-left: 1px solid #333;
+    position: relative;
+}
+
+.uml-arrow::after {
+    content: "▼";
+    position: absolute;
+    bottom: -10px;
+    left: -8px;
+    font-size: 16px;
+}
+
+.uml-label {
+    font-size: 0.85em;
+    padding: 2px 5px;
+    background-color: #fff;
+}
+
+/* Styles pour le diagramme de composition */
+.composition-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.composition-arrow {
+    font-size: 24px;
+    color: var(--inheritance-color, #7209b7);
+    display: flex;
+    align-items: center;
+}
+
+.class-box {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius);
+    width: calc(40% - 20px);
+    min-width: 250px;
+    overflow: hidden;
+}
+
+.class-box .class-name {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.class-box .class-properties,
+.class-box .class-methods {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f8f9fa;
+}
+
+.diagram-legend {
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+/* Styles pour le tableau de comparaison héritage vs composition */
+.comparison {
+    margin: 20px 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}

@@ -1,0 +1,22 @@
+/* 
+ * Corrections pour le module 24 (routeur)
+ * Ce fichier contient des correctifs pour assurer la cohérence du style
+ */
+
+/* Force l'utilisation de la police principale pour toutes les explications */
+.examples-list .example .example-description,
+.example .example-description,
+div.example-description,
+section .example-description {
+    font-family: var(--font-main) !important;
+}
+
+/* Assure que le texte dans les explications utilise la police principale */
+.example-description * {
+    font-family: inherit;
+}
+
+/* Seuls les éléments de code dans les explications utilisent la police monospace */
+.example-description code {
+    font-family: var(--font-mono);
+}

@@ -1,0 +1,298 @@
+/* Syntax highlighting styles */
+pre code {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    font-family: "Fira Code", "Consolas", Monaco, Menlo, monospace;
+    font-size: 0.95em;
+    line-height: 1.6;
+    background-color: #282a36; /* Fond sombre Dracula-like */
+    border-radius: 8px;
+    color: #f8f8f2; /* Texte clair */
+}
+
+/* Style par défaut pour tout code dans pre - c'est du PHP par défaut */
+pre code {
+    color: #f8f8f2;
+}
+
+code.language-php,
+code.language-html,
+code.language-css,
+code.language-js,
+code.language-sql,
+code.language-bash,
+code.language-tree {
+    color: #f8f8f2; /* Texte clair uniforme */
+}
+
+code .keyword {
+    color: #ff79c6; /* Rose vif */
+    font-weight: bold;
+}
+
+code .string {
+    color: #f1fa8c; /* Jaune clair */
+}
+
+code .comment {
+    color: #6a9955; /* Vert pour les commentaires */
+    font-style: italic;
+}
+
+code .variable {
+    color: #bd93f9; /* Violet */
+}
+
+code .tag {
+    color: #8be9fd; /* Bleu clair */
+    font-weight: bold;
+}
+
+code .function {
+    color: #50fa7b; /* Vert vif */
+}
+
+code .number {
+    color: #bd93f9; /* Violet */
+}
+
+code .operator {
+    color: #ff79c6; /* Rose vif */
+}
+
+code .property {
+    color: #8be9fd; /* Bleu clair */
+}
+
+/* Style spécifique pour les blocs de code PHP */
+.language-php .keyword {
+    color: #ff79c6; /* Rose vif */
+}
+
+.language-php .string {
+    color: #f1fa8c; /* Jaune clair */
+}
+
+/* Style spécifique pour les blocs de code HTML */
+.language-html .tag {
+    color: #ff79c6; /* Rose vif */
+}
+
+.language-html .attr {
+    color: #50fa7b; /* Vert vif */
+}
+
+/* Style spécifique pour SQL */
+.language-sql .keyword {
+    color: #ff79c6; /* Rose vif */
+    text-transform: uppercase;
+}
+
+/* Règles spécifiques pour les sections de comparaison de code du module sécurité */
+.security-comparison pre code {
+    background-color: #282a36 !important; /* Force le fond sombre */
+    color: #f8f8f2 !important; /* Force le texte clair */
+}
+
+.security-comparison .keyword {
+    color: #ff79c6 !important; /* Rose vif */
+    font-weight: bold;
+}
+
+.security-comparison .string {
+    color: #f1fa8c !important; /* Jaune clair */
+}
+
+.security-comparison .comment {
+    color: #6a9955 !important; /* Vert pour les commentaires */
+    font-style: italic;
+}
+
+.security-comparison .variable {
+    color: #bd93f9 !important; /* Violet */
+}
+
+.security-comparison .function {
+    color: #50fa7b !important; /* Vert vif */
+}
+
+.security-comparison .constant {
+    color: #8be9fd !important; /* Bleu clair */
+}
+
+.security-comparison .class-name {
+    color: #8be9fd !important; /* Bleu clair */
+    font-style: italic;
+}
+
+/* Styles pour les blocs de code ini et apache */
+.security-comparison .property {
+    color: #ff79c6 !important; /* Rose vif */
+}
+
+.security-comparison .value {
+    color: #f1fa8c !important; /* Jaune clair */
+}
+
+.security-comparison .section {
+    color: #50fa7b !important; /* Vert vif */
+    font-weight: bold;
+}
+
+.security-comparison .literal {
+    color: #8be9fd !important; /* Bleu clair */
+}
+
+/* Styles pour les balises HTML */
+.security-comparison .tag {
+    color: #ff79c6 !important; /* Rose vif */
+}
+
+.security-comparison .attr {
+    color: #50fa7b !important; /* Vert vif */
+}
+
+/* Style pour le php-tag */
+.security-comparison .php-tag {
+    color: #ff79c6 !important; /* Rose vif */
+    font-weight: bold;
+}
+
+/* Styles pour des éléments HTML dans le code */
+.security-comparison .html {
+    color: #f8f8f2 !important; /* Texte clair */
+}
+
+/* Style pour les erreurs et avertissements dans le code */
+.security-comparison .warning {
+    color: #ffb86c !important; /* Orange */
+    font-weight: bold;
+}
+
+/* Style pour le code en ligne */
+p code,
+li code {
+    background-color: rgba(
+        79,
+        70,
+        229,
+        0.1
+    ); /* Couleur de fond subtile basée sur la couleur primaire */
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: var(--primary-color); /* Couleur primaire du module */
+    font-family: "Fira Code", Consolas, Monaco, "Andale Mono", monospace;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+code .comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+code .function {
+    color: #dcdcaa;
+}
+
+code .variable {
+    color: #9cdcfe;
+}
+
+code .class-name {
+    color: #4ec9b0;
+}
+
+code .constant {
+    color: #569cd6;
+    font-weight: normal;
+}
+
+code .property {
+    color: #9cdcfe;
+}
+
+/* SQL syntax highlighting */
+.sql-keyword {
+    color: #569cd6;
+    font-weight: bold;
+}
+
+.sql-function {
+    color: #dcdcaa;
+}
+
+.sql-string {
+    color: #ce9178;
+}
+
+.sql-number {
+    color: #b5cea8;
+}
+
+.sql-comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+.sql-table {
+    color: #4ec9b0;
+}
+
+.sql-column {
+    color: #9cdcfe;
+}
+
+/* Assurer que le texte dans les blocs de code est visible peu importe le fond */
+.code-bg-dark code,
+.code-bg-dark .code {
+    color: #e9e9e9;
+}
+
+.code-bg-light code,
+.code-bg-light .code {
+    color: #333;
+}
+
+/* Style pour les blocs de code sur fond sombre */
+pre.code-dark {
+    background-color: var(--code-bg);
+    color: #e9e9e9;
+}
+
+/* Style pour les blocs de code sur fond clair */
+pre.code-light {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #eee;
+}
+
+/* Assurez-vous que le code est toujours lisible dans un contexte clair */
+.light-context .keyword,
+.light-context .string,
+.light-context .function,
+.light-context .variable,
+.light-context .comment,
+.light-context .number,
+.light-context .operator {
+    color: inherit;
+    font-weight: bold;
+}
+
+/* Exception pour le module de sécurité */
+.module14 .light-context .keyword,
+.module14 .light-context .string,
+.module14 .light-context .function,
+.module14 .light-context .variable,
+.module14 .light-context .comment,
+.module14 .light-context .number,
+.module14 .light-context .operator {
+    color: inherit !important; /* Réinitialiser pour appliquer nos propres styles */
+}
+
+/* Classe pour forcer un contexte clair sur n'importe quel bloc */
+.force-light {
+    background-color: #f8f9fa !important;
+    color: #333 !important;
+}

@@ -1,0 +1,77 @@
+/*
+STYLES POUR LA BARRE DE NAVIGATION PRO
+Styles pour le header professionnel utilisé dans les pages tutoriels
+*/
+
+.tuto-nav-pro {
+    background: #222;
+    color: #fff;
+    padding: 16px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    font-family: "Segoe UI", Arial, sans-serif;
+    position: relative;
+    z-index: 1000;
+    margin: -30px -30px 30px -30px;
+    /* Pour compenser le padding du body */
+}
+
+.tuto-nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.tuto-nav-logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.tuto-nav-logo-blue {
+    color: #4fc3f7;
+}
+
+.tuto-nav-logo-white {
+    color: #fff;
+}
+
+.tuto-nav-menu {
+    font-size: 1rem;
+}
+
+.tuto-nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 18px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.tuto-nav-link-blue {
+    color: #4fc3f7;
+}
+
+.tuto-nav-link:hover {
+    opacity: 1;
+}
+
+/* Styles responsifs pour la navigation pro */
+@media (max-width: 768px) {
+    .tuto-nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .tuto-nav-menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .tuto-nav-link {
+        margin-right: 0;
+    }
+}

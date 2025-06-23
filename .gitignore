@@ -1,0 +1,78 @@
+# Logs
+*.log
+logs/
+*.log.*
+
+# Dependency directories
+node_modules/
+vendor/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PHP specific
+*.tmp
+*.temp
+*.cache
+cache/
+temp/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Composer
+composer.phar
+composer.lock
+
+# PHPUnit
+phpunit.xml
+phpunit.phar
+/tests/coverage/
+.phpunit.result.cache
+
+# Backup files
+*.bak
+*.backup
+*.sql
+
+# User uploads (if applicable)
+uploads/
+files/
+
+# Configuration files (customize as needed)
+config/local.php
+config/database.php
+
+# Session files
+sessions/
+
+# Error logs
+error.log
+error_log
+
+# Apache/Nginx logs
+access.log
+error.log
+
+# Windows
+*.exe
+*.msi
+
+# Database
+*.sqlite
+*.db

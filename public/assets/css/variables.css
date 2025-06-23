@@ -1,0 +1,137 @@
+/* 
+FICHIER DE VARIABLES CSS GLOBALES
+Ce fichier contient toutes les variables de couleurs et de style utilisées dans le projet
+*/
+
+:root {
+    /* Couleurs principales pour les modules */
+    --module1-color: #3a86ff; /* Script PHP - Bleu */
+    --module2-color: #ff006e; /* Variables - Rose */
+    --module3-color: #ffbe0b; /* Conditions - Jaune */
+    --module4-color: #fb5607; /* Boucles - Orange */
+    --module5-color: #06d6a0; /* Fonctions - Vert */
+    --module6-color: #8338ec; /* Tableaux - Violet */
+    --module7-color: #3a0ca3; /* Fonctions natives - Indigo */
+    --module8-color: #4cc9f0; /* Inclusions - Bleu ciel */
+    --module9-color: #e76f51; /* Formulaires - Corail */
+    --module10-color: #2a9d8f; /* POO - Vert Émeraude */
+    --module11-color: #7209b7; /* POO Avancée - Violet Foncé */
+    --module12-color: #1e88e5; /* Bases de données - Bleu SQL */
+    --module13-color: #f97316; /* PHP et AJAX - Orange */
+    --module14-color: #dc3545; /* Sécurité - Rouge */
+    --module15-color: #4f46e5; /* Architecture MVC - Bleu indigo */
+    --module16-color: #9333ea; /* PHP et les API externes - Violet */
+    --module17-color: #fbbf24; /* Gestion des fichiers - Jaune doré */
+    --module18-color: #0d47a1; /* Tests unitaires - Bleu foncé */
+    --module19-color: #00838f; /* Envoi d'emails - Bleu turquoise */
+    --module20-color: #6a1b9a; /* Sessions et authentification - Violet */
+    --module21-color: #1b5e20; /* Internationalisation - Vert forêt */
+    --module22-color: #0d47a1; /* Déploiement et hébergement - Bleu marine */
+    --module23-color: #c2185b; /* Composer et autoloading - Framboise */
+    --module24-color: #4f5b93; /* Routeur PHP - Violet PHP */
+    --module24-color: #673ab7; /* Routeur PHP - Violet profond */
+
+    /* Variantes des couleurs principales (utilisées pour les dégradés et les états) */
+    --module1-dark: #2563eb;
+    --module2-dark: #d90057;
+    --module3-dark: #e39e00;
+    --module4-dark: #e24100;
+    --module5-dark: #04a47a;
+    --module6-dark: #6a1fd6;
+    --module7-dark: #2d0a80;
+    --module8-dark: #0091ad;
+    --module9-dark: #c35a41;
+    --module10-dark: #1e7d71;
+    --module11-dark: #5b068f;
+    --module12-dark: #1565c0;
+    --module13-dark: #ea580c;
+    --module14-dark: #b02a37;
+    --module15-dark: #3730a3;
+    --module16-dark: #7e22ce;
+    --module17-dark: #b45309;
+    --module18-dark: #002171;
+    --module19-dark: #005662;
+    --module20-dark: #38006b;
+    --module21-dark: #003300;
+    --module22-dark: #002171;
+    --module23-dark: #8c0032;
+    --module24-dark: #512da8;
+
+    /* Variantes légères (pour les arrière-plans, survols, etc.) */
+    --module1-light: rgba(58, 134, 255, 0.1);
+    --module2-light: rgba(255, 0, 110, 0.1);
+    --module3-light: rgba(255, 190, 11, 0.1);
+    --module4-light: rgba(251, 86, 7, 0.1);
+    --module5-light: rgba(6, 214, 160, 0.1);
+    --module6-light: rgba(131, 56, 236, 0.1);
+    --module7-light: rgba(58, 12, 163, 0.1);
+    --module8-light: rgba(76, 201, 240, 0.1);
+    --module9-light: rgba(231, 111, 81, 0.1);
+    --module10-light: rgba(42, 157, 143, 0.1);
+    --module11-light: rgba(114, 9, 183, 0.1);
+    --module12-light: rgba(30, 136, 229, 0.1);
+    --module13-light: rgba(249, 115, 22, 0.1);
+    --module14-light: rgba(220, 53, 69, 0.1);
+    --module15-light: rgba(79, 70, 229, 0.1);
+    --module16-light: rgba(147, 51, 234, 0.1);
+    --module17-light: rgba(251, 191, 36, 0.1);
+    --module18-light: #e3f2fd;
+    --module19-light: #e0f7fa;
+    --module20-light: #f3e5f5;
+    --module21-light: #e8f5e9;
+    --module22-light: #e3f2fd;
+    --module23-light: #fce4ec;
+    --module24-light: #ede7f6;
+
+    /* Couleurs pour les éléments spécifiques */
+    --header-bg: #003366; /* Fond du header */
+    --body-bg: #e7e7e7; /* Fond de la page */
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Ombre des cartes */
+
+    /* Couleurs pour la syntaxe du code */
+    --keyword-color: #569cd6; /* Mots-clés */
+    --string-color: #ce9178; /* Chaînes de caractères */
+    --comment-color: #6a9955; /* Commentaires */
+    --function-color: #dcdcaa; /* Fonctions */
+    --class-color: #4ec9b0; /* Classes */
+    --property-color: #9cdcfe; /* Propriétés */
+    --method-color: #dcdcaa; /* Méthodes */
+    --result-text: #06d6a0; /* Résultat */
+
+    /* Badges et alertes */
+    --badge-success: #06d6a0; /* Badge succès */
+    --badge-warning: #ffbe0b; /* Badge avertissement */
+    --badge-danger: #ff006e; /* Badge danger */
+
+    /* === Variables globales harmonisées === */
+    --font-main: "Segoe UI", Arial, sans-serif;
+    --font-mono: "Fira Code", Consolas, monospace;
+    --font-size-base: 16px;
+    --font-size-title: 2.5rem;
+    --font-size-subtitle: 1.1rem;
+    --font-size-h2: 1.5rem;
+    --font-size-h3: 1.2rem;
+    --font-size-code: 14px;
+    --radius: 8px;
+    --radius-btn: 4px;
+    --radius-card: 12px;
+    --btn-padding: 8px 16px;
+    --btn-font-weight: 500;
+    --btn-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    --box-padding: 15px;
+    --box-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --info-bg: #f1f5f9;
+    --warning-bg: #fff3cd;
+    --danger-bg: #f8d7da;
+    --success-bg: #d1e7dd;
+    --info-border: #3a86ff;
+    --warning-border: #ffc107;
+    --danger-border: #dc3545;
+    --success-border: #06d6a0;
+    --code-inline-bg: #fff;
+    --code-inline-color: #222;
+    --code-radius: 4px;
+    --code-padding: 3px 6px;
+    --transition: 0.2s;
+}

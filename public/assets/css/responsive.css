@@ -1,0 +1,62 @@
+/* 
+   STYLES RESPONSIFS
+   Adaptations pour différentes tailles d'écran
+*/
+
+@media (max-width: 768px) {
+    .db-diagram-container {
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .db-diagram-vertical {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .db-table-container {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .relation-arrow-vertical {
+        height: 30px;
+    }
+
+    .relation-arrow-vertical::before {
+        height: 30px;
+    }
+
+    .relation-arrow-vertical .relation-text {
+        font-size: 0.8rem;
+        padding: 2px 5px;
+    }
+
+    .relation-arrow-vertical .cardinality {
+        font-size: 0.7rem;
+        padding: 1px 4px;
+    }
+
+    .db-table-enhanced {
+        width: 250px;
+    }
+
+    .db-relations-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .user-comment,
+    .article-comment {
+        transform: none;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .db-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}

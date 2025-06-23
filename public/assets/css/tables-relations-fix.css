@@ -1,0 +1,51 @@
+/* 
+   Styles spécifiques pour les tableaux dans le module routeur PHP
+*/
+
+/* Styles généraux pour les tableaux dans le module 24 */
+.module24 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .module24 table {
+        display: table;
+    }
+}
+
+/* En-têtes de tableaux */
+.module24 table th {
+    background-color: var(--module24-color);
+    color: white;
+    padding: 10px 12px;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid #673ab7;
+}
+
+/* Cellules de tableaux */
+.module24 table td {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+/* Lignes alternées pour meilleure lisibilité */
+.module24 table tr:nth-child(even) {
+    background-color: #f5f5fa;
+}
+
+.module24 table tr:hover {
+    background-color: #efe8ff;
+}
+
+/* Style spécifique pour la table des conventions RESTful */
+.module24 .info-box table td:first-child {
+    font-weight: bold;
+    min-width: 80px;
+}

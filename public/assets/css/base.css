@@ -1,0 +1,134 @@
+/* 
+   STYLES DE BASE
+   Éléments fondamentaux partagés entre tous les modules
+*/
+
+/* Reset et styles de base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 30px;
+    background-color: var(--body-bg);
+    color: #222;
+    line-height: 1.6;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+/* Typographie base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--font-size-title);
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    color: var(--primary-dark);
+    margin-top: 2rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Conteneurs génériques */
+header {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color) 0%,
+        var(--primary-dark) 100%
+    );
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+    box-shadow: var(--card-shadow);
+}
+
+main {
+    padding: 20px 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-subtitle);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Code et syntaxe de base */
+code {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-code);
+}
+
+pre {
+    margin: 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Responsive globals */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 15px;
+    }
+
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}

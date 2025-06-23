@@ -1,0 +1,117 @@
+/* 
+ * Styles pour les explications pédagogiques du module de routeur PHP
+ * Ces styles mettent en forme les descriptions d'exemple de code
+ */
+
+.example-description {
+    margin: 1rem 0 1.2rem;
+    padding: 1rem 2.2rem; /* Augmentation du padding gauche pour l'emoji */
+    background: linear-gradient(
+        to right,
+        rgba(79, 91, 147, 0.1),
+        rgba(79, 91, 147, 0.05)
+    );
+    border-left: 4px solid var(--module24-color, #4f5b93); /* Couleur PHP standard si variable non définie */
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: visible; /* Assure que l'icône débordante reste visible */
+    font-family: var(--font-main) !important; /* Force la police principale */
+}
+
+/* Icône subtile d'ampoule pour indiquer une explication */
+.example-description::before {
+    content: "💡";
+    position: absolute;
+    left: -9px; /* Ajusté de -14px à -9px pour éviter la troncature */
+    top: -12px;
+    background-color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les éléments importants dans les descriptions */
+.example-description strong {
+    color: var(--module24-color, #4f5b93);
+    font-weight: 600;
+}
+
+/* Style pour les éléments de code dans les descriptions */
+.example-description code {
+    background-color: rgba(40, 42, 54, 0.05);
+    padding: 0.15rem 0.3rem;
+    border-radius: 3px;
+    font-family: var(
+        --font-mono
+    ); /* Police monospace pour les éléments de code uniquement */
+    font-size: 0.85em;
+    color: #e83e8c;
+}
+
+/* Force la police principale pour le texte des descriptions */
+.example-description p,
+.example-description li,
+.example-description h3,
+.example-description h4 {
+    font-family: var(--font-main) !important;
+}
+
+/* Mise en forme des listes dans les descriptions */
+.example-description ul,
+.example-description ol {
+    margin: 0.7rem 0 0.7rem 1.5rem;
+    padding-left: 0;
+}
+
+.example-description li {
+    margin-bottom: 0.4rem;
+}
+
+/* Style pour les notes et astuces dans les descriptions */
+.example-description p.tip {
+    margin-top: 0.8rem;
+    font-style: italic;
+    color: #555;
+}
+
+.example-description p.tip::before {
+    content: "Astuce : ";
+    font-weight: 600;
+    color: var(--module24-color, #4f5b93);
+}
+
+/* Styles responsive */
+@media (max-width: 768px) {
+    .example-description {
+        padding: 0.8rem 1rem;
+        margin: 0.8rem 0 1rem;
+        font-size: 0.9rem;
+    }
+    .example-description::before {
+        left: -8px; /* Ajusté de -12px à -8px pour éviter la troncature sur écrans plus petits */
+        top: -10px;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}
+
+/* Règle spécifique pour les explications dans des exemples (pour éviter la troncature de l'icône ampoule) */
+.example .example-description {
+    position: relative;
+    overflow: visible;
+    padding-left: 2.5rem; /* Plus d'espace à gauche pour l'ampoule */
+}
+
+.example .example-description::before {
+    left: -6px; /* Position ajustée pour être visible dans le contexte des exemples */
+}

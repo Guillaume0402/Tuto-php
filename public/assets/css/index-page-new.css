@@ -1,0 +1,290 @@
+/* 
+   STYLES POUR LA PAGE D'INDEX
+   Styles spécifiques pour la page d'accueil du tutoriel
+*/
+
+/* Style spécifique pour la page d'index */
+.index-page header {
+    background: linear-gradient(
+        135deg,
+        var(--module1-color) 0%,
+        var(--module7-dark) 100%
+    );
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-radius: var(--radius-card);
+    color: #fff;
+    box-shadow: var(--card-shadow);
+}
+
+.index-page h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.index-page .subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Grille des modules */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* Carte de module */
+.module-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Suppression des soulignements sur tous les liens */
+.module-card,
+.module-card:hover,
+.module-card a,
+.module-card a:hover,
+.module-card a:focus,
+.module-card a:active {
+    text-decoration: none !important;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Headers colorés pour chaque module */
+.card-header.card-1 {
+    background-color: var(--module1-color);
+}
+.card-header.card-2 {
+    background-color: var(--module2-color);
+}
+.card-header.card-3 {
+    background-color: var(--module3-color);
+}
+.card-header.card-4 {
+    background-color: var(--module4-color);
+}
+.card-header.card-5 {
+    background-color: var(--module5-color);
+}
+.card-header.card-6 {
+    background-color: var(--module6-color);
+}
+.card-header.card-7 {
+    background-color: var(--module7-color);
+}
+.card-header.card-8 {
+    background-color: var(--module8-color);
+}
+.card-header.card-9 {
+    background-color: var(--module9-color);
+}
+.card-header.card-10 {
+    background-color: var(--module10-color);
+}
+.card-header.card-11 {
+    background-color: var(--module11-color);
+}
+.card-header.card-12 {
+    background-color: var(--module12-color);
+}
+.card-header.card-13 {
+    background-color: var(--module13-color);
+}
+.card-header.card-14 {
+    background-color: var(--module14-color);
+}
+.card-header.card-15 {
+    background-color: var(--module15-color);
+}
+.card-header.card-16 {
+    background-color: var(--module16-color);
+}
+.card-header.card-17 {
+    background-color: var(--module17-color);
+}
+.card-header.card-18 {
+    background-color: var(--module18-color);
+}
+.card-header.card-19 {
+    background-color: var(--module19-color);
+}
+.card-header.card-20 {
+    background-color: var(--module20-color);
+}
+.card-header.card-21 {
+    background-color: var(--module21-color);
+}
+.card-header.card-22 {
+    background-color: var(--module22-color);
+}
+.card-header.card-23 {
+    background-color: var(--module23-color);
+}
+.card-header.card-24 {
+    background-color: var(--module24-color);
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.card-description {
+    color: var(--text-muted, #666);
+    flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.card-link {
+    display: inline-block;
+    color: var(--module1-color);
+    font-weight: 500;
+    position: relative;
+    padding-right: 20px;
+    text-decoration: none !important; /* Suppression du soulignement */
+}
+
+.card-2 .card-link {
+    color: var(--module2-color);
+}
+.card-3 .card-link {
+    color: var(--module3-color);
+}
+.card-4 .card-link {
+    color: var(--module4-color);
+}
+.card-5 .card-link {
+    color: var(--module5-color);
+}
+.card-6 .card-link {
+    color: var(--module6-color);
+}
+.card-7 .card-link {
+    color: var(--module7-color);
+}
+.card-8 .card-link {
+    color: var(--module8-color);
+}
+.card-9 .card-link {
+    color: var(--module9-color);
+}
+.card-10 .card-link {
+    color: var(--module10-color);
+}
+.card-11 .card-link {
+    color: var(--module11-color);
+}
+.card-12 .card-link {
+    color: var(--module12-color);
+}
+.card-13 .card-link {
+    color: var(--module13-color);
+}
+.card-14 .card-link {
+    color: var(--module14-color);
+}
+.card-15 .card-link {
+    color: var(--module15-color);
+}
+.card-16 .card-link {
+    color: var(--module16-color);
+}
+.card-17 .card-link {
+    color: var(--module17-color);
+}
+.card-18 .card-link {
+    color: var(--module18-color);
+}
+.card-19 .card-link {
+    color: var(--module19-color);
+}
+.card-20 .card-link {
+    color: var(--module20-color);
+}
+.card-21 .card-link {
+    color: var(--module21-color);
+}
+.card-22 .card-link {
+    color: var(--module22-color);
+}
+.card-23 .card-link {
+    color: var(--module23-color);
+}
+.card-24 .card-link {
+    color: var(--module24-color);
+}
+
+.card-link::after {
+    content: "→";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+}
+
+.module-card:hover .card-link::after {
+    transform: translate(5px, -50%);
+}
+
+/* S'assurer que les liens "Explorer ce module" n'ont pas de soulignement */
+a.card-link,
+a.card-link:hover,
+a.card-link:focus,
+a.card-link:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Responsive pour appareils mobiles */
+@media (max-width: 768px) {
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .index-page h1 {
+        font-size: 2.2rem;
+    }
+
+    .index-page .subtitle {
+        font-size: 1.1rem;
+    }
+}
