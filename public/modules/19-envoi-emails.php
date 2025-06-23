@@ -792,3 +792,4 @@ $description = "Apprenez à envoyer des e-mails avec PHP, des options basiques a
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

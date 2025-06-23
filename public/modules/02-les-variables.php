@@ -330,3 +330,4 @@ $$nomVariable <span class="operator">=</span> <span class="number">29.99</span><
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

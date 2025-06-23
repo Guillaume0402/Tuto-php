@@ -1049,3 +1049,4 @@ function calculer(string $operation, float $nombre1, float $nombre2): ?float {
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

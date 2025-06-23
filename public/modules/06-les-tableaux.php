@@ -884,3 +884,4 @@ $notesManip = <span class="function">array_values</span>($notesManip); <span cla
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

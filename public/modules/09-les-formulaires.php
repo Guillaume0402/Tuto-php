@@ -497,3 +497,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_demo'])) {
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

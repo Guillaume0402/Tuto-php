@@ -766,3 +766,4 @@ class Etudiant extends Personne
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

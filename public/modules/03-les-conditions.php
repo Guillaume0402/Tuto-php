@@ -447,3 +447,4 @@ $accesAutorise = ($utilisateur['role'] === 'admin' && $utilisateur['statut'] ===
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

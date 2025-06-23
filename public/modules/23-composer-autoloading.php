@@ -654,3 +654,4 @@ $description = "Maîtrisez la gestion des dépendances avec Composer, implément
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

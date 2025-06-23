@@ -852,3 +852,4 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

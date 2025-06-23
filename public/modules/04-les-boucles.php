@@ -569,3 +569,4 @@ $description = "Découvrez comment répéter des opérations avec les différent
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

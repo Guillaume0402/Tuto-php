@@ -217,9 +217,9 @@
             </div>
         </a>
     </section>
-    <footer>
-        <p>© <?php echo date('Y'); ?> Formation PHP - Tous droits réservés</p>
-    </footer>
+   
 </body>
 
 </html>
+
+<?php include __DIR__ . '/public/includes/footer.php';

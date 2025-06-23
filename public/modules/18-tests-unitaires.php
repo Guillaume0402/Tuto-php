@@ -556,3 +556,4 @@ Time: 00:00.003, Memory: 4.00 MB
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

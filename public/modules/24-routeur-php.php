@@ -2270,3 +2270,5 @@ $description = "Créez un système de routage efficace pour vos applications web
 </body>
 
 </html>
+
+<?php include __DIR__ . '/../includes/footer.php'; ?>

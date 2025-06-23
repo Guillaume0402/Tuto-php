@@ -100,3 +100,5 @@ Ceci est un exemple de commentaire
 </body>
 
 </html>
+
+<?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -566,3 +566,4 @@ $description = "Apprenez à créer des sites multilingues en PHP en utilisant di
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

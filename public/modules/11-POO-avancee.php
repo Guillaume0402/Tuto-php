@@ -817,3 +817,4 @@ $chien = new Chien("Rex", 3, "Berger Allemand");
 </body>
 
 </html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
