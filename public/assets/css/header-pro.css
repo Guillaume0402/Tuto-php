@@ -3,6 +3,18 @@ STYLES POUR LA BARRE DE NAVIGATION PRO
 Styles pour le header professionnel utilisé dans les pages tutoriels
 */
 
+/* Styles globaux pour éviter tout problème de débordement horizontal */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Assurer que le menu déroulant peut défiler sur mobile */
+.dropdown-menu-active {
+    -webkit-overflow-scrolling: touch;
+}
+
 .tuto-nav-pro {
     background: #222;
     color: #fff;
@@ -41,9 +53,9 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
 .tuto-nav-menu {
     font-size: 1rem;
 }
-.tuto-nav-menu a :hover {
+.tuto-nav-menu a:hover {
     text-decoration: underline;
-    color: aqua !important;
+    color: #4fc3f7 !important; /* Couleur fixe qui ne change pas avec le module */
 }
 
 .tuto-nav-link {
@@ -107,6 +119,7 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
     margin-top: 5px; /* Petit espace entre le bouton et le menu */
     background-color: #2d3748;
     min-width: 480px; /* Augmenter la largeur pour accueillir deux colonnes */
+    max-width: 95vw; /* Empêcher le menu de dépasser la largeur de la fenêtre */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     border-radius: 4px;
@@ -115,11 +128,25 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s, transform 0.3s;
+    overflow-y: auto; /* Permettre le défilement vertical si nécessaire */
+    max-height: 80vh; /* Hauteur maximale pour éviter débordement vertical */
 
     /* Nouvelle disposition en colonnes */
     column-count: 2;
     column-gap: 0;
     column-rule: 1px solid #4a5568;
+}
+
+/* Classe pour positionner le menu à droite quand il est proche du bord */
+.dropdown-menu-right {
+    left: auto;
+    right: 0;
+}
+
+/* Style pour le menu aligné à droite quand il est proche du bord droit de l'écran */
+.dropdown-menu-right {
+    left: auto;
+    right: 0;
 }
 
 .dropdown-menu-active {
@@ -130,13 +157,22 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
 
 .dropdown-item {
     color: #e2e8f0;
-    padding: 12px 16px;
+    padding: 10px 16px;
     text-decoration: none;
     display: block;
-    font-size: 0.95em;
+    font-size: 0.9em;
+    line-height: 1.3;
     transition: background-color 0.2s;
     /* Éviter les coupures d'éléments entre les colonnes */
     break-inside: avoid-column;
+    white-space: normal; /* Permettre au texte de passer à la ligne */
+    word-wrap: break-word; /* Forcer les mots longs à passer à la ligne */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #4fc3f7;
 }
 
 .dropdown-divider {
@@ -155,22 +191,196 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
     column-span: all;
 }
 
+
+
 /* Style pour appareils mobiles */
 @media (max-width: 768px) {
     .dropdown-menu {
-        position: static;
-        width: 100%;
-        min-width: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0; /* S'assurer qu'il occupe toute la largeur */
+        width: 100vw; /* Forcer la largeur à 100% de la fenêtre */
+        height: 100vh;
+        min-width: 100%; /* Forcer la largeur minimale à 100% */
+        max-width: 100%;
+        max-height: 100%;
         box-shadow: none;
         border-radius: 0;
-        margin-top: 0;
+        margin: 0; /* Supprimer toutes les marges */
+        padding-top: 60px; /* Espace pour le titre et le bouton de fermeture */
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        overflow-y: scroll; /* Utiliser scroll au lieu de auto pour forcer l'activation du défilement */
+        -webkit-overflow-scrolling: touch; /* Améliorer le défilement sur iOS */
         /* Revenir à une seule colonne sur mobile */
         column-count: 1;
         column-gap: 0;
         column-rule: none;
+        z-index: 2000;
+        transform: none !important; /* Empêcher les transformations qui pourraient affecter la position */
+        transition: opacity 0.3s ease !important; /* Simplifier la transition sur mobile */
+    } /* Ce CSS a été supprimé car il créait un conflit */
+
+    /* Overlay pour mobile */
+    .mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 1999;
+        animation: fadeIn 0.3s ease;
+    } /* L'overlay s'affiche quand un menu est actif */
+    .dropdown .dropdown-menu-active ~ .mobile-menu-overlay,
+    .dropdown-menu-active + .mobile-menu-overlay {
+        display: block;
     }
 
-    /* Autres styles responsifs restent inchangés */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    } /* Titre du menu mobile */ /* Titre du menu mobile */
+    .dropdown-menu-mobile-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
+        background-color: #1a1a1a;
+        color: #4fc3f7;
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        z-index: 2002; /* S'assurer qu'il est au-dessus de tout */
+    } /* Bouton de fermeture pour mobile */
+    .dropdown-menu-close {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        z-index: 2005; /* S'assurer qu'il est au-dessus de tout */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border: none;
+        outline: none;
+        padding: 0;
+        transition: background-color 0.2s;
+    }
+
+    .dropdown-menu-close:hover {
+        background-color: rgba(79, 195, 247, 0.3);
+    } /* Bouton de fermeture - uniquement visible en mobile */
+    #mobile-menu-close {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 28px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        z-index: 2010;
+        transition: background-color 0.2s;
+        display: none;
+    }
+
+    #mobile-menu-close:hover {
+        background-color: rgba(79, 195, 247, 0.5);
+    }
+
+    /* Visible uniquement en mode mobile et quand le menu est actif */
+    .dropdown-menu-active ~ #mobile-menu-close {
+        display: none; /* Par défaut caché même quand le menu est actif */
+    }
+
+    /* Visible uniquement en mode mobile et seulement quand le menu est actif */
+    @media (max-width: 768px) {
+        .dropdown-menu-active ~ #mobile-menu-close {
+            display: block;
+        }
+    }
+
+    /* Conteneur pour les éléments du menu avec défilement */
+    .dropdown-menu-mobile-content {
+        padding-top: 10px; /* Espace supplémentaire après le header */
+        padding-bottom: 30px; /* Espace supplémentaire en bas pour faciliter le défilement */
+        width: 100%;
+        overflow-y: auto; /* Permettre le défilement à l'intérieur du conteneur */
+        height: calc(
+            100vh - 60px
+        ); /* Hauteur calculée pour laisser de l'espace pour le header */
+        -webkit-overflow-scrolling: touch; /* Améliorer le défilement sur iOS */
+    } /* Empêcher le scroll du body quand le menu est ouvert sur mobile */
+    body.dropdown-open {
+        overflow: hidden !important;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Petite flèche en bas du menu pour indiquer la possibilité de défilement */
+    .dropdown-menu-mobile-content::after {
+        content: "⌄";
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.5);
+        padding: 10px 0;
+        margin-top: 10px;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 0.3;
+            transform: translateY(0);
+        }
+        50% {
+            opacity: 0.7;
+            transform: translateY(5px);
+        }
+        100% {
+            opacity: 0.3;
+            transform: translateY(0);
+        }
+    }
+
+    /* Améliorer l'apparence des liens du menu sur mobile */
+    .dropdown-item {
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 16px;
+        display: block;
+        margin: 0;
+        text-align: left;
+        clear: both;
+    }
+
+    /* Retirer les bordures du dernier élément */
+    .dropdown-item:last-child {
+        border-bottom: none;
+    }
 }
 
 /* Styles responsifs pour la navigation pro */
@@ -192,3 +402,6 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
         margin-right: 0;
     }
 }
+
+/* Nous utilisons maintenant une approche plus propre, où le bouton n'est affiché
+   que sur mobile via la règle @media (max-width: 768px) */

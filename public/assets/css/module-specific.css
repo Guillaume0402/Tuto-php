@@ -84,9 +84,12 @@
 /* Module 16: API Externes - Styles spécifiques */
 .module16 header {
     background-color: var(--module16-color);
-    background-image: 
-        linear-gradient(135deg, var(--module16-color) 0%, var(--module16-dark) 100%),
-        url('../assets/images/module16-bg.jpg');
+    background-image: linear-gradient(
+            135deg,
+            var(--module16-color) 0%,
+            var(--module16-dark) 100%
+        ),
+        url("../assets/images/module16-bg.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -163,9 +166,12 @@
 /* Module 18: Tests Unitaires */
 .module18 header {
     background-color: var(--module18-color);
-    background-image: 
-        linear-gradient(135deg, var(--module18-color) 0%, var(--module18-dark) 100%),
-        url('../assets/images/module18-bg.jpg');
+    background-image: linear-gradient(
+            135deg,
+            var(--module18-color) 0%,
+            var(--module18-dark) 100%
+        ),
+        url("../assets/images/module18-bg.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -190,9 +196,12 @@
 /* Module 19: Envoi d'emails */
 .module19 header {
     background-color: var(--module19-color);
-    background-image: 
-        linear-gradient(135deg, var(--module19-color) 0%, var(--module19-dark) 100%),
-        url('../assets/images/module19-bg.jpg');
+    background-image: linear-gradient(
+            135deg,
+            var(--module19-color) 0%,
+            var(--module19-dark) 100%
+        ),
+        url("../assets/images/module19-bg.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -217,9 +226,12 @@
 /* Module 20: Sessions et authentification */
 .module20 header {
     background-color: var(--module20-color);
-    background-image: 
-        linear-gradient(135deg, var(--module20-color) 0%, var(--module20-dark) 100%),
-        url('../assets/images/module20-bg.jpg');
+    background-image: linear-gradient(
+            135deg,
+            var(--module20-color) 0%,
+            var(--module20-dark) 100%
+        ),
+        url("../assets/images/module20-bg.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -244,9 +256,12 @@
 /* Module 21: Internationalisation */
 .module21 header {
     background-color: var(--module21-color);
-    background-image: 
-        linear-gradient(135deg, var(--module21-color) 0%, var(--module21-dark) 100%),
-        url('../assets/images/module21-bg.jpg');
+    background-image: linear-gradient(
+            135deg,
+            var(--module21-color) 0%,
+            var(--module21-dark) 100%
+        ),
+        url("../assets/images/module21-bg.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -271,9 +286,12 @@
 /* Module 22: Déploiement et hébergement */
 .module22 header {
     background-color: var(--module22-color);
-    background-image: 
-        linear-gradient(135deg, var(--module22-color) 0%, var(--module22-dark) 100%),
-        url('../assets/images/module22-bg.jpg');
+    background-image: linear-gradient(
+            135deg,
+            var(--module22-color) 0%,
+            var(--module22-dark) 100%
+        ),
+        url("../images/module22-bg.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -354,9 +372,12 @@
 /* Module 23: Composer et autoloading */
 .module23 header {
     background-color: var(--module23-color);
-    background-image: 
-        linear-gradient(135deg, var(--module23-color) 0%, var(--module23-dark) 100%),
-        url('../assets/images/module23-bg.jpg');
+    background-image: linear-gradient(
+            135deg,
+            var(--module23-color) 0%,
+            var(--module23-dark) 100%
+        ),
+        url("../assets/images/module23-bg.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -414,9 +435,12 @@
 /* Module 24: Routeur PHP */
 .module24 header {
     background-color: var(--module24-color);
-    background-image: 
-        linear-gradient(135deg, var(--module24-color) 0%, var(--module24-dark) 100%),
-        url('../assets/images/module24-bg.jpg');
+    background-image: linear-gradient(
+            135deg,
+            var(--module24-color) 0%,
+            var(--module24-dark) 100%
+        ),
+        url("../assets/images/module24-bg.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
@@ -539,15 +563,15 @@
     [class^="module"] table td {
         padding: 8px 10px;
     }
-    
+
     .pros-cons {
         flex-direction: column;
     }
-    
+
     [class^="module"] header {
         padding: 2rem 1rem;
     }
-    
+
     [class^="module"] h1 {
         font-size: 2rem;
     }
@@ -558,15 +582,15 @@
     [class^="module"] table {
         font-size: 14px;
     }
-    
+
     [class^="module"] h1 {
         font-size: 1.75rem;
     }
-    
+
     .route-path {
         font-size: 12px;
     }
-    
+
     .http-method {
         min-width: 40px;
         font-size: 10px;

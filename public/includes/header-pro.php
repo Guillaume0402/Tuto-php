@@ -53,14 +53,14 @@ require_once __DIR__ . '/config.php';
                     <a href="<?= BASE_URL ?>modules/20-sessions-authentification.php" class="dropdown-item">20. Gestion des sessions et authentification</a>
                     <a href="<?= BASE_URL ?>modules/21-internationalisation.php" class="dropdown-item">21. Internationalisation (i18n) et gestion des langues</a>
                     <a href="<?= BASE_URL ?>modules/22-deploiement-hebergement.php" class="dropdown-item">22. Déploiement et hébergement d'une application PHP</a>
-                    <a href="<?= BASE_URL ?>modules/23-composer-autoloading.php" class="dropdown-item">23. Utilisation de Composer et autoloading</a>                    
+                    <a href="<?= BASE_URL ?>modules/23-composer-autoloading.php" class="dropdown-item">23. Utilisation de Composer et autoloading</a>
                     <a href="<?= BASE_URL ?>modules/24-routeur-php.php" class="dropdown-item">24. Routeur PHP</a>
                     <div class="dropdown-divider"></div>
-                    
                 </div>
             </div>
             <!-- Fin du menu déroulant -->
         </nav>
-    </div>
-    <script src="/Tuto-php/public/assets/js/dropdown.js"></script>
+    </div> <!-- Overlay pour permettre de fermer en cliquant en dehors du menu -->
+    <script src="<?= BASE_URL ?>assets/js/dropdown.js"></script>
 </div>
+
