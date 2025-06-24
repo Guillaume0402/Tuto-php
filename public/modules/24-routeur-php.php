@@ -2,15 +2,7 @@
 $titre = "Routeur PHP";
 $description = "Créez un système de routage efficace pour vos applications web PHP";
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module24">
     <header>
@@ -2267,8 +2259,6 @@ $description = "Créez un système de routage efficace pour vos applications web
     <footer>
         <p>&copy; Tutoriel PHP - Tous droits réservés</p>
     </footer>
-</body>
 
-</html>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

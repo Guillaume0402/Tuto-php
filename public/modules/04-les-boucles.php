@@ -8,15 +8,7 @@ $description = "Découvrez comment répéter des opérations avec les différent
 // Les définitions sont conservées plus bas dans le code
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module4">
     <header>
@@ -566,7 +558,5 @@ $description = "Découvrez comment répéter des opérations avec les différent
                 <a href="05-les-fonctions.php" class="nav-button">Module suivant →</a>
             </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

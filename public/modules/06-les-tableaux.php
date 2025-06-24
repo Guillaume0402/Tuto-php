@@ -1,7 +1,6 @@
 <?php include __DIR__ . '/../includes/header-pro.php'; 
 
-// Inclusion des variables et configurations communes
-require_once 'includes/config.php';
+
 
 // Tableaux pour les exemples
 // Tableau indexé numériquement
@@ -83,15 +82,7 @@ function afficherComplexite($niveau, $explication)
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module6">
     <header>
@@ -881,7 +872,5 @@ $notesManip = <span class="function">array_values</span>($notesManip); <span cla
             <a href="07-fonctions-natives.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

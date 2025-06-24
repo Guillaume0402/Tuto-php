@@ -2,15 +2,7 @@
 $titre = "Envoi d'e-mails en PHP";
 $description = "Apprenez à envoyer des e-mails avec PHP, des options basiques aux fonctionnalités avancées comme les pièces jointes, les e-mails HTML et la sécurité.";
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module19">
     <header>
@@ -789,7 +781,5 @@ $description = "Apprenez à envoyer des e-mails avec PHP, des options basiques a
             <a href="20-sessions-authentification.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

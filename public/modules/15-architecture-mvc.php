@@ -1,13 +1,5 @@
 <?php include __DIR__ . '/../includes/header-pro.php'; ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architecture MVC en PHP | Formation PHP</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module15">
     <header>
@@ -1516,7 +1508,5 @@ blog-mvc/
                 <a href="16-api-externes.php" class="nav-button">Module suivant →</a>
             </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

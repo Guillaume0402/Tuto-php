@@ -1,15 +1,4 @@
 <?php include __DIR__ . '/../includes/header-pro.php'; 
-
-
-
-/**
- * Tutoriel PHP - POO Avancée : Interfaces et Classes Abstraites
- * Ce fichier présente les concepts avancés de la Programmation Orientée Objet en PHP
- */
-
-// Inclusion du fichier de configuration
-require_once 'includes/config.php';
-
 // Récupérer les informations de la page depuis la configuration
 $pageKey = '11-POO-avancee';
 $pageInfo = getPageInfo($pageKey);
@@ -182,15 +171,7 @@ final class Configuration
 // Création d'une instance pour la démonstration
 $chien = new Chien("Rex", 3, "Berger Allemand");
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $titre; ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module11">
     <header>
@@ -814,7 +795,5 @@ $chien = new Chien("Rex", 3, "Berger Allemand");
             <a href="12-bases-de-donnees.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

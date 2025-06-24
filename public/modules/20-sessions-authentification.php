@@ -2,15 +2,7 @@
 $titre = "Gestion des sessions et authentification";
 $description = "Apprenez à gérer les sessions PHP, créer un système d'authentification sécurisé et mettre en place une gestion des droits utilisateurs.";
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module20">
     <header>
@@ -849,7 +841,5 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
             <a href="21-internationalisation.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

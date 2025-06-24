@@ -1,15 +1,4 @@
 <?php include __DIR__ . '/../includes/header-pro.php';
-
-
-
-/**
- * Tutoriel PHP - POO: Les Classes
- * Ce fichier présente les concepts fondamentaux de la Programmation Orientée Objet en PHP
- */
-
-// Inclusion du fichier de configuration
-require_once 'includes/config.php';
-
 // Récupérer les informations de la page depuis la configuration
 $pageKey = '10-POO-les-classes';
 $pageInfo = getPageInfo($pageKey);
@@ -103,15 +92,7 @@ class Etudiant extends Personne
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $titre; ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module10">
     <header>

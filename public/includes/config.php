@@ -6,8 +6,9 @@
  */
 
 // ----- Configuration générale du site -----
+define('SITE_ROOT', '/Tuto-php/');
 define('BASE_URL', '/Tuto-php/public/');
-define('SITE_VERSION', '1.0.1');
+define('SITE_VERSION', '1.0.2');
 define('SITE_NAME', 'Tuto-PHP');
 define('SITE_AUTHOR', 'Guillaume Maignaut');
 define('SITE_GITHUB', 'https://github.com/Guillaume0402');

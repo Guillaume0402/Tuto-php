@@ -1,11 +1,5 @@
 <?php include __DIR__ . '/../includes/header-pro.php'; 
 
-/**
- * Tutoriel PHP - Gestion des fichiers et images
- * Ce module explique comment manipuler, traiter et sécuriser les fichiers et images en PHP.
- */
-
-require_once 'includes/config.php';
 
 $pageKey = '17-gestion-fichiers';
 $pageInfo = [
@@ -15,15 +9,7 @@ $pageInfo = [
 $titre = $pageInfo['titre'];
 $description = $pageInfo['description'];
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $titre; ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module17">
     <header>
@@ -234,7 +220,5 @@ $description = $pageInfo['description'];
             <a href="18-tests-unitaires.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

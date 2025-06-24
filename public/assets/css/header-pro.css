@@ -41,6 +41,10 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
 .tuto-nav-menu {
     font-size: 1rem;
 }
+.tuto-nav-menu a :hover {
+    text-decoration: underline;
+    color: aqua !important;
+}
 
 .tuto-nav-link {
     color: #fff;
@@ -92,7 +96,7 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
     transition: transform 0.2s ease;
 }
 
-.dropdown:hover .dropdown-icon {
+.dropdown-icon-active {
     transform: rotate(180deg);
 }
 
@@ -102,7 +106,7 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
     left: 0;
     margin-top: 5px; /* Petit espace entre le bouton et le menu */
     background-color: #2d3748;
-    min-width: 220px;
+    min-width: 480px; /* Augmenter la largeur pour accueillir deux colonnes */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     border-radius: 4px;
@@ -111,12 +115,17 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s, transform 0.3s;
+
+    /* Nouvelle disposition en colonnes */
+    column-count: 2;
+    column-gap: 0;
+    column-rule: 1px solid #4a5568;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+.dropdown-menu-active {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 .dropdown-item {
@@ -126,44 +135,42 @@ Styles pour le header professionnel utilisé dans les pages tutoriels
     display: block;
     font-size: 0.95em;
     transition: background-color 0.2s;
-}
-
-.dropdown-item:hover {
-    background-color: #4a5568;
-    color: #fff;
+    /* Éviter les coupures d'éléments entre les colonnes */
+    break-inside: avoid-column;
 }
 
 .dropdown-divider {
     height: 1px;
     background-color: #4a5568;
     margin: 5px 0;
+    /* S'étendre sur les deux colonnes */
+    column-span: all;
 }
 
 .dropdown-all {
     background-color: #3c4655;
     font-weight: 500;
     text-align: center;
+    /* S'étendre sur les deux colonnes */
+    column-span: all;
 }
 
 /* Style pour appareils mobiles */
 @media (max-width: 768px) {
     .dropdown-menu {
         position: static;
-        width: auto;
+        width: 100%;
+        min-width: auto;
         box-shadow: none;
         border-radius: 0;
         margin-top: 0;
+        /* Revenir à une seule colonne sur mobile */
+        column-count: 1;
+        column-gap: 0;
+        column-rule: none;
     }
 
-    .dropdown-toggle {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .tuto-nav-menu {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    /* Autres styles responsifs restent inchangés */
 }
 
 /* Styles responsifs pour la navigation pro */

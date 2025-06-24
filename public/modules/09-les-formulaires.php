@@ -1,15 +1,4 @@
 <?php include __DIR__ . '/../includes/header-pro.php'; 
-
-
-
-/**
- * Tutoriel PHP - Les Formulaires
- * Ce fichier explique comment créer et traiter des formulaires en PHP
- */
-
-// Inclusion du fichier de configuration
-require_once 'includes/config.php';
-
 // Récupérer les informations de la page depuis la configuration
 $pageKey = '09-les-formulaires';
 $pageInfo = getPageInfo($pageKey);
@@ -61,15 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_demo'])) {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $titre; ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module9">
     <header>
@@ -494,7 +475,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_demo'])) {
             <a href="10-POO-les-classes.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

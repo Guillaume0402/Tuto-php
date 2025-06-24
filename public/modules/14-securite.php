@@ -1,23 +1,5 @@
 <?php include __DIR__ . '/../includes/header-pro.php'; ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sécurité en PHP | Formation PHP</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/filtering-explanations.css">
-    <style>
-        @media (max-width: 768px) {
-            .security-layer[style] {
-                float: none !important;
-                width: 100% !important;
-                margin-right: 0 !important;
-            }
-        }
-    </style>
-</head>
 
 <body class="module14">
     <header>
@@ -1103,11 +1085,6 @@
         <a href="../../index.php" class="nav-button">Accueil</a>
         <a href="15-architecture-mvc.php" class="nav-button">Module suivant →</a>
     </div>
-    <script src="../assets/js/highlight.js"></script>
-    <script>
-        hljs.highlightAll();
-    </script>
-</body>
 
-</html>
+
 <?php include __DIR__ . '/../includes/footer.php'; ?>

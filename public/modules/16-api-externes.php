@@ -2,13 +2,6 @@
 
 
 
-/**
- * Tutoriel PHP - PHP et les API externes
- * Ce module explique comment connecter votre application PHP à des services externes via des API REST, cURL, OAuth, Webhooks, etc.
- */
-
-// Inclusion du fichier de configuration
-require_once 'includes/config.php';
 
 // Récupérer les informations de la page depuis la configuration (à adapter si besoin)
 $pageKey = '16-api-externes';
@@ -19,15 +12,7 @@ $pageInfo = [
 $titre = $pageInfo['titre'];
 $description = $pageInfo['description'];
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $titre; ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module16">
     <header>
@@ -661,7 +646,5 @@ $description = $pageInfo['description'];
             <a href="17-gestion-fichiers.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

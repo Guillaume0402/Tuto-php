@@ -56,15 +56,7 @@ $multiplier = fn($a, $b) => $a * $b;
 
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module5">
     <header>
@@ -1046,7 +1038,5 @@ function calculer(string $operation, float $nombre1, float $nombre2): ?float {
         <a href="../../index.php" class="nav-button">Accueil</a>
         <a href="06-les-tableaux.php" class="nav-button">Module suivant →</a>
     </div>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

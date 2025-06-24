@@ -56,16 +56,6 @@ $utilisateur = [
 $accesAutorise = ($utilisateur['role'] === 'admin' && $utilisateur['statut'] === 'actif');
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
-
 <body class="module3">
     <header>
         <h1><?= $titre ?></h1>
@@ -444,7 +434,5 @@ $accesAutorise = ($utilisateur['role'] === 'admin' && $utilisateur['statut'] ===
                 <a href="04-les-boucles.php" class="nav-button">Module suivant →</a>
             </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

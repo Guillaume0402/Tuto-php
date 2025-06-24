@@ -1,13 +1,4 @@
 <?php include __DIR__ . '/../includes/header-pro.php'; ?>
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Fonctions Natives PHP</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module7">
     <header>
@@ -536,8 +527,5 @@
             <a href="../../index.php" class="nav-button">Accueil</a>
             <a href="08-inclusions.php" class="nav-button">Module suivant →</a>
         </div>
-    </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

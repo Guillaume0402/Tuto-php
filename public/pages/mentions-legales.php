@@ -11,11 +11,11 @@ include __DIR__ . '/../includes/header-pro.php';
         <article class="legal-content">
             <h2>1. Éditeur du site</h2>
             <p>
-                Le site Tuto-PHP est édité par [Votre Nom/Société], dont le siège social est situé à [Votre Adresse].
+                Le site Tuto-PHP est édité par Maignaut Guillaume, travailleur indépendant.
                 <br>
-                Contact : [Votre Email] / [Votre Téléphone]
+                Contact : g.maignaut@gmail.com / 0650428039
                 <br>
-                Responsable de publication : [Nom du Responsable]
+                Responsable de publication : Maignaut Guillaume
             </p>
 
             <h2>2. Hébergement</h2>

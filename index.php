@@ -5,7 +5,7 @@ include __DIR__ . '/public/includes/header-pro.php'; ?>
 
 <body class="index-page">
     <header>
-        <h1>Formation PHP</h1>
+        <h1>Tutoriel PHP</h1>
         <p class="subtitle">Découvrez les fondamentaux du développement web avec PHP à travers une série de tutoriels pratiques et exemples interactifs.</p>
     </header>
         <section class="modules-grid">

@@ -3,15 +3,7 @@
 $titre = "Tests unitaires et qualité de code";
 $description = "Découvrez comment écrire des tests unitaires en PHP avec PHPUnit, améliorer la qualité de votre code et mettre en place l'intégration continue.";
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module18">
     <header>
@@ -553,7 +545,5 @@ Time: 00:00.003, Memory: 4.00 MB
         </div>
 
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

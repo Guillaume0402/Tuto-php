@@ -31,15 +31,6 @@ $nomVariable = "prix";
 $$nomVariable = 29.99; // $prix vaut maintenant 29.99
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module2">
     <header>
@@ -327,7 +318,5 @@ $$nomVariable <span class="operator">=</span> <span class="number">29.99</span><
             <a href="03-les-conditions.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -2,15 +2,7 @@
 $titre = "Déploiement et hébergement d'une application PHP";
 $description = "Apprenez à préparer votre application PHP pour la production, choisir le bon type d'hébergement et configurer correctement votre serveur pour une sécurité et des performances optimales.";
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module22">
     <header>
@@ -808,7 +800,5 @@ EOF
             <a href="23-composer-autoloading.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

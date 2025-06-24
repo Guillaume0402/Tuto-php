@@ -2,15 +2,7 @@
 $titre = "Utilisation de Composer et autoloading";
 $description = "Maîtrisez la gestion des dépendances avec Composer, implémentez l'autoloading PSR-4 et apprenez à créer et distribuer vos propres packages PHP.";
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module23">
     <header>
@@ -651,7 +643,5 @@ $description = "Maîtrisez la gestion des dépendances avec Composer, implément
             <a href="24-routeur-php.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

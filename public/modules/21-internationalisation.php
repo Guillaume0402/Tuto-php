@@ -2,15 +2,7 @@
 $titre = "Internationalisation (i18n) et gestion des langues";
 $description = "Apprenez à créer des sites multilingues en PHP en utilisant différentes techniques de traduction comme les fichiers de langue, gettext et les bibliothèques spécialisées.";
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module21">
     <header>
@@ -563,7 +555,5 @@ $description = "Apprenez à créer des sites multilingues en PHP en utilisant di
             <a href="22-deploiement-hebergement.php" class="nav-button">Module suivant →</a>
         </div>
     </main>
-</body>
 
-</html>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

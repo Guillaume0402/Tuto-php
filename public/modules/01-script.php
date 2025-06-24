@@ -1,20 +1,9 @@
 <?php include __DIR__ . '/../includes/header-pro.php';
-
 // Variables de page
 $titre = "Premier Script PHP";
 $description = "Découvrir la syntaxe de base et l'intégration du PHP dans une page HTML";
-
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-</head>
 
 <body class="module1">
     <header>
@@ -97,8 +86,6 @@ Ceci est un exemple de commentaire
         <a href="../../index.php" class="nav-button">Accueil</a>
         <a href="02-les-variables.php" class="nav-button">Module suivant →</a>
     </div>
-</body>
 
-</html>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
