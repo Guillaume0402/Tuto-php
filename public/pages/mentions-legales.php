@@ -1,12 +1,12 @@
 <?php
-$titre = "Mentions légales";
+$titreMention = "Mentions légales";
 $description = "Mentions légales du site Tuto-PHP";
-include __DIR__ . '/../public/includes/header-pro.php';
+include __DIR__ . '/../includes/header-pro.php';
 ?>
 
 <main>
     <section class="section legal-section">
-        <h1><?= $titre ?></h1>
+        <h1><?= $titreMention ?></h1>
 
         <article class="legal-content">
             <h2>1. Éditeur du site</h2>
@@ -61,4 +61,4 @@ include __DIR__ . '/../public/includes/header-pro.php';
     </section>
 </main>
 
-<?php include __DIR__ . '/../public/includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

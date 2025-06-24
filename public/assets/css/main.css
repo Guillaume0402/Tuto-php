@@ -49,7 +49,7 @@ Point d'entrée central qui importe tous les fichiers CSS modulaires
 @import "http-methods-fix.css";
 @import "routeur-fix.css";
 @import "tables-relations-fix.css";
-@import "syntax-highlighting-fix.css";
+
 
 /* Styles responsifs */
 @import "responsive.css";

@@ -5,8 +5,27 @@
  * Ce fichier contient les variables partagées entre les différentes pages du tutoriel
  */
 
-// Date actuelle
-$currentYear = date('Y');
+// ----- Configuration générale du site -----
+define('BASE_URL', '/Tuto-php/public/');
+define('SITE_VERSION', '1.0.1');
+define('SITE_NAME', 'Tuto-PHP');
+define('SITE_AUTHOR', 'Guillaume Maignaut');
+define('SITE_GITHUB', 'https://github.com/Guillaume0402');
+
+// ----- Configuration de l'environnement -----
+define('ENVIRONMENT', 'development'); // Options : 'development' ou 'production'
+
+// ----- Configuration Google Analytics -----
+define('GA_TRACKING_ID', 'UA-XXXXXXXX-X'); // À remplacer par votre ID de suivi Google Analytics
+
+// ----- Métadonnées par défaut -----
+$default_auteur = "Guillaume Maignaut";
+$default_annee = date('Y');
+$default_date_creation = date('d/m/Y');
+$default_date_modification = date('d/m/Y');
+
+// ----- Variables pour le développement -----
+$is_dev = (ENVIRONMENT === 'development');
 
 // Configuration des pages
 $pages = [

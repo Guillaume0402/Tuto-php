@@ -14,17 +14,19 @@
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center; /* Centrer horizontalement au lieu de space-between */
+    gap: 2rem; /* Ajouter un espace uniforme entre les sections */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
 .footer-section {
-    flex: 1;
-    min-width: 200px;
+    flex: 0 1 auto; /* Ne pas étirer, permettre de rétrécir, taille auto basée sur le contenu */
+    min-width: 180px; /* Légèrement plus petit pour mieux s'aligner */
+    max-width: 220px; /* Limiter la largeur maximale pour une présentation uniforme */
     margin-bottom: 2rem;
-    padding-right: 1.5rem;
+    /* Suppression du padding-right car nous utilisons maintenant gap pour l'espacement */
 }
 
 .footer-section h3 {
@@ -64,10 +66,13 @@
 .author-credits {
     font-size: 0.9rem;
     line-height: 1.4;
+    max-width: 240px; /* Limiter la largeur pour une meilleure cohérence avec les autres sections */
 }
 
 .author-credits p {
     margin: 0.3rem 0;
+    overflow-wrap: break-word; /* Éviter les débordements de texte */
+    hyphens: auto; /* Autoriser les césures si nécessaire */
 }
 
 .footer-bottom {
@@ -93,18 +98,107 @@
     color: #fff;
 }
 
+/* Style pour l'icône GitHub dans le footer */
+.github-icon {
+    vertical-align: middle;
+    margin-right: 4px;
+    transition: transform 0.3s ease;
+}
+
+.footer-bottom a:hover .github-icon {
+    transform: scale(1.1);
+}
+
+/* Style spécifique à la section auteur dans le footer */
+.author-credits {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.author-credits p {
+    margin: 0.5rem 0;
+}
+
+/* Styles pour le mode développement */
+.dev-info {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    z-index: 9999;
+    font-size: 0.85rem;
+    max-width: 350px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dev-info summary {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.dev-info summary::before {
+    content: "🛠️";
+}
+
+.dev-info summary:hover {
+    color: #a0aec0;
+}
+
+.dev-details {
+    padding: 10px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.dev-details p {
+    margin: 6px 0;
+    font-size: 0.8rem;
+}
+
+.dev-details strong {
+    color: #a0aec0;
+    margin-right: 4px;
+}
+
 /* Responsive design pour les écrans mobiles */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
+        align-items: center; /* Centrer les éléments verticalement en mode colonne */
+        text-align: center; /* Centrer le texte dans les éléments */
     }
 
     .footer-section {
-        padding-right: 0;
+        max-width: 320px; /* Plus large sur mobile */
+        width: 100%; /* Prendre toute la largeur disponible */
         margin-bottom: 1.5rem;
     }
 
+    /* Centrer les titres sur mobile */
+    .footer-section h3 {
+        text-align: center;
+    }
     .footer-bottom {
         padding: 1rem 0.5rem;
+    }
+
+    /* Ajustement de la boîte d'info développeur sur mobile */
+    .dev-info {
+        max-width: calc(100% - 20px);
+        bottom: 5px;
+        right: 5px;
+        font-size: 0.75rem;
+    }
+
+    .dev-details p {
+        font-size: 0.7rem;
     }
 }

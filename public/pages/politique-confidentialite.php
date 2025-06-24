@@ -1,12 +1,12 @@
 <?php
-$titre = "Politique de confidentialité";
+$titrePolitique = "Politique de confidentialité";
 $description = "Politique de confidentialité et traitement des données personnelles";
-include __DIR__ . '/../public/includes/header-pro.php';
+include __DIR__ . '/../includes/header-pro.php';
 ?>
 
 <main>
     <section class="section legal-section">
-        <h1><?= $titre ?></h1>
+        <h1><?= $titrePolitique ?></h1>
 
         <article class="legal-content">
             <h2>1. Collecte des données personnelles</h2>
@@ -80,4 +80,4 @@ include __DIR__ . '/../public/includes/header-pro.php';
     </section>
 </main>
 
-<?php include __DIR__ . '/../public/includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

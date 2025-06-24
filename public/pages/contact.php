@@ -1,12 +1,12 @@
 <?php
-$titre = "Contact";
+$titreContact = "Contact";
 $description = "Contactez-nous pour toute question concernant les tutoriels PHP";
-include __DIR__ . '/../public/includes/header-pro.php';
+include __DIR__ . '/../includes/header-pro.php';
 ?>
 
 <main>
     <section class="section contact-section">
-        <h1><?= $titre ?></h1>
+        <h1><?= $titreContact ?></h1>
 
         <div class="contact-container">
             <div class="contact-info">
@@ -18,8 +18,8 @@ include __DIR__ . '/../public/includes/header-pro.php';
                 </p>
 
                 <ul class="contact-details">
-                    <li><strong>Email :</strong> contact@example.com</li>
-                    <li><strong>GitHub :</strong> <a href="https://github.com/votre-repo/tuto-php" target="_blank">github.com/votre-repo/tuto-php</a></li>
+                    <li><strong>Email :</strong> g.maignaut@gmail.com</li>
+                    <li><strong>GitHub :</strong> <a href="https://github.com/Guillaume0402" target="_blank">github.com/votre-repo/tuto-php</a></li>
                 </ul>
 
                 <div class="response-time">
@@ -125,4 +125,4 @@ include __DIR__ . '/../public/includes/header-pro.php';
     </section>
 </main>
 
-<?php include __DIR__ . '/../public/includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
