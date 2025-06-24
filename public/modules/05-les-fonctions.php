@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 
 // Variables de page
 $titre = "Les Fonctions en PHP";
@@ -318,10 +318,10 @@ $multiplier = fn($a, $b) => $a * $b;
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">function</span> <span class="function">factorielle</span>(<span class="variable">$n</span>) {
     <span class="comment">// Cas de base</span>
-    <span class="keyword">if</span> (<span class="variable">$n</span> <span class="operator"><=</span> <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span><span class="punct">;</span>
+    <span class="keyword">if</span> (<span class="variable">$n</span> <= 1) <span class="keyword">return</span> <span class="number">1</span><span class="punct">;</span>
     
     <span class="comment">// Appel récursif</span>
-    <span class="keyword">return</span> <span class="variable">$n</span> <span class="operator">*</span> <span class="function">factorielle</span>(<span class="variable">$n</span> <span class="operator">-</span> <span class="number">1</span>)<span class="punct">;</span>
+    <span class="keyword">return</span> <span class="variable">$n</span> * <span class="function">factorielle</span>(<span class="variable">$n</span> - 1)<span class="punct">;</span>
 }</code></pre>
                         <div class="result">
                             <p>Appel de la fonction :</p>
@@ -1039,4 +1039,4 @@ function calculer(string $operation, float $nombre1, float $nombre2): ?float {
         <a href="06-les-tableaux.php" class="nav-button">Module suivant →</a>
     </div>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

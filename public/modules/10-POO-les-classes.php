@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php';
+<?php include __DIR__ . '/../includes/header.php';
 // Récupérer les informations de la page depuis la configuration
 $pageKey = '10-POO-les-classes';
 $pageInfo = getPageInfo($pageKey);

@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; ?>
+<?php include __DIR__ . '/../includes/header.php'; ?>
 
 <body class="module12">
     <header>
@@ -543,11 +543,10 @@
         <section class="section">
             <h2>Gestion des relations entre tables</h2>
             <h3>Exemple de modèle relationnel</h3>
-            <div class="db-diagram-vertical">
-                <!-- Table Utilisateurs -->
-                <div class="db-table-container">
-                    <div class="db-table-header">UTILISATEURS</div>
-                    <div class="db-table-content">
+            <div class="section db-diagram-vertical">
+                <div class="example db-table-container">
+                    <div class="example-header db-table-header">UTILISATEURS</div>
+                    <div class="example-content db-table-content">
                         <div class="db-column">
                             <span class="key-icon">🔑</span>
                             <span class="column-name">id</span>
@@ -567,17 +566,10 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Relation Utilisateurs -> Articles -->
-                <div class="relation-arrow-vertical">
-                    <span class="relation-text">écrit</span>
-                    <span class="cardinality">1:N</span>
-                </div>
-
-                <!-- Table Articles -->
-                <div class="db-table-container">
-                    <div class="db-table-header">ARTICLES</div>
-                    <div class="db-table-content">
+                <div class="relation-arrow-vertical"></div>
+                <div class="example db-table-container">
+                    <div class="example-header db-table-header">ARTICLES</div>
+                    <div class="example-content db-table-content">
                         <div class="db-column">
                             <span class="key-icon">🔑</span>
                             <span class="column-name">id</span>
@@ -602,17 +594,10 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Relation Articles -> Commentaires -->
-                <div class="relation-arrow-vertical">
-                    <span class="relation-text">contient</span>
-                    <span class="cardinality">1:N</span>
-                </div>
-
-                <!-- Table Commentaires -->
-                <div class="db-table-container">
-                    <div class="db-table-header">COMMENTAIRES</div>
-                    <div class="db-table-content">
+                <div class="relation-arrow-vertical"></div>
+                <div class="example db-table-container">
+                    <div class="example-header db-table-header">COMMENTAIRES</div>
+                    <div class="example-content db-table-content">
                         <div class="db-column">
                             <span class="key-icon">🔑</span>
                             <span class="column-name">id</span>
@@ -638,17 +623,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="db-legend">
-                <div class="legend-item">
-                    <span class="key-icon">🔑</span> Clé primaire
-                </div>
-                <div class="legend-item">
-                    <span class="key-icon">🔗</span> Clé étrangère
-                </div>
-                <div class="legend-item">
-                    <span class="cardinality">1:N</span> Relation un-à-plusieurs
+                <div class="info-box db-legend">
+                    <div class="legend-item"><span class="key-icon">🔑</span> Clé primaire</div>
+                    <div class="legend-item"><span class="key-icon">🔗</span> Clé étrangère</div>
+                    <div class="legend-item">TIMESTAMP = Date de création</div>
                 </div>
             </div>
 
@@ -831,7 +809,7 @@
     <span class="function">echo</span> <span class="string">"<p>Auteur: {$resultats[0]['auteur_nom']}</p>"</span>;
     
     <span class="comment">// Commentaires (peuvent varier d'une ligne à l'autre)</span>
-    <span class="keyword">if</span> (<span class="variable">$resultats</span>[0][<span class="string>'commentaire_id'</span>]) {
+    <span class="keyword">if</span> (<span class="variable">$resultats</span>[0][<span class="string">'commentaire_id'</span>]) {
         <span class="function">echo</span> <span class="string">"<h3>Commentaires :</h3>"</span>;
         <span class="keyword">foreach</span> (<span class="variable">$resultats</span> <span class="keyword">as</span> <span class="variable">$resultat</span>) {
             <span class="function">echo</span> <span class="string">"<div class='comment'>"</span>;
@@ -1061,4 +1039,4 @@
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

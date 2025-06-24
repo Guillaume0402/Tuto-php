@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 // Récupérer les informations de la page depuis la configuration
 $pageKey = '09-les-formulaires';
 $pageInfo = getPageInfo($pageKey);
@@ -476,4 +476,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_demo'])) {
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php';
+<?php include __DIR__ . '/../includes/header.php';
 
 
 
@@ -172,8 +172,8 @@ $description = $pageInfo['description'];
 <span class="variable">$json</span> = <span class="function">file_get_contents</span>(<span class="variable">$url</span>);
 <span class="variable">$data</span> = <span class="function">json_decode</span>(<span class="variable">$json</span>, <span class="keyword">true</span>);
 <span class="keyword">if</span> (<span class="variable">$data</span> && isset(<span class="variable">$data</span>[<span class="string">'main'</span>])) {
-    <span class="variable">$temp</span> = <span class="variable">$data</span>[<span class="string>'main'</span>][<span class="string>'temp'</span>];
-    <span class="variable">$desc</span> = <span class="variable">$data</span>[<span class="string>'weather'</span>][0][<span class="string>'description'</span>];
+    <span class="variable">$temp</span> = <span class="variable">$data</span>[<span class="string>'main'</span>][<span class="string">'temp'</span>];
+    <span class="variable">$desc</span> = <span class="variable">$data</span>[<span class="string">'weather'</span>][0][<span class="string">'description'</span>];
     <span class="keyword">echo</span> <span class="string">"À $city, il fait $temp°C et le temps est : $desc"</span>;
 } <span class="keyword">else</span> {
     <span class="keyword">echo</span> <span class="string">"Impossible de récupérer la météo."</span>;
@@ -535,22 +535,22 @@ $description = $pageInfo['description'];
 }
 
 <span class="comment">// Gestion du formulaire de réservation</span>
-<span class="keyword">if</span> (<span class="variable">$_SERVER</span>[<span class="string>'REQUEST_METHOD'</span>] === <span class="string">'POST'</span>) {
-    <span class="variable">$tripId</span> = <span class="variable">$_POST</span>[<span class="string>'trip_id'</span>];
+<span class="keyword">if</span> (<span class="variable">$_SERVER</span>[<span class="string">'REQUEST_METHOD'</span>] === <span class="string">'POST'</span>) {
+    <span class="variable">$tripId</span> = <span class="variable">$_POST</span>[<span class="string">'trip_id'</span>];
     
     <span class="variable">$userData</span> = [
-        <span class="string>'name'</span> => <span class="variable">$_POST</span>[<span class="string>'name'</span>],
-        <span class="string>'email'</span> => <span class="variable">$_POST</span>[<span class="string>'email'</span>],
-        <span class="string>'phone'</span> => <span class="variable">$_POST</span>[<span class="string>'phone'</span>],
-        <span class="string>'passengers'</span> => (int) <span class="variable">$_POST</span>[<span class="string>'passengers'</span>],
-        <span class="string>'message'</span> => <span class="variable">$_POST</span>[<span class="string>'message'</span>] ?? <span class="string">''</span>
+        <span class="string>'name'</span> => <span class="variable">$_POST</span>[<span class="string">'name'</span>],
+        <span class="string">'email'</span> => <span class="variable">$_POST</span>[<span class="string">'email'</span>],
+        <span class="string">'phone'</span> => <span class="variable">$_POST</span>[<span class="string">'phone'</span>],
+        <span class="string">'passengers'</span> => (int) <span class="variable">$_POST</span>[<span class="string">'passengers'</span>],
+        <span class="string">'message'</span> => <span class="variable">$_POST</span>[<span class="string">'message'</span>] ?? <span class="string">''</span>
     ];
     
     <span class="variable">$result</span> = <span class="function">bookTrip</span>(<span class="variable">$tripId</span>, <span class="variable">$userData</span>, <span class="variable">$apiKey</span>, <span class="variable">$baseUrl</span>);
     
-    <span class="keyword">if</span> (<span class="variable">$result</span>[<span class="string>'status'</span>]) {
+    <span class="keyword">if</span> (<span class="variable">$result</span>[<span class="string">'status'</span>]) {
         <span class="comment">// Réservation réussie</span>
-        <span class="variable">$bookingId</span> = <span class="variable">$result</span>[<span class="string>'data'</span>][<span class="string>'booking_id'</span>];
+        <span class="variable">$bookingId</span> = <span class="variable">$result</span>[<span class="string">'data'</span>][<span class="string">'booking_id'</span>];
         <span class="keyword">echo</span> <span class="string">"&lt;div class='success'>
                 &lt;h3>Réservation confirmée !&lt;/h3>
                 &lt;p>Votre numéro de réservation : $bookingId&lt;/p>
@@ -559,7 +559,7 @@ $description = $pageInfo['description'];
             &lt;/div>"</span>;
     } <span class="keyword">else</span> {
         <span class="comment">// Erreur de réservation</span>
-        <span class="variable">$errorMessage</span> = <span class="variable">$result</span>[<span class="string>'data'</span>][<span class="string>'message'</span>] ?? <span class="string">"Impossible de finaliser votre réservation"</span>;
+        <span class="variable">$errorMessage</span> = <span class="variable">$result</span>[<span class="string">'data'</span>][<span class="string">'message'</span>] ?? <span class="string">"Impossible de finaliser votre réservation"</span>;
         <span class="keyword">echo</span> <span class="string">"&lt;div class='error'>$errorMessage&lt;/div>"</span>;
     }
 }
@@ -585,7 +585,7 @@ $description = $pageInfo['description'];
     <span class="comment">/* Vos données de test */</span>
 ];
 <span class="function">header</span>(<span class="string">'Content-Type: application/json'</span>);
-<span class="keyword">echo</span> <span class="function">json_encode</span>([<span class="string">'trips'</span> => <span class="variable">$trips</span>, <span class="string>'meta'</span> => [...]);
+<span class="keyword">echo</span> <span class="function">json_encode</span>([<span class="string">'trips'</span> => <span class="variable">$trips</span>, <span class="string">'meta'</span> => [...]);
 </code></pre>
             </div>
         </section>
@@ -647,4 +647,4 @@ $description = $pageInfo['description'];
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

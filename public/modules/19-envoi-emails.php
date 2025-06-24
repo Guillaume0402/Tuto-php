@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php';
+<?php include __DIR__ . '/../includes/header.php';
 $titre = "Envoi d'e-mails en PHP";
 $description = "Apprenez à envoyer des e-mails avec PHP, des options basiques aux fonctionnalités avancées comme les pièces jointes, les e-mails HTML et la sécurité.";
 ?>
@@ -782,4 +782,4 @@ $description = "Apprenez à envoyer des e-mails avec PHP, des options basiques a
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

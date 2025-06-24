@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 
 // Variables de page
 $titre = "Les Boucles en PHP";
@@ -328,7 +328,7 @@ $description = "Découvrez comment répéter des opérations avec les différent
 
             <section class="section">
                 <h2>Comparaison des boucles</h2>
-                <table class="comparison-table">
+                <table class="data-table">
                     <thead>
                         <tr>
                             <th>Type de boucle</th>
@@ -559,4 +559,4 @@ $description = "Découvrez comment répéter des opérations avec les différent
             </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

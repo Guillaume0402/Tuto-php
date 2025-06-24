@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 // Définition des variables pour cette page
 $titre = $pageInfo['titre'];
 $description = $pageInfo['description'];
@@ -165,7 +165,7 @@ $description = $pageInfo['description'];
 
         <section class="section">
             <h2>Comparaison des Méthodes d'Inclusion</h2>
-            <table class="comparison-table">
+            <table class="data-table">
                 <thead>
                     <tr>
                         <th>Fonction</th>
@@ -276,4 +276,4 @@ $description = $pageInfo['description'];
         <p>&copy; <?php echo date('Y'); ?> Tutoriel PHP</p>
     </footer>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

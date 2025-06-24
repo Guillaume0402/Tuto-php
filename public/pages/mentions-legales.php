@@ -1,7 +1,7 @@
 <?php
 $titreMention = "Mentions légales";
 $description = "Mentions légales du site Tuto-PHP";
-include __DIR__ . '/../includes/header-pro.php';
+include __DIR__ . '/../includes/header.php';
 ?>
 
 <main>

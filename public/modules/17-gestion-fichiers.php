@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 
 
 $pageKey = '17-gestion-fichiers';
@@ -221,4 +221,4 @@ $description = $pageInfo['description'];
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

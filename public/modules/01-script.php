@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php';
+<?php include __DIR__ . '/../includes/header.php';
 // Variables de page
 $titre = "Premier Script PHP";
 $description = "Découvrir la syntaxe de base et l'intégration du PHP dans une page HTML";
@@ -88,4 +88,4 @@ Ceci est un exemple de commentaire
     </div>
 
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -28,7 +28,6 @@ Ce fichier contient toutes les variables de couleurs et de style utilisées dans
     --module21-color: #1b5e20; /* Internationalisation - Vert forêt */
     --module22-color: #0d47a1; /* Déploiement et hébergement - Bleu marine */
     --module23-color: #c2185b; /* Composer et autoloading - Framboise */
-    --module24-color: #4f5b93; /* Routeur PHP - Violet PHP */
     --module24-color: #673ab7; /* Routeur PHP - Violet profond */
 
     /* Variantes des couleurs principales (utilisées pour les dégradés et les états) */
@@ -75,13 +74,13 @@ Ce fichier contient toutes les variables de couleurs et de style utilisées dans
     --module15-light: rgba(79, 70, 229, 0.1);
     --module16-light: rgba(147, 51, 234, 0.1);
     --module17-light: rgba(251, 191, 36, 0.1);
-    --module18-light: #e3f2fd;
-    --module19-light: #e0f7fa;
-    --module20-light: #f3e5f5;
-    --module21-light: #e8f5e9;
-    --module22-light: #e3f2fd;
-    --module23-light: #fce4ec;
-    --module24-light: #ede7f6;
+    --module18-light: rgba(13, 71, 161, 0.1);
+    --module19-light: rgba(0, 131, 143, 0.1);
+    --module20-light: rgba(106, 27, 154, 0.1);
+    --module21-light: rgba(27, 94, 32, 0.1);
+    --module22-light: rgba(13, 71, 161, 0.1);
+    --module23-light: rgba(194, 24, 91, 0.1);
+    --module24-light: rgba(103, 58, 183, 0.1);
 
     /* Couleurs pour les éléments spécifiques */
     --header-bg: #003366; /* Fond du header */

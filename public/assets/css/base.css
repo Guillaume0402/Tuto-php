@@ -132,3 +132,16 @@ pre {
         font-size: 1.3rem;
     }
 }
+
+/*
+ * Pour empêcher un lien d'adopter la couleur du module,
+ * ajoutez la classe .no-module-color sur le <a> :
+ * <a href="#" class="no-module-color">Lien neutre</a>
+ */
+.no-module-color {
+    color: #222 !important;
+    text-decoration: underline !important;
+}
+.no-module-color:hover {
+    color: #555 !important;
+}

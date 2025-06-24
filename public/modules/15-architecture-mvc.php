@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; ?>
+<?php include __DIR__ . '/../includes/header.php'; ?>
 
 
 <body class="module15">
@@ -118,8 +118,8 @@
                             <span class="tag">&lt;?=</span> <span class="function">htmlspecialchars</span>(<span class="variable">$article</span>[<span class="string>'title'</span>]) <span class="tag">?&gt;</span>
                         <span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/h2&gt;</span>
                         <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"date"</span><span class="tag">&gt;</span>Publié le <span class="tag">&lt;?=</span> <span class="function">date</span>(<span class="string">'d/m/Y'</span>, <span class="function">strtotime</span>(<span class="variable">$article</span>[<span class="string>'created_at'</span>])) <span class="tag">?&gt;</span><span class="tag">&lt;/p&gt;</span>
-                        <span class="tag">&lt;p&gt;</span><span class="tag">&lt;?=</span> <span class="function">substr</span>(<span class="function">htmlspecialchars</span>(<span class="variable">$article</span>[<span class="string>'content'</span>]), 0, 200) <span class="tag">?&gt;</span>...<span class="tag">&lt;/p&gt;</span>
-                        <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/article/view/</span><span class="tag">&lt;?=</span> <span class="variable">$article</span>[<span class="string>'id'</span>] <span class="tag">?&gt;</span><span class="string">"</span> <span class="attr">class</span>=<span class="string">"read-more"</span><span class="tag">&gt;</span>Lire la suite<span class="tag">&lt;/a&gt;</span>
+                        <span class="tag">&lt;p&gt;</span><span class="tag">&lt;?=</span> <span class="function">substr</span>(<span class="function">htmlspecialchars</span>(<span class="variable">$article</span>[<span class="string">'content'</span>]), 0, 200) <span class="tag">?&gt;</span>...<span class="tag">&lt;/p&gt;</span>
+                        <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/article/view/</span><span class="tag">&lt;?=</span> <span class="variable">$article</span>[<span class="string">'id'</span>] <span class="tag">?&gt;</span><span class="string">"</span> <span class="attr">class</span>=<span class="string">"read-more"</span><span class="tag">&gt;</span>Lire la suite<span class="tag">&lt;/a&gt;</span>
                     <span class="tag">&lt;/div&gt;</span>
                 <span class="tag">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="tag">?&gt;</span>
             <span class="tag">&lt;/div&gt;</span>
@@ -810,7 +810,7 @@
         }));
         
         <span class="comment">// Ajouter des filtres personnalisés</span>
-        <span class="keyword">self</span>::<span class="variable">$twig</span>-><span class="function">addFilter</span>(<span class="keyword">new</span> \<span class="class">Twig</span>\<span class="class">TwigFilter</span>(<span class="string>'date_format'</span>, <span class="keyword">function</span>(<span class="variable">$date</span>, <span class="variable">$format</span> = <span class="string>'d/m/Y'</span>) {
+        <span class="keyword">self</span>::<span class="variable">$twig</span>-><span class="function">addFilter</span>(<span class="keyword">new</span> \<span class="class">Twig</span>\<span class="class">TwigFilter</span>(<span class="string>'date_format'</span>, <span class="keyword">function</span>(<span class="variable">$date</span>, <span class="variable">$format</span> = <span class="string">'d/m/Y'</span>) {
             <span class="keyword">return</span> <span class="function">date</span>(<span class="variable">$format</span>, <span class="function">strtotime</span>(<span class="variable">$date</span>));
         }));
     }
@@ -879,7 +879,7 @@
                 <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"comment"</span><span class="tag">&gt;</span>
                     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"comment-header"</span><span class="tag">&gt;</span>
                         <span class="tag">&lt;strong&gt;</span><span class="tag">{{</span> comment.username <span class="tag">}}</span><span class="tag">&lt;/strong&gt;</span>
-                        <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"date"</span><span class="tag">&gt;</span><span class="tag>{{</span> comment.created_at|date_format <span class="tag">}}</span><span class="tag">&lt;/span&gt;</span>
+                        <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"date"</span><span class="tag">&gt;</span><span class="tag">{{</span> comment.created_at|date_format <span class="tag">}}</span><span class="tag">&lt;/span&gt;</span>
                     <span class="tag">&lt;/div&gt;</span>
                     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"comment-content"</span><span class="tag">&gt;</span>
                         <span class="tag">{{</span> comment.content <span class="tag">}}</span>
@@ -917,19 +917,38 @@
 my-mvc-framework/
 ├── app/
 │   ├── controllers/
+│   │   ├── ArticleController.php
+│   │   ├── CommentController.php
+│   │   ├── UserController.php
+│   │   └── HomeController.php
 │   ├── models/
-│   ├── views/
-│   │   ├── layouts/
-│   │   └── partials/
-│   └── helpers/
+│   │   ├── ArticleModel.php
+│   │   ├── CommentModel.php
+│   │   └── UserModel.php
+│   └── views/
+│       ├── articles/
+│       │   ├── index.php
+│       │   ├── view.php
+│       │   ├── create.php
+│       │   └── edit.php
+│       ├── users/
+│       │   ├── login.php
+│       │   └── register.php
+│       └── layouts/
+│           └── default.php
 ├── config/
-├── public/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│   ├── .htaccess
-│   └── index.php
-└── vendor/
+│   ├── config.php
+│   └── database.php
+├── core/
+│   ├── Model.php
+│   ├── Controller.php
+│   ├── View.php
+│   └── Router.php
+└── public/
+    ├── index.php
+    ├── css/
+    ├── js/
+    └── .htaccess
 </code></pre>
 
                 <h3>2. Configuration de la redirection avec .htaccess</h3>
@@ -1277,7 +1296,7 @@ blog-mvc/
         } <span class="keyword">else</span> {
             <span class="comment">// Erreur : réafficher le formulaire</span>
             <span class="variable">$categories</span> = <span class="variable">$this->categoryModel</span>-><span class="function">all</span>();
-            <span class="variable">$errors</span>[<span class="string>'db'</span>] = <span class="string">"Erreur lors de la création de l'article. Veuillez réessayer."</span>;
+            <span class="variable">$errors</span>[<span class="string">'db'</span>] = <span class="string">"Erreur lors de la création de l'article. Veuillez réessayer."</span>;
             
             <span class="keyword">echo</span> <span class="class">View</span>::<span class="function">renderWithLayout</span>(<span class="string">'articles/create'</span>, <span class="string">'default'</span>, [
                 <span class="string">'title'</span> => <span class="string">'Créer un article'</span>,
@@ -1317,7 +1336,7 @@ blog-mvc/
         
         <span class="comment">// Déplacer le fichier uploadé</span>
         <span class="keyword">if</span> (<span class="function">move_uploaded_file</span>(<span class="variable">$file</span>[<span class="string">'tmp_name'</span>], <span class="variable">$targetPath</span>)) {
-            <span class="keyword">return</span> [<span class="string">'success'</span> => <span class="keyword">true</span>, <span class="string>'path'</span> => <span class="variable">$uploadPath</span>];
+            <span class="keyword">return</span> [<span class="string">'success'</span> => <span class="keyword">true</span>, <span class="string">'path'</span> => <span class="variable">$uploadPath</span>];
         } <span class="keyword">else</span> {
             <span class="keyword">return</span> [
                 <span class="string">'success'</span> => <span class="keyword">false</span>, 
@@ -1509,4 +1528,4 @@ blog-mvc/
             </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

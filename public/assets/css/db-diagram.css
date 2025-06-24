@@ -1,57 +1,55 @@
-/* Styles pour les diagrammes de base de données relationnelles - Module 12 */
+/* 
+   STYLES SPÉCIFIQUES AUX DIAGRAMMES DE BASE DE DONNÉES
+   Utilise les classes existantes du projet (.section, .example, .data-table, etc.)
+   et ne contient que les styles vraiment spécifiques aux diagrammes DB
+*/
+
+/* Conteneur principal - utilise .section existant */
 .db-diagram-container {
+    /* Hérite de .section - ajoute seulement les spécificités DB */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 20px;
     background-color: #f8f9fa;
-    border-radius: 10px;
-    margin: 25px 0;
-    overflow: auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.db-table-enhanced {
+/* Tables de base de données - utilise .example existant */
+.db-table-enhanced,
+.db-table-container {
+    /* Hérite de .example - ajoute seulement les spécificités DB */
     width: 300px;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e0e0e0;
+    min-height: auto;
+    padding: 0;
 }
 
 .db-table-container {
     width: 220px;
-    background: white;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e0e0e0;
     flex-shrink: 0;
 }
 
+/* En-tête de table - utilise .example-header existant */
 .db-table-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 6px;
-    font-weight: bold;
-    font-size: 0.95rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 6px 8px;
+    /* Hérite de .example-header - ajoute seulement les spécificités DB */
     background: linear-gradient(
         to right,
         var(--primary-color),
         var(--primary-dark)
     );
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    text-align: center;
 }
 
+/* Contenu de table - utilise .example-content existant */
 .db-table-content {
+    /* Hérite de .example-content - ajoute seulement les spécificités DB */
     padding: 5px 10px;
 }
 
+/* Colonnes de base de données - spécifique aux diagrammes DB */
 .db-column {
     display: flex;
     align-items: center;
@@ -82,25 +80,7 @@
     text-align: center;
 }
 
-/* Relation verticale améliorée */
-.relation-arrow-vertical::before {
-    content: "";
-    width: 2px;
-    background-color: var(--primary-color);
-    height: 18px;
-}
-
-.relation-arrow-vertical::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 7px solid var(--primary-color);
-    position: absolute;
-    bottom: -3px;
-}
-
+/* Relations entre tables - spécifique aux diagrammes DB */
 .db-relation {
     position: relative;
     width: 100%;
@@ -149,6 +129,56 @@
     color: var(--primary-dark);
 }
 
+/* Flèches de relation - spécifique aux diagrammes DB */
+.relation-arrow-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    margin: 20px;
+}
+
+.relation-arrow-vertical::before {
+    content: "";
+    width: 2px;
+    background-color: var(--primary-color);
+    height: 18px;
+}
+
+.relation-arrow-vertical::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid var(--primary-color);
+    position: absolute;
+    bottom: -3px;
+}
+
+.relation-arrow-vertical .relation-text {
+    top: 50%;
+    left: calc(100% + 5px);
+    transform: translateY(-50%);
+    white-space: nowrap;
+    z-index: 2;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+}
+
+.relation-arrow-vertical .cardinality {
+    right: -30px;
+    top: auto;
+    bottom: -2px;
+    font-size: 0.75rem;
+    padding: 1px 4px;
+}
+
+/* Conteneur de relations - spécifique aux diagrammes DB */
 .db-relations-container {
     display: flex;
     width: 100%;
@@ -156,38 +186,7 @@
     position: relative;
 }
 
-.user-comment {
-    transform: rotate(-25deg);
-    width: 45%;
-    left: -5%;
-}
-
-.article-comment {
-    transform: rotate(25deg);
-    width: 45%;
-    right: -5%;
-}
-
-.db-legend {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 10px;
-    padding: 6px;
-    background: white;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.8rem;
-    color: #555;
-}
-
-/* Styles pour les diagrammes de base de données verticaux - Module 12 */
+/* Diagramme vertical - spécifique aux diagrammes DB */
 .db-diagram-vertical {
     display: flex;
     justify-content: center;
@@ -203,48 +202,9 @@
     margin-right: auto;
 }
 
-.relation-arrow-vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    width: 30px;
-    height: 18px;
-    margin: 20px;
-}
-
-/* Position du texte de relation pour le diagramme vertical */
-.relation-arrow-vertical .relation-text {
-    top: 50%;
-    left: calc(100% + 5px);
-    transform: translateY(-50%);
-    white-space: nowrap;
-    z-index: 2;
-    font-size: 0.8rem;
-    padding: 2px 5px;
-}
-
-/* Position de la cardinalité pour le diagramme vertical */
-.relation-arrow-vertical .cardinality {
-    right: -30px;
-    top: auto;
-    bottom: -2px;
-    font-size: 0.75rem;
-    padding: 1px 4px;
-}
-
-.bottom-to-top {
-    position: relative;
-    transform: rotate(180deg);
-}
-
-.bottom-to-top .relation-text {
-    transform: translateX(-50%) rotate(180deg);
-}
-
+/* Légende - utilise .info-box existant */
 .db-legend {
+    /* Hérite de .info-box - ajoute seulement les spécificités DB */
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -263,6 +223,7 @@
     color: #555;
 }
 
+/* Responsive - spécifique aux diagrammes DB */
 @media (max-width: 768px) {
     .db-diagram-container {
         padding: 10px;
@@ -306,14 +267,6 @@
         gap: 20px;
     }
 
-    .user-comment,
-    .article-comment {
-        transform: none;
-        width: 100%;
-        left: 0;
-        right: 0;
-    }
-
     .db-legend {
         flex-direction: column;
         align-items: center;
@@ -321,7 +274,7 @@
     }
 }
 
-/* Ajustements des effets visuels pour le diagramme vertical */
+/* Effets visuels - spécifique aux diagrammes DB */
 .db-table-container:hover {
     transform: translateY(-1px);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);

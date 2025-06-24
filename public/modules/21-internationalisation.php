@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 $titre = "Internationalisation (i18n) et gestion des langues";
 $description = "Apprenez à créer des sites multilingues en PHP en utilisant différentes techniques de traduction comme les fichiers de langue, gettext et les bibliothèques spécialisées.";
 ?>
@@ -556,4 +556,4 @@ $description = "Apprenez à créer des sites multilingues en PHP en utilisant di
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; ?>
+<?php include __DIR__ . '/../includes/header.php'; ?>
 
 
 <body class="module14">
@@ -104,7 +104,7 @@
 <span class="variable">$url</span> = <span class="function">filter_input</span>(<span class="constant">INPUT_POST</span>, <span class="string">'site_web'</span>, <span class="constant">FILTER_VALIDATE_URL</span>);
 
 <span class="comment">// Validation d'un nombre entier avec des options</span>
-<span class="variable">$age</span> = <span class="function">filter_input</span>(<span class="constant">INPUT_POST</span>, <span class="string>'age'</span>, <span class="constant">FILTER_VALIDATE_INT</span>, [
+<span class="variable">$age</span> = <span class="function">filter_input</span>(<span class="constant">INPUT_POST</span>, <span class="string">'age'</span>, <span class="constant">FILTER_VALIDATE_INT</span>, [
     <span class="string">'options'</span> => [
         <span class="string">'min_range'</span> => 1,
         <span class="string">'max_range'</span> => 120
@@ -112,21 +112,21 @@
 ]);
 
 <span class="comment">// Nettoyage d'une chaîne de caractères</span>
-<span class="variable">$commentaire</span> = <span class="function">filter_input</span>(<span class="constant">INPUT_POST</span>, <span class="string>'commentaire'</span>, <span class="constant">FILTER_SANITIZE_STRING</span>);
+<span class="variable">$commentaire</span> = <span class="function">filter_input</span>(<span class="constant">INPUT_POST</span>, <span class="string">'commentaire'</span>, <span class="constant">FILTER_SANITIZE_STRING</span>);
 
 <span class="comment">// Assainissement personnalisé avec des expressions régulières</span>
-<span class="variable">$username</span> = <span class="function">filter_input</span>(<span class="constant">INPUT_POST</span>, <span class="string>'username'</span>, <span class="constant">FILTER_VALIDATE_REGEXP</span>, [
+<span class="variable">$username</span> = <span class="function">filter_input</span>(<span class="constant">INPUT_POST</span>, <span class="string">'username'</span>, <span class="constant">FILTER_VALIDATE_REGEXP</span>, [
     <span class="string">'options'</span> => [
-        <span class="string">'regexp'</span> => <span class="string>'/^[a-zA-Z0-9_]{3,20}$/'</span>
+        <span class="string">'regexp'</span> => <span class="string">'/^[a-zA-Z0-9_]{3,20}$/'</span>
     ]
 ]);
 </code></pre>
                 </div>
             </div>
 
-            <div class="filtering-explanations">
+            <div class="info-box">
                 <h4>Explication détaillée des fonctions de filtrage</h4>
-                <table class="filter-functions-table">
+                <table class="data-table">
                     <tr>
                         <th>Fonction/Filtre</th>
                         <th>Description</th>
@@ -305,10 +305,10 @@
                 <div class="example-content">
                     <pre><code class="language-php">
 <span class="comment">// htmlspecialchars - Convertit les caractères spéciaux en entités HTML</span>
-<span class="variable">$texte_sécurisé</span> = <span class="function">htmlspecialchars</span>(<span class="variable">$input</span>, <span class="constant">ENT_QUOTES</span>, <span class="string>'UTF-8'</span>);
+<span class="variable">$texte_sécurisé</span> = <span class="function">htmlspecialchars</span>(<span class="variable">$input</span>, <span class="constant">ENT_QUOTES</span>, <span class="string">'UTF-8'</span>);
 
 <span class="comment">// htmlentities - Convertit tous les caractères qui ont des entités HTML</span>
-<span class="variable">$texte_sécurisé</span> = <span class="function">htmlentities</span>(<span class="variable">$input</span>, <span class="constant">ENT_QUOTES</span>, <span class="string>'UTF-8'</span>);
+<span class="variable">$texte_sécurisé</span> = <span class="function">htmlentities</span>(<span class="variable">$input</span>, <span class="constant">ENT_QUOTES</span>, <span class="string">'UTF-8'</span>);
 
 <span class="comment">// strip_tags - Supprime les balises HTML et PHP</span>
 <span class="variable">$texte_sans_balises</span> = <span class="function">strip_tags</span>(<span class="variable">$input</span>);
@@ -972,8 +972,8 @@
 <span class="variable">$secure_settings</span> = [
     <span class="comment">// Sécurité générale</span>
     <span class="string">'expose_php'</span> => [<span class="string">'value'</span> => <span class="keyword">false</span>, <span class="string">'risk'</span> => <span class="string">'medium'</span>],
-    <span class="string">'display_errors'</span> => [<span class="string">'value'</span> => <span class="keyword">false</span>, <span class="string">'risk'</span> => <span class="string>'medium'</span>, <span class="string">'environment'</span> => <span class="string">'production'</span>],
-    <span class="string">'log_errors'</span> => [<span class="string">'value'</span> => <span class="keyword">true</span>, <span class="string">'risk'</span> => <span class="string>'medium'</span>],
+    <span class="string">'display_errors'</span> => [<span class="string">'value'</span> => <span class="keyword">false</span>, <span class="string">'risk'</span> => <span class="string">'medium'</span>, <span class="string">'environment'</span> => <span class="string">'production'</span>],
+    <span class="string">'log_errors'</span> => [<span class="string">'value'</span> => <span class="keyword">true</span>, <span class="string">'risk'</span> => <span class="string">'medium'</span>],
     
     <span class="comment">// Sécurité des inclusions</span>
     <span class="string">'allow_url_fopen'</span> => [<span class="string">'value'</span> => <span class="keyword">false</span>, <span class="string">'risk'</span> => <span class="string>'high'</span>],
@@ -984,7 +984,7 @@
     <span class="string">'session.use_only_cookies'</span> => [<span class="string">'value'</span> => <span class="string>'1'</span>, <span class="string">'risk'</span> => <span class="string>'high'</span>],
     <span class="string">'session.cookie_httponly'</span> => [<span class="string">'value'</span> => <span class="string>'1'</span>, <span class="string">'risk'</span> => <span class="string>'high'</span>],
     <span class="string">'session.cookie_secure'</span> => [<span class="string">'value'</span> => <span class="string>'1'</span>, <span class="string">'risk'</span> => <span class="string>'high'</span>],
-    <span class="string">'session.cookie_samesite'</span> => [<span class="string">'value'</span> => <span class="string>'Lax'</span>, <span class="string">'risk'</span> => <span class="string>'medium'</span>]
+    <span class="string">'session.cookie_samesite'</span> => [<span class="string">'value'</span> => <span class="string>'Lax'</span>, <span class="string">'risk'</span> => <span class="string">'medium'</span>]
 ];
 
 <span class="variable">$environment</span> = <span class="string">'development'</span>; <span class="comment">// Changez en 'production' pour la production</span>
@@ -1021,7 +1021,7 @@
     <span class="keyword">echo</span> <span class="string">"&lt;td&gt;"</span> . <span class="function">htmlspecialchars</span>(<span class="variable">$directive</span>) . <span class="string">"&lt;/td&gt;"</span>;
     <span class="keyword">echo</span> <span class="string">"&lt;td&gt;"</span> . <span class="function">htmlspecialchars</span>(<span class="function">is_bool</span>(<span class="variable">$current_value</span>) ? (<span class="variable">$current_value</span> ? <span class="string">'true'</span> : <span class="string">'false'</span>) : <span class="variable">$current_value</span>) . <span class="string">"&lt;/td&gt;"</span>;
     <span class="keyword">echo</span> <span class="string">"&lt;td&gt;"</span> . <span class="function">htmlspecialchars</span>(<span class="function">is_bool</span>(<span class="variable">$config</span>[<span class="string>'value'</span>]) ? (<span class="variable">$config</span>[<span class="string>'value'</span>] ? <span class="string">'true'</span> : <span class="string">'false'</span>) : <span class="variable">$config</span>[<span class="string>'value'</span>]) . <span class="string">"&lt;/td&gt;"</span>;
-    <span class="keyword">echo</span> <span class="string">"&lt;td style='color: "</span> . (<span class="variable">$config</span>[<span class="string>'risk'</span>] === <span class="string>'critical'</span> ? <span class="string">'red'</span> : (<span class="variable">$config</span>[<span class="string>'risk'</span>] === <span class="string>'high'</span> ? <span class="string">'orangered'</span> : <span class="string">'orange'</span>)) . <span class="string">"'&gt;"</span> . <span class="function">ucfirst</span>(<span class="variable">$config</span>[<span class="string>'risk'</span>]) . <span class="string">"&lt;/td&gt;"</span>;
+    <span class="keyword">echo</span> <span class="string">"&lt;td style='color: "</span> . (<span class="variable">$config</span>[<span class="string">'risk'</span>] === <span class="string">'critical'</span> ? <span class="string">'red'</span> : (<span class="variable">$config</span>[<span class="string">'risk'</span>] === <span class="string">'high'</span> ? <span class="string">'orangered'</span> : <span class="string">'orange'</span>)) . <span class="string">"'&gt;"</span> . <span class="function">ucfirst</span>(<span class="variable">$config</span>[<span class="string">'risk'</span>]) . <span class="string">"&lt;/td&gt;"</span>;
     <span class="keyword">echo</span> <span class="string">"&lt;td&gt;"</span> . <span class="variable">$status</span> . <span class="string">"&lt;/td&gt;"</span>;
     <span class="keyword">echo</span> <span class="string">"&lt;/tr&gt;"</span>;
 }
@@ -1087,4 +1087,4 @@
     </div>
 
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

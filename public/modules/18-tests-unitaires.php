@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 
 $titre = "Tests unitaires et qualité de code";
 $description = "Découvrez comment écrire des tests unitaires en PHP avec PHPUnit, améliorer la qualité de votre code et mettre en place l'intégration continue.";
@@ -546,4 +546,4 @@ Time: 00:00.003, Memory: 4.00 MB
 
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

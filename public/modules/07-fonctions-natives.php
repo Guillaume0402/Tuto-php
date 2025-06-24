@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; ?>
+<?php include __DIR__ . '/../includes/header.php'; ?>
 
 <body class="module7">
     <header>
@@ -29,7 +29,7 @@
 
             <div class="examples-grid">
                 <div class="example">
-                    <div class="example-header strings-header">strlen()</div>
+                    <div class="example-header example-header--string">strlen()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">strlen</span>(<span class="string">"Bonjour"</span>);</code></pre>
                         <div class="result">
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="example">
-                    <div class="example-header strings-header">str_replace()</div>
+                    <div class="example-header example-header--string">str_replace()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">str_replace</span>(<span class="string">"jour"</span>, <span class="string">"soir"</span>, <span class="string">"Bonjour"</span>);</code></pre>
                         <div class="result">
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="example">
-                    <div class="example-header strings-header">strtolower()</div>
+                    <div class="example-header example-header--string">strtolower()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">strtolower</span>(<span class="string">"BONJOUR"</span>);</code></pre>
                         <div class="result">
@@ -61,7 +61,7 @@
 
             <div class="examples-grid">
                 <div class="example">
-                    <div class="example-header strings-header">strtoupper()</div>
+                    <div class="example-header example-header--string">strtoupper()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">strtoupper</span>(<span class="string">"bonjour"</span>);</code></pre>
                         <div class="result">
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="example">
-                    <div class="example-header strings-header">substr()</div>
+                    <div class="example-header example-header--string">substr()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">substr</span>(<span class="string">"Bonjour"</span>, <span class="number">0</span>, <span class="number">3</span>);</code></pre>
                         <div class="result">
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="example">
-                    <div class="example-header strings-header">trim()</div>
+                    <div class="example-header example-header--string">trim()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">trim</span>(<span class="string">" Bonjour "</span>);</code></pre>
                         <div class="result">
@@ -110,7 +110,7 @@
 
             <div class="examples-grid">
                 <div class="example">
-                    <div class="example-header numeric-header">abs()</div>
+                    <div class="example-header example-header--numeric">abs()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">abs</span>(<span class="number">-42</span>);</code></pre>
                         <div class="result">
@@ -120,7 +120,7 @@
                 </div>
 
                 <div class="example">
-                    <div class="example-header numeric-header">round()</div>
+                    <div class="example-header example-header--numeric">round()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">round</span>(<span class="number">3.14159</span>, <span class="number">2</span>);</code></pre>
                         <div class="result">
@@ -130,7 +130,7 @@
                 </div>
 
                 <div class="example">
-                    <div class="example-header numeric-header">max()</div>
+                    <div class="example-header example-header--numeric">max()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">max</span>(<span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>);</code></pre>
                         <div class="result">
@@ -142,7 +142,7 @@
 
             <div class="examples-grid">
                 <div class="example">
-                    <div class="example-header numeric-header">min()</div>
+                    <div class="example-header example-header--numeric">min()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">min</span>(<span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>);</code></pre>
                         <div class="result">
@@ -152,7 +152,7 @@
                 </div>
 
                 <div class="example">
-                    <div class="example-header numeric-header">rand()</div>
+                    <div class="example-header example-header--numeric">rand()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">rand</span>(<span class="number">1</span>, <span class="number">10</span>);</code></pre>
                         <div class="result">
@@ -162,7 +162,7 @@
                 </div>
 
                 <div class="example">
-                    <div class="example-header numeric-header">is_numeric()</div>
+                    <div class="example-header example-header--numeric">is_numeric()</div>
                     <div class="example-content">
                         <pre><code class="language-php"><span class="keyword">echo</span> <span class="function">is_numeric</span>(<span class="string">"123"</span>);</code></pre>
                         <div class="result">
@@ -196,9 +196,9 @@
                 <div class="example">
                     <div class="example-header arrays-header">array_push()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>];
-<span class="function">array_push</span>(<span class="variable">$arr</span>, <span class="number">3</span>);
-<span class="function">print_r</span>(<span class="variable">$arr</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>];
+<span class="function">array_push</span>(<span class="keyword">$arr</span>, <span class="number">3</span>);
+<span class="function">print_r</span>(<span class="keyword">$arr</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : Array ( [0] => 1 [1] => 2 [2] => 3 )</p>
                         </div>
@@ -208,9 +208,9 @@
                 <div class="example">
                     <div class="example-header arrays-header">array_pop()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
-<span class="keyword">echo</span> <span class="function">array_pop</span>(<span class="variable">$arr</span>);
-<span class="function">print_r</span>(<span class="variable">$arr</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+<span class="keyword">echo</span> <span class="function">array_pop</span>(<span class="keyword">$arr</span>);
+<span class="function">print_r</span>(<span class="keyword">$arr</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : 3 Array ( [0] => 1 [1] => 2 )</p>
                         </div>
@@ -220,8 +220,8 @@
                 <div class="example">
                     <div class="example-header arrays-header">count()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
-<span class="keyword">echo</span> <span class="function">count</span>(<span class="variable">$arr</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+<span class="keyword">echo</span> <span class="function">count</span>(<span class="keyword">$arr</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : 3</p>
                         </div>
@@ -231,8 +231,8 @@
                 <div class="example">
                     <div class="example-header arrays-header">array_flip()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$arr</span> <span class="operator">=</span> [<span class="string">"a"</span> <span class="operator">=></span> <span class="number">1</span>, <span class="string">"b"</span> <span class="operator">=></span> <span class="number">2</span>];
-<span class="function">print_r</span>(<span class="function">array_flip</span>(<span class="variable">$arr</span>));</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$arr</span> <span class="operator">=</span> [<span class="string">"a"</span> <span class="operator">=></span> <span class="number">1</span>, <span class="string">"b"</span> <span class="operator">=></span> <span class="number">2</span>];
+<span class="function">print_r</span>(<span class="function">array_flip</span>(<span class="keyword">$arr</span>));</code></pre>
                         <div class="result">
                             <p>Résultat : Array ( [1] => a [2] => b )</p>
                         </div>
@@ -242,8 +242,8 @@
                 <div class="example">
                     <div class="example-header arrays-header">array_key_exists()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$arr</span> <span class="operator">=</span> [<span class="string">"a"</span> <span class="operator">=></span> <span class="number">1</span>, <span class="string">"b"</span> <span class="operator">=></span> <span class="number">2</span>];
-<span class="keyword">echo</span> <span class="function">array_key_exists</span>(<span class="string">"a"</span>, <span class="variable">$arr</span>) ? <span class="string">'Oui'</span> : <span class="string">'Non'</span>;</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$arr</span> <span class="operator">=</span> [<span class="string">"a"</span> <span class="operator">=></span> <span class="number">1</span>, <span class="string">"b"</span> <span class="operator">=></span> <span class="number">2</span>];
+<span class="keyword">echo</span> <span class="function">array_key_exists</span>(<span class="string">"a"</span>, <span class="keyword">$arr</span>) ? <span class="string">'Oui'</span> : <span class="string">'Non'</span>;</code></pre>
                         <div class="result">
                             <p>Résultat : Oui</p>
                         </div>
@@ -253,8 +253,8 @@
                 <div class="example">
                     <div class="example-header arrays-header">in_array()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
-<span class="keyword">echo</span> <span class="function">in_array</span>(<span class="number">2</span>, <span class="variable">$arr</span>) ? <span class="string">'Oui'</span> : <span class="string">'Non'</span>;</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+<span class="keyword">echo</span> <span class="function">in_array</span>(<span class="number">2</span>, <span class="keyword">$arr</span>) ? <span class="string">'Oui'</span> : <span class="string">'Non'</span>;</code></pre>
                         <div class="result">
                             <p>Résultat : Oui</p>
                         </div>
@@ -266,9 +266,9 @@
                 <div class="example">
                     <div class="example-header arrays-header">sort()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$arr</span> <span class="operator">=</span> [<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>];
-<span class="function">sort</span>(<span class="variable">$arr</span>);
-<span class="function">print_r</span>(<span class="variable">$arr</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$arr</span> <span class="operator">=</span> [<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>];
+<span class="function">sort</span>(<span class="keyword">$arr</span>);
+<span class="function">print_r</span>(<span class="keyword">$arr</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : Array ( [0] => 1 [1] => 2 [2] => 3 )</p>
                         </div>
@@ -278,9 +278,9 @@
                 <div class="example">
                     <div class="example-header arrays-header">rsort()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>];
-<span class="function">rsort</span>(<span class="variable">$arr</span>);
-<span class="function">print_r</span>(<span class="variable">$arr</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$arr</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>];
+<span class="function">rsort</span>(<span class="keyword">$arr</span>);
+<span class="function">print_r</span>(<span class="keyword">$arr</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : Array ( [0] => 3 [1] => 2 [2] => 1 )</p>
                         </div>
@@ -290,9 +290,9 @@
                 <div class="example">
                     <div class="example-header arrays-header">array_merge()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$a</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>];
-<span class="variable">$b</span> <span class="operator">=</span> [<span class="number">3</span>, <span class="number">4</span>];
-<span class="function">print_r</span>(<span class="function">array_merge</span>(<span class="variable">$a</span>, <span class="variable">$b</span>));</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$a</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>];
+<span class="keyword">$b</span> <span class="operator">=</span> [<span class="number">3</span>, <span class="number">4</span>];
+<span class="function">print_r</span>(<span class="function">array_merge</span>(<span class="keyword">$a</span>, <span class="keyword">$b</span>));</code></pre>
                         <div class="result">
                             <p>Résultat : Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )</p>
                         </div>
@@ -400,8 +400,8 @@
                 <div class="example">
                     <div class="example-header json-header">json_encode()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$data</span> <span class="operator">=</span> [<span class="string">"nom"</span> <span class="operator">=></span> <span class="string">"Alice"</span>, <span class="string">"age"</span> <span class="operator">=></span> <span class="number">30</span>];
-<span class="keyword">echo</span> <span class="function">json_encode</span>(<span class="variable">$data</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$data</span> <span class="operator">=</span> [<span class="string">"nom"</span> <span class="operator">=></span> <span class="string">"Alice"</span>, <span class="string">"age"</span> <span class="operator">=></span> <span class="number">30</span>];
+<span class="keyword">echo</span> <span class="function">json_encode</span>(<span class="keyword">$data</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : {"nom":"Alice","age":30}</p>
                         </div>
@@ -411,9 +411,9 @@
                 <div class="example">
                     <div class="example-header json-header">json_decode()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$json</span> <span class="operator">=</span> <span class="string">'{"nom":"Alice","age":30}'</span>;
-<span class="variable">$php</span> <span class="operator">=</span> <span class="function">json_decode</span>(<span class="variable">$json</span>, <span class="keyword">true</span>);
-<span class="function">print_r</span>(<span class="variable">$php</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$json</span> <span class="operator">=</span> <span class="string">'{"nom":"Alice","age":30}'</span>;
+<span class="keyword">$php</span> <span class="operator">=</span> <span class="function">json_decode</span>(<span class="keyword">$json</span>, <span class="keyword">true</span>);
+<span class="function">print_r</span>(<span class="keyword">$php</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : Array ( [nom] => Alice [age] => 30 )</p>
                         </div>
@@ -454,8 +454,8 @@
                 <div class="example">
                     <div class="example-header variables-header">isset()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$a</span> <span class="operator">=</span> <span class="number">5</span>;
-<span class="keyword">echo</span> <span class="function">isset</span>(<span class="variable">$a</span>) ? <span class="string">'Oui'</span> : <span class="string">'Non'</span>;</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$a</span> <span class="operator">=</span> <span class="number">5</span>;
+<span class="keyword">echo</span> <span class="function">isset</span>(<span class="keyword">$a</span>) ? <span class="string">'Oui'</span> : <span class="string">'Non'</span>;</code></pre>
                         <div class="result">
                             <p>Résultat : Oui</p>
                         </div>
@@ -465,8 +465,8 @@
                 <div class="example">
                     <div class="example-header variables-header">empty()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$b</span> <span class="operator">=</span> <span class="number">0</span>;
-<span class="keyword">echo</span> <span class="function">empty</span>(<span class="variable">$b</span>) ? <span class="string">'Oui'</span> : <span class="string">'Non'</span>;</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$b</span> <span class="operator">=</span> <span class="number">0</span>;
+<span class="keyword">echo</span> <span class="function">empty</span>(<span class="keyword">$b</span>) ? <span class="string">'Oui'</span> : <span class="string">'Non'</span>;</code></pre>
                         <div class="result">
                             <p>Résultat : Oui</p>
                         </div>
@@ -476,9 +476,9 @@
                 <div class="example">
                     <div class="example-header variables-header">unset()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$c</span> <span class="operator">=</span> <span class="number">10</span>;
-<span class="function">unset</span>(<span class="variable">$c</span>);
-<span class="keyword">echo</span> <span class="function">isset</span>(<span class="variable">$c</span>) ? <span class="string">'Définie'</span> : <span class="string">'Non définie'</span>;</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$c</span> <span class="operator">=</span> <span class="number">10</span>;
+<span class="function">unset</span>(<span class="keyword">$c</span>);
+<span class="keyword">echo</span> <span class="function">isset</span>(<span class="keyword">$c</span>) ? <span class="string">'Définie'</span> : <span class="string">'Non définie'</span>;</code></pre>
                         <div class="result">
                             <p>Résultat : Non définie</p>
                         </div>
@@ -490,8 +490,8 @@
                 <div class="example">
                     <div class="example-header variables-header">gettype()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$d</span> <span class="operator">=</span> <span class="string">"Hello"</span>;
-<span class="keyword">echo</span> <span class="function">gettype</span>(<span class="variable">$d</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$d</span> <span class="operator">=</span> <span class="string">"Hello"</span>;
+<span class="keyword">echo</span> <span class="function">gettype</span>(<span class="keyword">$d</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : string</p>
                         </div>
@@ -501,8 +501,8 @@
                 <div class="example">
                     <div class="example-header variables-header">var_dump()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$e</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
-<span class="function">var_dump</span>(<span class="variable">$e</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$e</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+<span class="function">var_dump</span>(<span class="keyword">$e</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : array(3) { [0]=> int(1) [1]=> int(2) [2]=> int(3) }</p>
                         </div>
@@ -512,8 +512,8 @@
                 <div class="example">
                     <div class="example-header variables-header">print_r()</div>
                     <div class="example-content">
-                        <pre><code class="language-php"><span class="variable">$f</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
-<span class="function">print_r</span>(<span class="variable">$f</span>);</code></pre>
+                        <pre><code class="language-php"><span class="keyword">$f</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+<span class="function">print_r</span>(<span class="keyword">$f</span>);</code></pre>
                         <div class="result">
                             <p>Résultat : Array ( [0] => 1 [1] => 2 [2] => 3 )</p>
                         </div>
@@ -528,4 +528,4 @@
             <a href="08-inclusions.php" class="nav-button">Module suivant →</a>
         </div>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+        <?php include __DIR__ . '/../includes/footer.php'; ?>

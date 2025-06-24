@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 
 // Définition des variables pour les exemples
 $titre = "Les Structures Conditionnelles en PHP";
@@ -143,7 +143,7 @@ $accesAutorise = ($utilisateur['role'] === 'admin' && $utilisateur['statut'] ===
         <section class="section">
             <h2>Opérateurs de comparaison</h2>
 
-            <table class="comparison-table">
+            <table class="data-table">
                 <thead>
                     <tr>
                         <th>Opérateur</th>
@@ -435,4 +435,4 @@ $accesAutorise = ($utilisateur['role'] === 'admin' && $utilisateur['statut'] ===
             </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

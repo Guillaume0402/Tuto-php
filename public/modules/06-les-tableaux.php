@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 
 
 
@@ -410,7 +410,7 @@ $cleHistoire = <span class="function">array_key_exists</span>(<span class="strin
         <section class="section">
             <h2>Fonctions utiles pour les tableaux</h2>
 
-            <table class="comparison-table">
+            <table class="data-table">
                 <thead>
                     <tr>
                         <th>Fonction</th>
@@ -873,4 +873,4 @@ $notesManip = <span class="function">array_values</span>($notesManip); <span cla
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

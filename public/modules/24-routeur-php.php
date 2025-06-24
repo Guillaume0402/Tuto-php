@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php';
+<?php include __DIR__ . '/../includes/header.php';
 $titre = "Routeur PHP";
 $description = "Créez un système de routage efficace pour vos applications web PHP";
 ?>

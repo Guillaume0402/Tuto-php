@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php';
+<?php include __DIR__ . '/../includes/header.php';
 $titre = "Utilisation de Composer et autoloading";
 $description = "Maîtrisez la gestion des dépendances avec Composer, implémentez l'autoloading PSR-4 et apprenez à créer et distribuer vos propres packages PHP.";
 ?>
@@ -644,4 +644,4 @@ $description = "Maîtrisez la gestion des dépendances avec Composer, implément
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

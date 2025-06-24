@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php';
+<?php include __DIR__ . '/../includes/header.php';
 $titre = "Gestion des sessions et authentification";
 $description = "Apprenez à gérer les sessions PHP, créer un système d'authentification sécurisé et mettre en place une gestion des droits utilisateurs.";
 ?>
@@ -157,7 +157,7 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="function">session_start</span>();</code></pre>
                 <div class="explanation">
                     <h4>Explication des paramètres de sécurité</h4>
-                    <table class="parameter-table">
+                    <table class="data-table">
                         <tr>
                             <th>Paramètre</th>
                             <th>Description</th>
@@ -203,7 +203,7 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
             <h3>Cookies en PHP</h3>
             <div class="info-box">
                 <strong>Différence entre Cookies et Sessions</strong>
-                <table class="comparison-table">
+                <table class="data-table">
                     <tr>
                         <th>Aspect</th>
                         <th>Cookies</th>
@@ -327,10 +327,10 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         <span class="variable">$data</span> . <span class="string">'.'</span> . <span class="variable">$signature</span>,
         [
             <span class="string>'expires'</span>  => <span class="function">time</span>() + <span class="number">365</span> * <span class="number">24</span> * <span class="number">3600</span>,
-            <span class="string>'path'</span>     => <span class="string>'/'</span>,
-            <span class="string>'secure'</span>   => <span class="keyword">true</span>,
-            <span class="string>'httponly'</span> => <span class="keyword">true</span>,
-            <span class="string>'samesite'</span> => <span class="string>'Lax'</span>
+            <span class="string">'path'</span>     => <span class="string>'/'</span>,
+            <span class="string">'secure'</span>   => <span class="keyword">true</span>,
+            <span class="string">'httponly'</span> => <span class="keyword">true</span>,
+            <span class="string">'samesite'</span> => <span class="string>'Lax'</span>
         ]
     );
 }</code></pre>
@@ -354,7 +354,7 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
     username <span class="type">VARCHAR</span>(50) <span class="keyword">NOT NULL</span> <span class="keyword">UNIQUE</span>,
     email <span class="type">VARCHAR</span>(100) <span class="keyword">NOT NULL</span> <span class="keyword">UNIQUE</span>,
     password <span class="type">VARCHAR</span>(255) <span class="keyword">NOT NULL</span>,  <span class="comment">-- Pour le hash</span>
-    role <span class="type">VARCHAR</span>(20) <span class="keyword">NOT NULL</span> <span class="keyword">DEFAULT</span> <span class="string>'user'</span>,
+    role <span class="type">VARCHAR</span>(20) <span class="keyword">NOT NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'user'</span>,
     is_active <span class="type">BOOLEAN</span> <span class="keyword">NOT NULL</span> <span class="keyword">DEFAULT</span> <span class="constant">TRUE</span>,
     created_at <span class="type">TIMESTAMP</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span>,
     last_login <span class="type">TIMESTAMP</span> <span class="keyword">NULL</span>,
@@ -409,10 +409,10 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
                         <pre><code class="language-php"><span class="comment">// register.php</span>
 <span class="keyword">if</span> (<span class="variable">$_SERVER</span>[<span class="string>'REQUEST_METHOD'</span>] == <span class="string">'POST'</span>) {
     <span class="comment">// Récupérer et assainir les données</span>
-    <span class="variable">$username</span> = <span class="function">filter_input</span>(INPUT_POST, <span class="string>'username'</span>, FILTER_SANITIZE_SPECIAL_CHARS);
-    <span class="variable">$email</span> = <span class="function">filter_input</span>(INPUT_POST, <span class="string>'email'</span>, FILTER_SANITIZE_EMAIL);
-    <span class="variable">$password</span> = <span class="variable">$_POST</span>[<span class="string>'password'</span>] ?? <span class="string">''</span>;
-    <span class="variable">$confirm</span> = <span class="variable">$_POST</span>[<span class="string>'confirm_password'</span>] ?? <span class="string">''</span>;
+    <span class="variable">$username</span> = <span class="function">filter_input</span>(INPUT_POST, <span class="string">'username'</span>, FILTER_SANITIZE_SPECIAL_CHARS);
+    <span class="variable">$email</span> = <span class="function">filter_input</span>(INPUT_POST, <span class="string">'email'</span>, FILTER_SANITIZE_EMAIL);
+    <span class="variable">$password</span> = <span class="variable">$_POST</span>[<span class="string">'password'</span>] ?? <span class="string">''</span>;
+    <span class="variable">$confirm</span> = <span class="variable">$_POST</span>[<span class="string">'confirm_password'</span>] ?? <span class="string">''</span>;
     
     <span class="comment">// Validation</span>
     <span class="variable">$errors</span> = [];
@@ -437,7 +437,7 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
     <span class="keyword">if</span> (<span class="function">count</span>(<span class="variable">$errors</span>) === <span class="number">0</span>) {
         <span class="variable">$pdo</span> = <span class="keyword">new</span> <span class="class-name">PDO</span>(<span class="string">'mysql:host=localhost;dbname=myapp'</span>, <span class="string">'user'</span>, <span class="string">'password'</span>);
         
-        <span class="variable">$stmt</span> = <span class="variable">$pdo</span>-><span class="function">prepare</span>(<span class="string>'SELECT COUNT(*) FROM users WHERE username = ? OR email = ?'</span>);
+        <span class="variable">$stmt</span> = <span class="variable">$pdo</span>-><span class="function">prepare</span>(<span class="string">'SELECT COUNT(*) FROM users WHERE username = ? OR email = ?'</span>);
         <span class="variable">$stmt</span>-><span class="function">execute</span>([<span class="variable">$username</span>, <span class="variable">$email</span>]);
         
         <span class="keyword">if</span> (<span class="variable">$stmt</span>-><span class="function">fetchColumn</span>() > <span class="number">0</span>) {
@@ -526,8 +526,8 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="keyword">if</span> (<span class="variable">$_SERVER</span>[<span class="string>'REQUEST_METHOD'</span>] == <span class="string">'POST'</span>) {
     <span class="comment">// Récupérer les données</span>
     <span class="variable">$identifier</span> = <span class="function">trim</span>(<span class="variable">$_POST</span>[<span class="string>'identifier'</span>] ?? <span class="string">''</span>);
-    <span class="variable">$password</span> = <span class="variable">$_POST</span>[<span class="string>'password'</span>] ?? <span class="string">''</span>;
-    <span class="variable">$remember</span> = <span class="function">isset</span>(<span class="variable">$_POST</span>[<span class="string>'remember_me'</span>]);
+    <span class="variable">$password</span> = <span class="variable">$_POST</span>[<span class="string">'password'</span>] ?? <span class="string">''</span>;
+    <span class="variable">$remember</span> = <span class="function">isset</span>(<span class="variable">$_POST</span>[<span class="string">'remember_me'</span>]);
     
     <span class="comment">// Validation basique</span>
     <span class="keyword">if</span> (<span class="function">empty</span>(<span class="variable">$identifier</span>) || <span class="function">empty</span>(<span class="variable">$password</span>)) {
@@ -551,14 +551,14 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
             <span class="function">session_regenerate_id</span>(<span class="keyword">true</span>);
             
             <span class="comment">// Stocker les informations dans la session</span>
-            <span class="variable">$_SESSION</span>[<span class="string>'user_id'</span>] = <span class="variable">$user</span>[<span class="string>'id'</span>];
-            <span class="variable">$_SESSION</span>[<span class="string>'username'</span>] = <span class="variable">$user</span>[<span class="string>'username'</span>];
-            <span class="variable">$_SESSION</span>[<span class="string>'role'</span>] = <span class="variable">$user</span>[<span class="string>'role'</span>];
-            <span class="variable">$_SESSION</span>[<span class="string>'last_activity'</span>] = <span class="function">time</span>();
+            <span class="variable">$_SESSION</span>[<span class="string">'user_id'</span>] = <span class="variable">$user</span>[<span class="string">'id'</span>];
+            <span class="variable">$_SESSION</span>[<span class="string">'username'</span>] = <span class="variable">$user</span>[<span class="string">'username'</span>];
+            <span class="variable">$_SESSION</span>[<span class="string">'role'</span>] = <span class="variable">$user</span>[<span class="string">'role'</span>];
+            <span class="variable">$_SESSION</span>[<span class="string">'last_activity'</span>] = <span class="function">time</span>();
             
             <span class="comment">// Mettre à jour la date de dernière connexion</span>
             <span class="variable">$updateStmt</span> = <span class="variable">$pdo</span>-><span class="function">prepare</span>(<span class="string">'UPDATE users SET last_login = NOW() WHERE id = ?'</span>);
-            <span class="variable">$updateStmt</span>-><span class="function">execute</span>([<span class="variable">$user</span>[<span class="string>'id'</span>]]);
+            <span class="variable">$updateStmt</span>-><span class="function">execute</span>([<span class="variable">$user</span>[<span class="string">'id'</span>]]);
             
             <span class="comment">// Si "Se souvenir de moi" est coché</span>
             <span class="keyword">if</span> (<span class="variable">$remember</span>) {
@@ -570,18 +570,18 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
                     INSERT INTO auth_tokens (user_id, token, expires_at) 
                     VALUES (?, ?, DATE_ADD(NOW(), INTERVAL 30 DAY))
                 '</span>);
-                <span class="variable">$tokenStmt</span>-><span class="function">execute</span>([<span class="variable">$user</span>[<span class="string>'id'</span>], <span class="function">password_hash</span>(<span class="variable">$token</span>, PASSWORD_DEFAULT)]);
+                <span class="variable">$tokenStmt</span>-><span class="function">execute</span>([<span class="variable">$user</span>[<span class="string">'id'</span>], <span class="function">password_hash</span>(<span class="variable">$token</span>, PASSWORD_DEFAULT)]);
                 
                 <span class="comment">// Définir un cookie "remember me"</span>
                 <span class="function">setcookie</span>(
-                    <span class="string>'remember_token'</span>, 
-                    <span class="variable">$user</span>[<span class="string>'id'</span>] . <span class="string">':'</span> . <span class="variable">$token</span>,
+                    <span class="string">'remember_token'</span>, 
+                    <span class="variable">$user</span>[<span class="string">'id'</span>] . <span class="string">':'</span> . <span class="variable">$token</span>,
                     [
-                        <span class="string>'expires'</span> => <span class="function">time</span>() + <span class="number">30</span> * <span class="number">24</span> * <span class="number">3600</span>, <span class="comment">// 30 jours</span>
-                        <span class="string>'path'</span> => <span class="string">'/'</span>,
-                        <span class="string>'httponly'</span> => <span class="keyword">true</span>,
-                        <span class="string>'secure'</span> => <span class="keyword">true</span>,
-                        <span class="string>'samesite'</span> => <span class="string>'Lax'</span>
+                        <span class="string">'expires'</span> => <span class="function">time</span>() + <span class="number">30</span> * <span class="number">24</span> * <span class="number">3600</span>, <span class="comment">// 30 jours</span>
+                        <span class="string">'path'</span> => <span class="string">'/'</span>,
+                        <span class="string">'httponly'</span> => <span class="keyword">true</span>,
+                        <span class="string">'secure'</span> => <span class="keyword">true</span>,
+                        <span class="string">'samesite'</span> => <span class="string">'Lax'</span>
                     ]
                 );
             }
@@ -621,13 +621,13 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
     <span class="keyword">if</span> (<span class="function">empty</span>(<span class="variable">$_SESSION</span>[<span class="string">'csrf_token'</span>])) {
         <span class="variable">$_SESSION</span>[<span class="string">'csrf_token'</span>] = <span class="function">bin2hex</span>(<span class="function">random_bytes</span>(<span class="number">32</span>));
     }
-    <span class="keyword">return</span> <span class="variable">$_SESSION</span>[<span class="string>'csrf_token'</span>];
+    <span class="keyword">return</span> <span class="variable">$_SESSION</span>[<span class="string">'csrf_token'</span>];
 }
 
 <span class="comment">// Vérifier un token CSRF</span>
 <span class="keyword">function</span> <span class="function">verifyCsrfToken</span>(<span class="variable">$token</span>) {
-    <span class="keyword">if</span> (!<span class="function">isset</span>(<span class="variable">$_SESSION</span>[<span class="string>'csrf_token'</span>]) || 
-        !<span class="function">hash_equals</span>(<span class="variable">$_SESSION</span>[<span class="string>'csrf_token'</span>], <span class="variable">$token</span>)) {
+    <span class="keyword">if</span> (!<span class="function">isset</span>(<span class="variable">$_SESSION</span>[<span class="string">'csrf_token'</span>]) || 
+        !<span class="function">hash_equals</span>(<span class="variable">$_SESSION</span>[<span class="string">'csrf_token'</span>], <span class="variable">$token</span>)) {
         <span class="comment">// Token invalide, rejeter la requête</span>
         <span class="function">http_response_code</span>(<span class="number">403</span>);
         <span class="keyword">die</span>(<span class="string">'Action non autorisée'</span>);
@@ -638,7 +638,7 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="keyword">echo</span> <span class="string">'&lt;input type="hidden" name="csrf_token" value="'</span> . <span class="function">generateCsrfToken</span>() . <span class="string">'"&gt;'</span>;
 
 <span class="comment">// Lors du traitement du formulaire</span>
-<span class="function">verifyCsrfToken</span>(<span class="variable">$_POST</span>[<span class="string>'csrf_token'</span>] ?? <span class="string">''</span>);</code></pre>
+<span class="function">verifyCsrfToken</span>(<span class="variable">$_POST</span>[<span class="string">'csrf_token'</span>] ?? <span class="string">''</span>);</code></pre>
                     <div class="result">
                         <p>Le token CSRF (Cross-Site Request Forgery) est une mesure de protection cruciale pour empêcher les attaques où un site malveillant pourrait forcer votre navigateur à effectuer des actions non autorisées sur un site où vous êtes authentifié.</p>
                     </div>
@@ -757,7 +757,7 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="keyword">function</span> <span class="function">requirePermission</span>(<span class="variable">$permissionName</span>) {
     <span class="function">requireLogin</span>(); <span class="comment">// S'assurer que l'utilisateur est connecté</span>
     
-    <span class="variable">$userId</span> = <span class="variable">$_SESSION</span>[<span class="string>'user_id'</span>];
+    <span class="variable">$userId</span> = <span class="variable">$_SESSION</span>[<span class="string">'user_id'</span>];
     <span class="variable">$pdo</span> = <span class="keyword">new</span> <span class="class-name">PDO</span>(<span class="string">'mysql:host=localhost;dbname=myapp'</span>, <span class="string">'user'</span>, <span class="string">'password'</span>);
     <span class="variable">$auth</span> = <span class="keyword">new</span> <span class="class-name">Authorization</span>(<span class="variable">$pdo</span>);
     
@@ -776,7 +776,7 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="keyword">require_once</span> <span class="string">'auth_middleware.php'</span>;
 
 <span class="comment">// Vérifier que l'utilisateur a la permission de gérer les utilisateurs</span>
-<span class="function">requirePermission</span>(<span class="string>'manage_users'</span>);
+<span class="function">requirePermission</span>(<span class="string">'manage_users'</span>);
 
 <span class="comment">// Le code ci-dessous ne s'exécute que si l'utilisateur a la permission</span>
 <span class="variable">$pdo</span> = <span class="keyword">new</span> <span class="class-name">PDO</span>(<span class="string">'mysql:host=localhost;dbname=myapp'</span>, <span class="string">'user'</span>, <span class="string">'password'</span>);
@@ -807,15 +807,15 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
     
     <span class="variable">$pdo</span> = <span class="keyword">new</span> <span class="class-name">PDO</span>(<span class="string">'mysql:host=localhost;dbname=myapp'</span>, <span class="string">'user'</span>, <span class="string">'password'</span>);
     <span class="variable">$auth</span> = <span class="keyword">new</span> <span class="class-name">Authorization</span>(<span class="variable">$pdo</span>);
-    <span class="keyword">return</span> <span class="variable">$auth</span>-><span class="function">hasPermission</span>(<span class="variable">$_SESSION</span>[<span class="string>'user_id'</span>], <span class="variable">$permissionName</span>);
+    <span class="keyword">return</span> <span class="variable">$auth</span>-><span class="function">hasPermission</span>(<span class="variable">$_SESSION</span>[<span class="string">'user_id'</span>], <span class="variable">$permissionName</span>);
 }
 
 <span class="comment">// Dans une vue</span>
-<span class="keyword">if</span> (<span class="function">canUserAccess</span>(<span class="string>'manage_users'</span>)) {
+<span class="keyword">if</span> (<span class="function">canUserAccess</span>(<span class="string">'manage_users'</span>)) {
     <span class="keyword">echo</span> <span class="string">'&lt;a href="admin_users.php" class="admin-button"&gt;Gérer les utilisateurs&lt;/a&gt;'</span>;
 }
 
-<span class="keyword">if</span> (<span class="function">canUserAccess</span>(<span class="string>'view_reports'</span>)) {
+<span class="keyword">if</span> (<span class="function">canUserAccess</span>(<span class="string">'view_reports'</span>)) {
     <span class="keyword">echo</span> <span class="string">'&lt;li&gt;&lt;a href="reports.php"&gt;Rapports&lt;/a&gt;&lt;/li&gt;'</span>;
 }</code></pre>
                     <div class="result">
@@ -842,4 +842,4 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

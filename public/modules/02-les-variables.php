@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php';
+<?php include __DIR__ . '/../includes/header.php';
 
 // chaine de caractères
 $titre = "Les Variables en PHP";
@@ -319,4 +319,4 @@ $$nomVariable <span class="operator">=</span> <span class="number">29.99</span><
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

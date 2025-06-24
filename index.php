@@ -1,6 +1,5 @@
-
-<?php 
-include __DIR__ . '/public/includes/header-pro.php'; ?>
+<?php
+include __DIR__ . '/public/includes/header.php'; ?>
 
 
 <body class="index-page">
@@ -8,8 +7,8 @@ include __DIR__ . '/public/includes/header-pro.php'; ?>
         <h1>Tutoriel PHP</h1>
         <p class="subtitle">Découvrez les fondamentaux du développement web avec PHP à travers une série de tutoriels pratiques et exemples interactifs.</p>
     </header>
-        <section class="modules-grid">
-    <a href="public/modules/01-script.php" class="module-card">
+    <section class="modules-grid">
+        <a href="public/modules/01-script.php" class="module-card">
             <div class="card-header card-1">Module 1</div>
             <div class="card-content">
                 <h3 class="card-title">Un premier script PHP</h3>
@@ -211,7 +210,7 @@ include __DIR__ . '/public/includes/header-pro.php'; ?>
             </div>
         </a>
     </section>
-   
 
 
-<?php include __DIR__ . '/public/includes/footer.php';
+
+    <?php include __DIR__ . '/public/includes/footer.php';

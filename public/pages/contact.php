@@ -1,7 +1,7 @@
 <?php
 $titreContact = "Contact";
 $description = "Contactez-nous pour toute question concernant les tutoriels PHP";
-include __DIR__ . '/../includes/header-pro.php';
+include __DIR__ . '/../includes/header.php';
 ?>
 
 <main>

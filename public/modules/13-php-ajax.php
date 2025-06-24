@@ -201,7 +201,7 @@
             </div>
 
             <h3>Tableau comparatif des méthodes AJAX</h3>
-            <table class="methods-comparison">
+            <table class="data-table">
                 <thead>
                     <tr>
                         <th>Caractéristique</th>
@@ -351,7 +351,7 @@
 ) {
     <span class="keyword">echo</span> <span class="function">json_encode</span>([
         <span class="string>'success'</span> => <span class="keyword">false</span>,
-        <span class="string>'message'</span> => <span class="string>'Données incomplètes'</span>
+        <span class="string">'message'</span> => <span class="string">'Données incomplètes'</span>
     ]);
     <span class="keyword">exit</span>;
 }
@@ -423,16 +423,16 @@
         <span class="function">afficherResultats</span>(<span class="variable">data</span>);
     } <span class="keyword">catch</span> (<span class="variable">error</span>) {
         <span class="variable">console</span>.<span class="function">error</span>(<span class="string">'Erreur de recherche:'</span>, <span class="variable">error</span>);
-        <span class="variable">searchResults</span>.<span class="property">innerHTML</span> = <span class="string>'Une erreur est survenue'</span>;
+        <span class="variable">searchResults</span>.<span class="property">innerHTML</span> = <span class="string">'Une erreur est survenue'</span>;
     }
 }
 
 <span class="keyword">function</span> <span class="function">afficherResultats</span>(<span class="parameter">resultats</span>) {    <span class="keyword">if</span> (<span class="variable">resultats</span>.<span class="property">length</span> === <span class="number">0</span>) {
-        <span class="variable">searchResults</span>.<span class="property">innerHTML</span> = <span class="string>'&lt;p&gt;Aucun résultat trouvé&lt;/p&gt;'</span>;
+        <span class="variable">searchResults</span>.<span class="property">innerHTML</span> = <span class="string">'&lt;p&gt;Aucun résultat trouvé&lt;/p&gt;'</span>;
         <span class="keyword">return</span>;
     }
     
-    <span class="keyword">let</span> <span class="variable">html</span> = <span class="string>'&lt;ul class="results-list"&gt;'</span>;
+    <span class="keyword">let</span> <span class="variable">html</span> = <span class="string">'&lt;ul class="results-list"&gt;'</span>;
     <span class="variable">resultats</span>.<span class="function">forEach</span>(<span class="parameter">item</span> => {
         <span class="variable">html</span> += <span class="string">`
             &lt;li&gt;
@@ -442,7 +442,7 @@
                 &lt;/div&gt;
             &lt;/li&gt;
         `</span>;
-    });    <span class="variable">html</span> += <span class="string>'&lt;/ul&gt;'</span>;
+    });    <span class="variable">html</span> += <span class="string">'&lt;/ul&gt;'</span>;
     
     <span class="variable">searchResults</span>.<span class="property">innerHTML</span> = <span class="variable">html</span>;
 }
@@ -634,4 +634,4 @@ project/
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

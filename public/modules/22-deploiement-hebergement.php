@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; 
+<?php include __DIR__ . '/../includes/header.php';
 $titre = "Déploiement et hébergement d'une application PHP";
 $description = "Apprenez à préparer votre application PHP pour la production, choisir le bon type d'hébergement et configurer correctement votre serveur pour une sécurité et des performances optimales.";
 ?>
@@ -249,7 +249,7 @@ $description = "Apprenez à préparer votre application PHP pour la production, 
             <div class="example">
                 <div class="example-header">Types d'hébergement PHP</div>
                 <div class="example-content">
-                    <table class="comparison-table">
+                    <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Critère</th>
@@ -312,35 +312,21 @@ $description = "Apprenez à préparer votre application PHP pour la production, 
 
             <h3>Hébergement mutualisé</h3>
             <div class="info-box">
-                <strong>Avantages et inconvénients</strong>
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>Avantages :</strong>
-                        <ul>
-                            <li>Solution la moins chère</li>
-                            <li>Facile à configurer et à gérer</li>
-                            <li>Interface d'administration conviviale (cPanel, Plesk)</li>
-                            <li>Configuration PHP pré-installée</li>
-                            <li>Support technique généralement inclus</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>Inconvénients :</strong>
-                        <ul>
-                            <li>Ressources limitées et partagées</li>
-                            <li>"Mauvais voisins" peuvent affecter les performances</li>
-                            <li>Peu ou pas de contrôle sur la configuration du serveur</li>
-                            <li>Extensions PHP et versions souvent limitées</li>
-                            <li>Problèmes pour les applications à fort trafic</li>
-                        </ul>
-                    </div>
-                </div>
-                <strong>Configuration type :</strong>
+                <strong>Avantages :</strong>
                 <ul>
-                    <li>Accès FTP/SFTP pour upload de fichiers</li>
-                    <li>PHPMyAdmin pour gérer la base de données</li>
-                    <li>Modification limitée des paramètres PHP via .htaccess ou interface</li>
-                    <li>Souvent limité à une version PHP spécifique</li>
+                    <li>Solution la moins chère</li>
+                    <li>Facile à configurer et à gérer</li>
+                    <li>Interface d'administration conviviale (cPanel, Plesk)</li>
+                    <li>Configuration PHP pré-installée</li>
+                    <li>Support technique généralement inclus</li>
+                </ul>
+                <strong>Inconvénients :</strong>
+                <ul>
+                    <li>Ressources limitées et partagées</li>
+                    <li>"Mauvais voisins" peuvent affecter les performances</li>
+                    <li>Peu ou pas de contrôle sur la configuration du serveur</li>
+                    <li>Extensions PHP et versions souvent limitées</li>
+                    <li>Problèmes pour les applications à fort trafic</li>
                 </ul>
             </div>
 
@@ -801,4 +787,4 @@ EOF
         </div>
     </main>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -1,7 +1,7 @@
 <?php
 $titrePolitique = "Politique de confidentialité";
 $description = "Politique de confidentialité et traitement des données personnelles";
-include __DIR__ . '/../includes/header-pro.php';
+include __DIR__ . '/../includes/header.php';
 ?>
 
 <main>
