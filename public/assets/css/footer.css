@@ -50,17 +50,18 @@
 }
 
 .footer-section a,
+.footer-section a:visited,
+.footer-section a:active,
 .footer-nav a {
-    color: #a0aec0;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: inline-block;
+    color: #fff !important;
+    text-decoration: underline;
+    transition: color 0.2s;
 }
 
 .footer-section a:hover,
+.footer-section a:focus,
 .footer-nav a:hover {
-    color: #fff;
-    text-decoration: underline;
+    color: #3a86ff !important;
 }
 
 .author-credits {
@@ -89,13 +90,17 @@
     margin: 0.3rem 0;
 }
 
-.footer-bottom a {
-    color: #cbd5e0;
+.footer-bottom a,
+.footer-bottom a:visited,
+.footer-bottom a:active {
+    color: #fff !important;
     text-decoration: underline;
+    transition: color 0.2s;
 }
 
-.footer-bottom a:hover {
-    color: #fff;
+.footer-bottom a:hover,
+.footer-bottom a:focus {
+    color: #3a86ff !important;
 }
 
 /* Style pour l'icône GitHub dans le footer */
@@ -201,4 +206,16 @@
     .dev-details p {
         font-size: 0.7rem;
     }
+}
+
+footer a,
+.footer a {
+    color: #fff !important;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+footer a:hover,
+.footer a:hover {
+    color: #3a86ff !important;
 }

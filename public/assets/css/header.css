@@ -33,6 +33,7 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    position: relative;
 }
 .header__link {
     color: #fff;
@@ -102,11 +103,16 @@ body.menu-open .header__burger span:nth-child(3) {
     top: 14px !important;
 }
 /* --- MENU MODULES --- */
+.header__modules-wrapper {
+    position: relative;
+    display: inline-block;
+}
 .header__modules-menu {
     display: none;
     position: absolute;
     top: 100%;
-    right: 2rem;
+    right: 0;
+    left: auto;
     min-width: 340px;
     background: #232946;
     color: #fff;
@@ -326,5 +332,18 @@ body.menu-open .burger-menu__close {
 @media (min-width: 900px) {
     .burger-menu__close {
         display: none !important;
+    }
+}
+
+/* Cacher le burger en desktop */
+@media (min-width: 900px) {
+    .header__burger {
+        display: none !important;
+    }
+}
+/* Afficher le burger en mobile */
+@media (max-width: 899px) {
+    .header__burger {
+        display: flex !important;
     }
 }

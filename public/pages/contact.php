@@ -42,36 +42,49 @@ include __DIR__ . '/../includes/header.php';
                     $email = trim($_POST['email'] ?? '');
                     $subject = trim($_POST['subject'] ?? '');
                     $message = trim($_POST['message'] ?? '');
+                    $privacy = isset($_POST['privacy']);
+                    $honeypot = trim($_POST['website'] ?? ''); // Champ anti-spam
 
                     // Validation
                     if (empty($name)) {
                         $errors[] = "Le nom est requis";
                     }
-
                     if (empty($email)) {
                         $errors[] = "L'email est requis";
                     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                         $errors[] = "L'email n'est pas valide";
                     }
-
                     if (empty($subject)) {
                         $errors[] = "Le sujet est requis";
                     }
-
                     if (empty($message)) {
                         $errors[] = "Le message est requis";
+                    }
+                    if (!$privacy) {
+                        $errors[] = "Vous devez accepter la politique de confidentialité.";
+                    }
+                    if (!empty($honeypot)) {
+                        $errors[] = "Erreur de validation (anti-spam).";
                     }
 
                     // Envoi de l'email si pas d'erreurs
                     if (empty($errors)) {
-                        // Dans une version de production, vous enverriez réellement l'email ici
-                        // mail('votre@email.com', "Contact du site: $subject", $message, "From: $email");
-
-                        // Pour le tutoriel, on simule juste le succès
-                        $success = true;
-
-                        // Réinitialisation des champs
-                        $name = $email = $subject = $message = '';
+                        // Sécurisation de l'email
+                        $to = 'g.maignaut@gmail.com';
+                        $safe_subject = substr(str_replace(["\r", "\n"], '', $subject), 0, 100);
+                        $safe_email = filter_var($email, FILTER_SANITIZE_EMAIL);
+                        $body = "Nom: $name\nEmail: $safe_email\nSujet: $safe_subject\nMessage:\n$message";
+                        $headers = "From: noreply@tutophp.com\r\n";
+                        $headers .= "Reply-To: $safe_email\r\n";
+                        $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+                        // Envoi réel (décommente la ligne suivante en production)
+                        $mailSent = mail($to, "Contact du site: $safe_subject", $body, $headers);
+                        if ($mailSent) {
+                            $success = true;
+                            $name = $email = $subject = $message = '';
+                        } else {
+                            $errors[] = "Erreur lors de l'envoi, réessayez plus tard.";
+                        }
                     }
                 }
                 ?>
@@ -92,7 +105,12 @@ include __DIR__ . '/../includes/header.php';
                     </div>
                 <?php endif; ?>
 
-                <form method="post" action="" class="form">
+                <form method="post" action="" class="form" autocomplete="off">
+                    <!-- Champ honeypot anti-spam (caché pour les humains) -->
+                    <div style="display:none;">
+                        <label for="website">Ne pas remplir ce champ</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="form-group">
                         <label for="name">Nom *</label>
                         <input type="text" id="name" name="name" value="<?= htmlspecialchars($name) ?>" required>
@@ -118,11 +136,23 @@ include __DIR__ . '/../includes/header.php';
                         <label for="privacy">J'accepte le traitement de mes données conformément à la <a href="politique-confidentialite.php">politique de confidentialité</a> *</label>
                     </div>
 
-                    <button type="submit" class="submit-btn">Envoyer le message</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Envoyer le message</button>
                 </form>
             </div>
         </div>
     </section>
 </main>
+
+<script>
+    // Désactive le bouton submit après clic pour éviter les doubles envois
+    const form = document.querySelector('.form');
+    const submitBtn = document.getElementById('submitBtn');
+    if (form && submitBtn) {
+        form.addEventListener('submit', function() {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+        });
+    }
+</script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
