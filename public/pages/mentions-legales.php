@@ -13,7 +13,7 @@ include __DIR__ . '/../includes/header.php';
             <p>
                 Le site Tuto-PHP est édité par Maignaut Guillaume, travailleur indépendant.
                 <br>
-                Contact : g.maignaut@gmail.com / 0650428039
+                Contact : g.maignaut@gmail.com
                 <br>
                 Responsable de publication : Maignaut Guillaume
             </p>
@@ -55,9 +55,8 @@ include __DIR__ . '/../includes/header.php';
 
             <h2>7. Droit applicable</h2>
             <p>
-                Le présent site et ses mentions légales sont soumis au droit [français/de votre pays].
-                Tout litige relatif à l'utilisation du site sera soumis à la compétence exclusive des
-                tribunaux de [Votre Juridiction].
+                Le présent site et ses mentions légales sont soumis au droit français.<br>
+                Tout litige relatif à l'utilisation du site sera de la compétence exclusive des tribunaux français.
             </p>
         </article>
     </section>
