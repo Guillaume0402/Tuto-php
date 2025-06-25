@@ -33,7 +33,11 @@ define('SITE_AUTHOR', 'Guillaume Maignaut');
 define('SITE_GITHUB', 'https://github.com/Guillaume0402');
 
 // ----- Configuration de l'environnement -----
-define('ENVIRONMENT', 'development'); // Options : 'development' ou 'production'
+if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'herokuapp.com') !== false) {
+    define('ENVIRONMENT', 'production');
+} else {
+    define('ENVIRONMENT', 'development');
+} // Options : 'development' ou 'production'
 
 // ----- Configuration Google Analytics -----
 define('GA_TRACKING_ID', 'UA-XXXXXXXX-X'); // À remplacer par votre ID de suivi Google Analytics
