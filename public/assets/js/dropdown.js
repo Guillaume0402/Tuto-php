@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlay = document.querySelector(".header__overlay");
     const burger = document.querySelector(".header__burger");
     const nav = document.querySelector(".header__nav");
+    const burgerClose = document.querySelector(".burger-menu__close");
 
     modulesMenu.classList.remove("open");
     overlay.classList.remove("open");
@@ -37,16 +38,41 @@ document.addEventListener("DOMContentLoaded", function () {
     if (burger && nav) {
         burger.addEventListener("click", function () {
             if (window.innerWidth > 900) return;
-            nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+            const isOpen = document.body.classList.contains("menu-open");
+            if (isOpen) {
+                nav.style.display = "none";
+                document.body.classList.remove("menu-open");
+            } else {
+                nav.style.display = "flex";
+                document.body.classList.add("menu-open");
+            }
+        });
+    }
+    if (burgerClose && nav) {
+        burgerClose.addEventListener("click", function () {
+            nav.style.display = "none";
+            document.body.classList.remove("menu-open");
         });
     }
     if (closeBtn) closeBtn.addEventListener("click", closeModulesMenu);
     if (overlay) overlay.addEventListener("click", closeModulesMenu);
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") closeModulesMenu();
+        if (
+            e.key === "Escape" &&
+            document.body.classList.contains("menu-open")
+        ) {
+            if (nav) nav.style.display = "none";
+            document.body.classList.remove("menu-open");
+        }
     });
     window.addEventListener("resize", function () {
-        if (window.innerWidth > 900 && nav) nav.style.display = "flex";
-        if (window.innerWidth <= 900 && nav) nav.style.display = "none";
+        if (window.innerWidth > 900 && nav) {
+            nav.style.display = "flex";
+            document.body.classList.remove("menu-open");
+        }
+        if (window.innerWidth <= 900 && nav) {
+            nav.style.display = "none";
+            document.body.classList.remove("menu-open");
+        }
     });
 });

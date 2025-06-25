@@ -57,25 +57,49 @@
     color: #3a86ff;
 }
 .header__burger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    gap: 6px;
-    z-index: 1100;
+    position: relative !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: none !important;
+    border: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2000 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
 }
 .header__burger span {
-    display: block;
-    width: 26px;
-    height: 3px;
-    background: #fff;
-    border-radius: 2px;
-    transition: all 0.3s;
+    position: absolute !important;
+    left: 2px !important;
+    width: 28px !important;
+    height: 3px !important;
+    background: #fff !important;
+    border-radius: 2px !important;
+    transition: 0.3s !important;
+    opacity: 1 !important;
+}
+/* Positionnement initial des barres */
+.header__burger span:nth-child(1) {
+    top: 7px !important;
+}
+.header__burger span:nth-child(2) {
+    top: 14px !important;
+}
+.header__burger span:nth-child(3) {
+    top: 21px !important;
+}
+/* Animation burger -> croix */
+body.menu-open .header__burger span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 14px !important;
+}
+body.menu-open .header__burger span:nth-child(2) {
+    opacity: 0 !important;
+}
+body.menu-open .header__burger span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 14px !important;
 }
 /* --- MENU MODULES --- */
 .header__modules-menu {
@@ -104,8 +128,8 @@
     padding: 1rem 1.5rem 1rem 1.5rem;
     font-size: 1.1rem;
     font-weight: bold;
-    background: #f8f9fa;
-    color: #232946;
+    background: #012a53;
+    color: #ffffff;
     border-bottom: 1px solid #e0e0e0;
     position: sticky;
     top: 0;
@@ -115,7 +139,7 @@
     background: none;
     border: none;
     font-size: 2rem;
-    color: #232946;
+    color: #ffffff;
     cursor: pointer;
     padding: 0 8px;
     line-height: 1;
@@ -163,8 +187,9 @@
         display: none;
         flex-direction: column;
         align-items: stretch;
+        gap: 0;
         width: 100vw;
-        height: 40vh;
+        height: auto;
         background: var(--header-bg, #232946);
         position: fixed;
         top: 150px;
@@ -183,7 +208,7 @@
         color: #ffffff !important;
     }
     .header__link {
-        padding: 1.2rem 2rem;
+        padding: 2rem 2rem;
         border-bottom: 1px solid #e0e0e0;
         font-size: 1.08rem;
         background: none;
@@ -195,7 +220,7 @@
     }
     .header__link:hover,
     .header__link:focus {
-        background: #f3f6fa;
+        background: #f3f6fa33;
         color: #3a86ff;
     }
     .header__burger {
@@ -212,8 +237,8 @@
         max-height: 100vh;
         border-radius: 0;
         box-shadow: none;
-        background: #fff;
-        color: #232946;
+        background: #232946;
+        color: #ffffff21;
         padding-bottom: 0;
         flex-direction: column;
         overflow-y: auto;
@@ -222,7 +247,7 @@
     }
     .header__modules-header {
         background: #f8f9fa;
-        color: #232946;
+        color: #fff;
         border-bottom: 1px solid #e0e0e0;
         position: fixed;
         top: 0;
@@ -234,6 +259,19 @@
         align-items: center;
         justify-content: space-between;
     }
+
+    .burger-menu__close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 2.5rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
     .header__close {
         position: absolute;
         top: 18px;
@@ -253,7 +291,7 @@
         margin-top: 1rem;
     }
     .header__module {
-        color: #232946;
+        color: #fff;
         border-bottom: 1px solid #e0e0e0;
         font-size: 1.08rem;
         padding: 1.2rem 2rem;
@@ -262,5 +300,31 @@
     .header__module:focus {
         background: #f3f6fa;
         color: #3a86ff;
+    }
+}
+
+/* Masquer la croix par défaut */
+.burger-menu__close {
+    display: none;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+/* Afficher la croix quand le menu est ouvert en mobile */
+body.menu-open .burger-menu__close {
+    display: block;
+}
+
+/* Toujours cacher la croix en desktop */
+@media (min-width: 900px) {
+    .burger-menu__close {
+        display: none !important;
     }
 }
