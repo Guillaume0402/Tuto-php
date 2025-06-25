@@ -134,10 +134,10 @@ $description = "Créez un système de routage efficace pour vos applications web
             <div class="examples-list">
                 <div class="example">
                     <div class="example-header">Classe Router</div>
-                    <div class="example-description">
-                        <p>Voici l'implémentation centrale du routeur. Cette classe gère l'enregistrement des routes pour différentes méthodes HTTP (GET, POST), le stockage des callbacks associés, et le dispatching des requêtes vers les contrôleurs appropriés. Notez la structure de données en deux dimensions qui organise les routes par méthode HTTP puis par chemin.</p>
-                    </div>
                     <div class="example-content">
+                        <div class="note">
+                            Voici l'implémentation centrale du routeur. Cette classe gère l'enregistrement des routes pour différentes méthodes HTTP (GET, POST), le stockage des callbacks associés, et le dispatching des requêtes vers les contrôleurs appropriés. Notez la structure de données en deux dimensions qui organise les routes par méthode HTTP puis par chemin.
+                        </div>
                         <pre><code class="language-php"><span class="comment">// /src/Router/Router.php</span>
 
 <span class="keyword">namespace</span> App\Router;

@@ -260,6 +260,30 @@ COMPOSANTS
     color: white;
 }
 
+
+.note {
+    display: flex;
+    align-items: flex-start;
+    background: #eaf3ff;
+    border-left: 5px solid #3a86ff;
+    color: #1a2a3a;
+    padding: 1em 1.2em;
+    margin: 1.2em 0;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+    line-height: 1.6;
+    position: relative;
+}
+.note::before {
+    content: "💡";
+    font-size: 1.4em;
+    margin-right: 0.7em;
+    margin-top: 0.1em;
+    flex-shrink: 0;
+}
+
+
 /* Responsive */
 @media (max-width: 900px) {
     .examples-grid {
@@ -272,3 +296,5 @@ COMPOSANTS
         align-items: center;
     }
 }
+
+
