@@ -20,7 +20,9 @@ include __DIR__ . '/../includes/header.php';
 
             <h2>2. Hébergement</h2>
             <p>
-                Ce site est hébergé par [Nom de l'Hébergeur], [Adresse de l'Hébergeur], [Contact de l'Hébergeur].
+                Ce site est hébergé par <strong>Heroku (Salesforce.com, Inc.)</strong>, plateforme cloud américaine.<br>
+                Adresse : Salesforce Tower, 415 Mission Street, 3rd Floor, San Francisco, CA 94105, États-Unis.<br>
+                Plus d’informations sur <a href="https://www.heroku.com/" target="_blank" rel="noopener">www.heroku.com</a>
             </p>
 
             <h2>3. Propriété intellectuelle</h2>
