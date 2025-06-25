@@ -60,7 +60,7 @@
         <div class="header__overlay"></div>
     </header>
     <main>
-        ```
+        
     </main>
     <!-- Déplacement du script ici pour garantir que le DOM est prêt -->
     <script src="<?= BASE_URL ?>/assets/js/dropdown.js"></script>
