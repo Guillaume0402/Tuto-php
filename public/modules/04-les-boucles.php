@@ -15,9 +15,9 @@ $description = "Découvrez comment répéter des opérations avec les différent
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="03-les-conditions.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="05-les-fonctions.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/03-les-conditions.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/05-les-fonctions.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
@@ -554,9 +554,9 @@ $description = "Découvrez comment répéter des opérations avec les différent
     </section>
 
     <div class="navigation">
-        <a href="03-les-conditions.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="05-les-fonctions.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/03-les-conditions.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/05-les-fonctions.php" class="nav-button">Module suivant →</a>
     </div>
 </main>
 

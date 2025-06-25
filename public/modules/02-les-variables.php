@@ -38,9 +38,9 @@ $$nomVariable = 29.99; // $prix vaut maintenant 29.99
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="01-script.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="03-les-conditions.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/01-script.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/03-les-conditions.php" class="nav-button">Module suivant →</a>
 </div>
 
 <main>
@@ -312,9 +312,9 @@ $$nomVariable <span class="operator">=</span> <span class="number">29.99</span><
     </section>
 
     <div class="navigation">
-        <a href="01-script.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="03-les-conditions.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/01-script.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/03-les-conditions.php" class="nav-button">Module suivant →</a>
     </div>
 </main>
 

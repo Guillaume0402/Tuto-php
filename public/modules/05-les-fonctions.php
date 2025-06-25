@@ -63,9 +63,9 @@ $multiplier = fn($a, $b) => $a * $b;
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="04-les-boucles.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="06-les-tableaux.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/04-les-boucles.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/06-les-tableaux.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
@@ -1033,9 +1033,9 @@ function calculer(string $operation, float $nombre1, float $nombre2): ?float {
 </script>
 
 <div class="navigation">
-    <a href="04-les-boucles.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="06-les-tableaux.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/04-les-boucles.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/06-les-tableaux.php" class="nav-button">Module suivant →</a>
 </div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

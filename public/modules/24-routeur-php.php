@@ -12,8 +12,8 @@ $description = "Créez un système de routage efficace pour vos applications web
         <p class="subtitle"><?= $description ?></p>
     </div>
     <div class="navigation">
-        <a href="23-composer-autoloading.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/23-composer-autoloading.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
         <a class="nav-button" style="visibility: hidden;">Module suivant →</a>
     </div>
 

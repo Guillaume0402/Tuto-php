@@ -179,9 +179,9 @@ $chien = new Chien("Rex", 3, "Berger Allemand");
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="10-POO-les-classes.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="12-bases-de-donnees.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/10-POO-les-classes.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/12-bases-de-donnees.php" class="nav-button">Module suivant →</a>
 </div>
 
 <main>
@@ -199,7 +199,7 @@ $chien = new Chien("Rex", 3, "Berger Allemand");
         </ul>
 
         <div class="info-box">
-            <p><strong>Prérequis :</strong> Pour bien comprendre ce module, vous devez déjà maîtriser les concepts de base de la POO présentés dans le <a href="10-POO-les-classes.php">module précédent</a>.</p>
+            <p><strong>Prérequis :</strong> Pour bien comprendre ce module, vous devez déjà maîtriser les concepts de base de la POO présentés dans le <a href="<?= BASE_URL ?>/modules/10-POO-les-classes.php">module précédent</a>.</p>
         </div>
     </section>
 

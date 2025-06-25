@@ -100,9 +100,9 @@ class Etudiant extends Personne
     <p class="subtitle"><?php echo $description; ?></p>
 </div>
 <div class="navigation">
-    <a href="09-les-formulaires.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="11-POO-avancee.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/09-les-formulaires.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/11-POO-avancee.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">

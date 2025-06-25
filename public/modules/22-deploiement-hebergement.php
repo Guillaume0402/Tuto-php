@@ -10,9 +10,9 @@ $description = "Apprenez à préparer votre application PHP pour la production, 
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="21-internationalisation.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="23-composer-autoloading.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/21-internationalisation.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/23-composer-autoloading.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">

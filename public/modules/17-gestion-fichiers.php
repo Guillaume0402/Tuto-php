@@ -18,9 +18,9 @@ $description = $pageInfo['description'];
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="16-api-externes.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="18-tests-unitaires.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/16-api-externes.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/18-tests-unitaires.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
@@ -216,9 +216,9 @@ $description = $pageInfo['description'];
     </section>
 
     <div class="navigation">
-        <a href="16-api-externes.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="18-tests-unitaires.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/16-api-externes.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/18-tests-unitaires.php" class="nav-button">Module suivant →</a>
     </div>
 </main>
 

@@ -7,7 +7,21 @@
 
 // ----- Configuration générale du site -----
 define('SITE_ROOT', '/Tuto-php/');
-define('BASE_URL', '/Tuto-php/public/');
+// BASE_URL dynamique pour fonctionner en local et en prod
+function getBaseUrl()
+{
+    $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
+    $host = $_SERVER['HTTP_HOST'];
+    // On cherche la position de "/public" dans le chemin du script
+    $publicPos = strpos($_SERVER['SCRIPT_NAME'], '/public/');
+    if ($publicPos !== false) {
+        $base = substr($_SERVER['SCRIPT_NAME'], 0, $publicPos + 7); // 7 = strlen('/public')
+        return $protocol . '://' . $host . $base;
+    }
+    // fallback
+    return $protocol . '://' . $host;
+}
+define('BASE_URL', getBaseUrl());
 define('SITE_VERSION', '1.0.2');
 define('SITE_NAME', 'Tuto-PHP');
 define('SITE_AUTHOR', 'Guillaume Maignaut');

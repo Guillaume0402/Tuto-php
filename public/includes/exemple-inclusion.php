@@ -5,9 +5,11 @@
  * Ce fichier montre comment inclure des en-têtes, des fonctions et des pieds de page
  */
 
+// Fichier d'exemple pédagogique, non utilisé en production
+
 // Inclusion des fichiers nécessaires
-require_once 'config.php';
-require_once 'functions.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/functions.php';
 
 // Variables spécifiques à cette page
 $titre = "Démonstration des Inclusions";
@@ -15,7 +17,7 @@ $description = "Cet exemple montre comment utiliser include et require en PHP";
 $auteur = "Équipe de développement PHP";
 
 // Inclusion de l'en-tête
-include 'header.php';
+include __DIR__ . '/header.php';
 
 // Contenu spécifique à la page
 ?>
@@ -65,5 +67,5 @@ include 'header.php';
 
 <?php
 // Inclusion du pied de page
-include 'footer.php';
+include __DIR__ . '/footer.php';
 ?>

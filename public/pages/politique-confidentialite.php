@@ -49,7 +49,7 @@ include __DIR__ . '/../includes/header.php';
                 <li>Droit d'opposition</li>
             </ul>
             <p>
-                Pour exercer ces droits, contactez-nous à [votre adresse e-mail].
+                Pour exercer ces droits, contactez-nous à <a href="mailto:g.maignaut@gmail.com">g.maignaut@gmail.com</a>.
             </p>
 
             <h2>5. Cookies</h2>

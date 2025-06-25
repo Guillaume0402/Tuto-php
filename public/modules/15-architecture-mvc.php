@@ -9,9 +9,9 @@ include __DIR__ . '/../includes/header.php'; ?>
         <p class="subtitle"><?= $description ?? '' ?></p>
     </div>
     <div class="navigation">
-        <a href="14-securite.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="16-api-externes.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/14-securite.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/16-api-externes.php" class="nav-button">Module suivant →</a>
     </div>
     <main>
         <section class="section">
@@ -1524,9 +1524,9 @@ blog-mvc/
                 </div>
             </section>
             <div class="navigation">
-                <a href="14-securite.php" class="nav-button">← Module précédent</a>
-                <a href="../../index.php" class="nav-button">Accueil</a>
-                <a href="16-api-externes.php" class="nav-button">Module suivant →</a>
+                <a href="<?= BASE_URL ?>/modules/14-securite.php" class="nav-button">← Module précédent</a>
+                <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+                <a href="<?= BASE_URL ?>/modules/16-api-externes.php" class="nav-button">Module suivant →</a>
             </div>
     </main>
 

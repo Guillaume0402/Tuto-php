@@ -9,9 +9,9 @@ include __DIR__ . '/../includes/header.php'; ?>
         <p class="subtitle">Protégez vos applications PHP contre les vulnérabilités courantes et mettez en œuvre les bonnes pratiques de sécurité.</p>
     </div>
     <div class="navigation">
-        <a href="13-php-ajax.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="15-architecture-mvc.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/13-php-ajax.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/15-architecture-mvc.php" class="nav-button">Module suivant →</a>
     </div>
     <main>
         <section class="section">
@@ -985,7 +985,7 @@ include __DIR__ . '/../includes/header.php'; ?>
     <span class="string">'session.use_strict_mode'</span> => [<span class="string">'value'</span> => <span class="string>'1'</span>, <span class="string">'risk'</span> => <span class="string>'high'</span>],
     <span class="string">'session.use_only_cookies'</span> => [<span class="string">'value'</span> => <span class="string>'1'</span>, <span class="string">'risk'</span> => <span class="string>'high'</span>],
     <span class="string">'session.cookie_httponly'</span> => [<span class="string">'value'</span> => <span class="string>'1'</span>, <span class="string">'risk'</span> => <span class="string>'high'</span>],
-    <span class="string">'session.cookie_secure'</span> => [<span class="string">'value'</span> => <span class="string>'1'</span>, <span class="string">'risk'</span> => <span class="string>'high'</span>],
+    <span class="string">'session.cookie_secure'</span> => [<span class="string">'value'</span> => <span class="string>'1'</span>, <span class="string">'risk'</span> => <span class="string">'high'</span>],
     <span class="string">'session.cookie_samesite'</span> => [<span class="string">'value'</span> => <span class="string>'Lax'</span>, <span class="string">'risk'</span> => <span class="string">'medium'</span>]
 ];
 
@@ -1083,9 +1083,9 @@ include __DIR__ . '/../includes/header.php'; ?>
         </section>
     </main>
     <div class="navigation">
-        <a href="13-php-ajax.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="15-architecture-mvc.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/13-php-ajax.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/15-architecture-mvc.php" class="nav-button">Module suivant →</a>
     </div>
 
 

@@ -7,9 +7,9 @@ include __DIR__ . '/../includes/header.php'; ?>
     <p class="subtitle">Maîtrisez l'interaction avec les bases de données MySQL en PHP : connexion, requêtes SQL, et PDO.</p>
 </div>
 <div class="navigation">
-    <a href="11-POO-avancee.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="13-php-ajax.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/11-POO-avancee.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/13-php-ajax.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
@@ -1034,9 +1034,9 @@ include __DIR__ . '/../includes/header.php'; ?>
         </div>
     </section>
     <div class="navigation">
-        <a href="11-POO-avancee.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="13-php-ajax.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/11-POO-avancee.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/13-php-ajax.php" class="nav-button">Module suivant →</a>
     </div>
 </main>
 

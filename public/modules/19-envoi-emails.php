@@ -10,9 +10,9 @@ $description = "Apprenez à envoyer des e-mails avec PHP, des options basiques a
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="18-tests-unitaires.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="20-sessions-authentification.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/18-tests-unitaires.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/20-sessions-authentification.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
@@ -776,9 +776,9 @@ $description = "Apprenez à envoyer des e-mails avec PHP, des options basiques a
         </div>
     </section>
     <div class="navigation">
-        <a href="18-tests-unitaires.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="20-sessions-authentification.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/18-tests-unitaires.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/20-sessions-authentification.php" class="nav-button">Module suivant →</a>
     </div>
 </main>
 

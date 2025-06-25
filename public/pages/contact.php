@@ -133,7 +133,7 @@ include __DIR__ . '/../includes/header.php';
 
                     <div class="form-group privacy-consent">
                         <input type="checkbox" id="privacy" name="privacy" required>
-                        <label for="privacy">J'accepte le traitement de mes données conformément à la <a href="politique-confidentialite.php">politique de confidentialité</a> *</label>
+                        <label for="privacy">J'accepte le traitement de mes données conformément à la <a href="<?= BASE_URL ?>/pages/politique-confidentialite.php">politique de confidentialité</a> *</label>
                     </div>
 
                     <button type="submit" class="submit-btn" id="submitBtn">Envoyer le message</button>

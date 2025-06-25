@@ -36,7 +36,7 @@ include __DIR__ . '/../includes/header.php';
             <p>
                 Ce site respecte la vie privée des utilisateurs et se conforme au Règlement Général sur la Protection des
                 Données (RGPD). Pour plus d'informations, veuillez consulter notre page de
-                <a href="politique-confidentialite.php">Politique de confidentialité</a>.
+                <a href="<?= BASE_URL ?>/pages/politique-confidentialite.php">Politique de confidentialité</a>.
             </p>
 
             <h2>5. Cookies</h2>

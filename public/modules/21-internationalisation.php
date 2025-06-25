@@ -10,9 +10,9 @@ $description = "Apprenez à créer des sites multilingues en PHP en utilisant di
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="20-sessions-authentification.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="22-deploiement-hebergement.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/20-sessions-authentification.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/22-deploiement-hebergement.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
