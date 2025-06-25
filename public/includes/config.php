@@ -10,7 +10,12 @@ define('SITE_ROOT', '/Tuto-php/');
 // BASE_URL dynamique pour fonctionner en local et en prod
 function getBaseUrl()
 {
-    $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
+    // Forcer https en production Heroku
+    if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'herokuapp.com') !== false) {
+        $protocol = 'https';
+    } else {
+        $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
+    }
     $host = $_SERVER['HTTP_HOST'];
     // On cherche la position de "/public" dans le chemin du script
     $publicPos = strpos($_SERVER['SCRIPT_NAME'], '/public/');
