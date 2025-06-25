@@ -11,7 +11,7 @@ if (!defined('SITE_VERSION')) {
             <h3>Navigation</h3>
             <nav class="footer-nav">
                 <ul>
-                    <li><a href="<?= SITE_ROOT ?>" class="no-module-color">Accueil</a></li>
+                    <li><a href="<?= BASE_URL ?>/" class="no-module-color">Accueil</a></li>
                     <li><a href="<?= BASE_URL ?>/modules/01-script.php">Premiers pas</a></li>
                     <li><a href="<?= BASE_URL ?>/modules/12-bases-de-donnees.php">Bases de données</a></li>
                     <li><a href="<?= BASE_URL ?>/modules/24-routeur-php.php">Routeur PHP</a></li>
