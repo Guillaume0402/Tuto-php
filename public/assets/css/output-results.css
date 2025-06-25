@@ -1,47 +1,7 @@
 /* 
-   STYLES POUR LES SORTIES ET RÉSULTATS PHP
-   Styles pour l'affichage des résultats d'exécution du code PHP
+STYLES POUR LES SORTIES ET RÉSULTATS PHP
+Styles pour l'affichage des résultats d'exécution du code PHP
 */
-
-/* Styles pour l'affichage des tableaux PHP */
-.array-output {
-    font-family: var(--font-mono);
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    white-space: pre-wrap;
-    word-break: break-word;
-    overflow-x: auto;
-}
-
-/* Amélioration pour les print_r */
-pre.array-result {
-    background-color: #f8f9fa !important; /* Priorité élevée pour éviter les fonds sombres */
-    color: #333 !important;
-    border: 1px solid #eee;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
-}
-
-/* Style pour le contenu affiché dans les résultats */
-.output-container {
-    background-color: #f8f9fa;
-    color: #333;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #eee;
-}
-
-/* Style pour les valeurs retournées */
-.return-value {
-    font-weight: 600;
-    color: var(--primary-dark);
-}
 
 /* Styles généraux pour rendre les sorties PHP lisibles partout */
 pre,
@@ -82,34 +42,7 @@ pre.array-result {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Style pour les éléments dans les résultats */
-.result * {
-    color: #333 !important;
-}
-
-/* Force le fond clair pour les résultats */
-.force-light,
-.force-light * {
-    background-color: #fff !important;
-    color: #333 !important;
-}
-
-/* Amélioration de la présentation des sorties print_r */
-pre.array-result .array,
-pre.array-result .object {
-    color: #333 !important;
-    font-weight: bold !important;
-}
-
-pre.array-result .string {
-    color: #d63384 !important;
-}
-
-pre.array-result .number {
-    color: #0d6efd !important;
-}
-
-/* Styles pour les tableaux noirs dans les résultats */
+/* Styles pour les tableaux dans les résultats */
 .result table {
     background-color: white;
     color: #333;

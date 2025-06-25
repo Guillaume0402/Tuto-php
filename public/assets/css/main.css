@@ -10,7 +10,7 @@ Point d'entrée central qui importe tous les fichiers CSS modulaires
 @import "base.css";
 
 /* En-tête professionnel */
-@import "header-pro.css";
+@import "header.css";
 
 /* Composants réutilisables */
 @import "components.css";
@@ -31,25 +31,24 @@ Point d'entrée central qui importe tous les fichiers CSS modulaires
 @import "poo.css";
 
 /* Styles pour la page d'index */
-@import "index-page-new.css";
+@import "index.css";
 
 /* Styles pour les explications du routeur PHP */
-@import "routeur-explanations.css";
+/* @import "routeur-explanations.css";  // supprimé car le fichier n'existe pas */
 
 /* Styles pour les tableaux et les listes */
 @import "db-diagram.css";
 
 /* Styles pour les sorties et résultats PHP */
-@import "output-results.css";
+/* @import "output-results.css";  // supprimé car le fichier n'existe pas */
 
 /* Styles spécifiques aux modules */
 @import "module-specific.css";
 
 /* Corrections pour les méthodes HTTP et tableaux */
-@import "http-methods-fix.css";
+/* @import "http-methods-fix.css";  // supprimé car le fichier n'existe pas */
 @import "routeur-fix.css";
 @import "tables-relations-fix.css";
-
 
 /* Styles responsifs */
 @import "responsive.css";
@@ -155,28 +154,10 @@ body.module17 {
     --primary-dark: var(--module17-dark);
     --primary-light: var(--module17-light);
 }
-
-/* Style pour l'en-tête des pages */
-.page-header {
-    background: var(--primary-color, #3a86ff);
-    padding: 2rem 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    color: white;
+body.index-page {
+    --primary-color: var(--module1-color);
+    --primary-dark: var(--module7-dark);
 }
-
-.page-header h1 {
-    margin-top: 0;
-    color: white;
-}
-
-.page-header p {
-    margin-bottom: 0;
-    opacity: 0.9;
-}
-
-/* Ce contenu a été déplacé vers module-specific.css */
 
 /* Style pour l'en-tête des pages */
 .page-header {
@@ -244,3 +225,36 @@ body.module17 {
 /* Les styles spécifiques aux modules ont été déplacés vers module-specific.css */
 
 /* Les styles responsifs ont été déplacés vers responsive.css */
+
+/* HEADER PRINCIPAL : couleur fixe */
+.header {
+    background: var(--header-bg, #232946);
+    color: #fff;
+}
+.header__container,
+.header__nav,
+.header__link,
+.header__logo {
+    color: #fff;
+}
+.header__link--blue {
+    color: #3a86ff;
+}
+
+/* COLORATION DYNAMIQUE DES MODULES */
+/* SUPPRIMÉ : .module-header { ... } et variantes, car déjà défini dans module-specific.css */
+
+.nav-button {
+    background: var(--primary-color, #3a86ff);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.nav-button:hover {
+    background: var(--primary-dark, #2563eb);
+}
+
+/* Les variables de couleurs de modules sont déjà définies via body.moduleX dans ce fichier et variables.css */

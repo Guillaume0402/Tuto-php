@@ -1,83 +1,83 @@
-<?php include __DIR__ . '/../includes/header-pro.php'; ?>
+<?php
+$moduleClass = 'module13';
+include __DIR__ . '/../includes/header.php'; ?>
 
+<div class="module-header">
+    <h1>PHP et AJAX</h1>
+    <p class="subtitle">Créez des applications web dynamiques en combinant PHP et AJAX pour des mises à jour sans rechargement de page.</p>
+</div>
+<div class="navigation">
+    <a href="12-bases-de-donnees.php" class="nav-button">← Module précédent</a>
+    <a href="../../index.php" class="nav-button">Accueil</a>
+    <a href="14-securite.php" class="nav-button">Module suivant →</a>
+</div>
+<main>
+    <section class="section">
+        <h2>Introduction à AJAX avec PHP</h2>
+        <p>AJAX (Asynchronous JavaScript And XML) est une technique de développement web qui permet de créer des applications web interactives. Grâce à AJAX, les applications web peuvent envoyer et récupérer des données d'un serveur de façon asynchrone, sans interférer avec l'affichage et le comportement de la page existante.</p>
 
-<body class="module13">
-    <header>
-        <h1>PHP et AJAX</h1>
-        <p class="subtitle">Créez des applications web dynamiques en combinant PHP et AJAX pour des mises à jour sans rechargement de page.</p>
-    </header>
-    <div class="navigation">
-        <a href="12-bases-de-donnees.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="14-securite.php" class="nav-button">Module suivant →</a>
-    </div>
-    <main>
-        <section class="section">
-            <h2>Introduction à AJAX avec PHP</h2>
-            <p>AJAX (Asynchronous JavaScript And XML) est une technique de développement web qui permet de créer des applications web interactives. Grâce à AJAX, les applications web peuvent envoyer et récupérer des données d'un serveur de façon asynchrone, sans interférer avec l'affichage et le comportement de la page existante.</p>
+        <h3>Pourquoi utiliser AJAX avec PHP ?</h3>
+        <ul>
+            <li><strong>Amélioration de l'expérience utilisateur</strong> : Mise à jour des parties spécifiques de la page sans rechargement complet</li>
+            <li><strong>Réduction de la charge serveur</strong> : Récupération de données ciblées plutôt que de générer des pages entières</li>
+            <li><strong>Applications web plus réactives</strong> : Interface utilisateur fluide et dynamique</li>
+            <li><strong>Interaction asynchrone</strong> : Exécution d'autres scripts pendant le chargement des données</li>
+        </ul>
 
-            <h3>Pourquoi utiliser AJAX avec PHP ?</h3>
-            <ul>
-                <li><strong>Amélioration de l'expérience utilisateur</strong> : Mise à jour des parties spécifiques de la page sans rechargement complet</li>
-                <li><strong>Réduction de la charge serveur</strong> : Récupération de données ciblées plutôt que de générer des pages entières</li>
-                <li><strong>Applications web plus réactives</strong> : Interface utilisateur fluide et dynamique</li>
-                <li><strong>Interaction asynchrone</strong> : Exécution d'autres scripts pendant le chargement des données</li>
-            </ul>
-
-            <div class="ajax-lifecycle">
-                <h4>Cycle de vie d'une requête AJAX</h4>
-                <p>Comprendre le cycle de vie complet d'une requête AJAX est essentiel pour développer des applications web robustes :</p>
-                <div class="ajax-lifecycle-diagram">
-                    <div class="lifecycle-step">
-                        <h5>1. Déclencheur</h5>
-                        <p>Un événement utilisateur (clic, saisie) ou un timer déclenche une requête AJAX</p>
-                    </div>
-                    <div class="lifecycle-step">
-                        <h5>2. Création</h5>
-                        <p>Création d'un objet XMLHttpRequest ou utilisation de l'API Fetch</p>
-                    </div>
-                    <div class="lifecycle-step">
-                        <h5>3. Envoi</h5>
-                        <p>Configuration et envoi de la requête HTTP vers le serveur PHP</p>
-                    </div>
-                    <div class="lifecycle-step">
-                        <h5>4. Traitement</h5>
-                        <p>Le script PHP traite la demande et prépare une réponse</p>
-                    </div>
-                    <div class="lifecycle-step">
-                        <h5>5. Mise à jour</h5>
-                        <p>JavaScript reçoit la réponse et met à jour le DOM en conséquence</p>
-                    </div>
+        <div class="ajax-lifecycle">
+            <h4>Cycle de vie d'une requête AJAX</h4>
+            <p>Comprendre le cycle de vie complet d'une requête AJAX est essentiel pour développer des applications web robustes :</p>
+            <div class="ajax-lifecycle-diagram">
+                <div class="lifecycle-step">
+                    <h5>1. Déclencheur</h5>
+                    <p>Un événement utilisateur (clic, saisie) ou un timer déclenche une requête AJAX</p>
                 </div>
-                <p>Cette nature asynchrone signifie que le navigateur n'attend pas la réponse du serveur - le reste de l'application continue de fonctionner normalement pendant ce temps.</p>
+                <div class="lifecycle-step">
+                    <h5>2. Création</h5>
+                    <p>Création d'un objet XMLHttpRequest ou utilisation de l'API Fetch</p>
+                </div>
+                <div class="lifecycle-step">
+                    <h5>3. Envoi</h5>
+                    <p>Configuration et envoi de la requête HTTP vers le serveur PHP</p>
+                </div>
+                <div class="lifecycle-step">
+                    <h5>4. Traitement</h5>
+                    <p>Le script PHP traite la demande et prépare une réponse</p>
+                </div>
+                <div class="lifecycle-step">
+                    <h5>5. Mise à jour</h5>
+                    <p>JavaScript reçoit la réponse et met à jour le DOM en conséquence</p>
+                </div>
             </div>
+            <p>Cette nature asynchrone signifie que le navigateur n'attend pas la réponse du serveur - le reste de l'application continue de fonctionner normalement pendant ce temps.</p>
+        </div>
 
-            <h3>Le rôle de PHP dans les applications AJAX</h3>
-            <p>Dans une architecture AJAX, PHP agit comme le <strong>backend</strong> qui :</p>
-            <ul>
-                <li>Reçoit les requêtes AJAX envoyées par le navigateur</li>
-                <li>Traite ces requêtes (interrogation de base de données, calculs, etc.)</li>
-                <li>Prépare et renvoie des données formatées (JSON, HTML, XML)</li>
-                <li>Gère les sessions utilisateur et l'authentification</li>
-                <li>Effectue des validations et traitements de sécurité</li>
-            </ul>
-            <p>Le PHP est particulièrement bien adapté pour les applications AJAX car il peut générer dynamiquement n'importe quel format de réponse nécessaire et possède des fonctions intégrées pour manipuler facilement le JSON, format le plus utilisé avec AJAX.</p>
+        <h3>Le rôle de PHP dans les applications AJAX</h3>
+        <p>Dans une architecture AJAX, PHP agit comme le <strong>backend</strong> qui :</p>
+        <ul>
+            <li>Reçoit les requêtes AJAX envoyées par le navigateur</li>
+            <li>Traite ces requêtes (interrogation de base de données, calculs, etc.)</li>
+            <li>Prépare et renvoie des données formatées (JSON, HTML, XML)</li>
+            <li>Gère les sessions utilisateur et l'authentification</li>
+            <li>Effectue des validations et traitements de sécurité</li>
+        </ul>
+        <p>Le PHP est particulièrement bien adapté pour les applications AJAX car il peut générer dynamiquement n'importe quel format de réponse nécessaire et possède des fonctions intégrées pour manipuler facilement le JSON, format le plus utilisé avec AJAX.</p>
 
-            <div class="info-box">
-                <p><strong>Prérequis :</strong> Pour ce module, vous devez avoir des connaissances de base en JavaScript, en manipulation du DOM et en PHP, notamment la compréhension des requêtes HTTP.</p>
-            </div>
-        </section>
+        <div class="info-box">
+            <p><strong>Prérequis :</strong> Pour ce module, vous devez avoir des connaissances de base en JavaScript, en manipulation du DOM et en PHP, notamment la compréhension des requêtes HTTP.</p>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Les bases d'une requête AJAX</h2>
+    <section class="section">
+        <h2>Les bases d'une requête AJAX</h2>
 
-            <h3>1. Avec JavaScript natif (XMLHttpRequest)</h3>
-            <p>L'objet XMLHttpRequest est l'approche traditionnelle pour effectuer des requêtes AJAX. Bien que plus verbeux que les méthodes modernes, il reste utile pour comprendre les mécanismes fondamentaux.</p>
+        <h3>1. Avec JavaScript natif (XMLHttpRequest)</h3>
+        <p>L'objet XMLHttpRequest est l'approche traditionnelle pour effectuer des requêtes AJAX. Bien que plus verbeux que les méthodes modernes, il reste utile pour comprendre les mécanismes fondamentaux.</p>
 
-            <div class="example">
-                <div class="example-header">Requête AJAX simple avec XMLHttpRequest</div>
-                <div class="example-content">
-                    <pre><code class="language-javascript">
+        <div class="example">
+            <div class="example-header">Requête AJAX simple avec XMLHttpRequest</div>
+            <div class="example-content">
+                <pre><code class="language-javascript">
 <span class="comment">// Code côté client (JavaScript)</span>
 <span class="keyword">function</span> <span class="function">chargerDonnees</span>() {
     <span class="keyword">var</span> <span class="variable">xhr</span> = <span class="keyword">new</span> <span class="class-name">XMLHttpRequest</span>();
@@ -96,13 +96,13 @@
     <span class="variable">xhr</span>.<span class="function">send</span>();
 }
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <div class="example">
-                <div class="example-header">Code PHP pour traiter la requête AJAX</div>
-                <div class="example-content">
-                    <pre><code class="language-php">
+        <div class="example">
+            <div class="example-header">Code PHP pour traiter la requête AJAX</div>
+            <div class="example-content">
+                <pre><code class="language-php">
 <span class="comment">// getData.php - Code côté serveur</span>
 <span class="keyword">header</span>(<span class="string">'Content-Type: text/html; charset=utf-8'</span>);
 
@@ -118,16 +118,16 @@
 <span class="keyword">echo</span> <span class="string">"Heure : "</span> . <span class="variable">$donnees</span>[<span class="string">"heure"</span>] . <span class="string">"&lt;br&gt;"</span>;
 <span class="keyword">echo</span> <span class="string">"Date : "</span> . <span class="variable">$donnees</span>[<span class="string">"date"</span>];
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <h3>2. Avec Fetch API (JavaScript moderne)</h3>
-            <p>L'API Fetch est une interface JavaScript moderne pour effectuer des requêtes HTTP. Elle utilise les Promises et offre une syntaxe plus élégante que XMLHttpRequest.</p>
+        <h3>2. Avec Fetch API (JavaScript moderne)</h3>
+        <p>L'API Fetch est une interface JavaScript moderne pour effectuer des requêtes HTTP. Elle utilise les Promises et offre une syntaxe plus élégante que XMLHttpRequest.</p>
 
-            <div class="example">
-                <div class="example-header">Requête AJAX avec l'API Fetch</div>
-                <div class="example-content">
-                    <pre><code class="language-javascript">
+        <div class="example">
+            <div class="example-header">Requête AJAX avec l'API Fetch</div>
+            <div class="example-content">
+                <pre><code class="language-javascript">
 <span class="comment">// Code côté client (JavaScript)</span>
 <span class="keyword">function</span> <span class="function">chargerDonneesAvecFetch</span>() {    <span class="function">fetch</span>(<span class="string">'getData.php'</span>)
         .<span class="function">then</span>(<span class="parameter">response</span> => {
@@ -144,20 +144,20 @@
         });
 }
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <div class="tip-box">
-                <p><strong>Astuce :</strong> L'API Fetch est généralement préférée pour les nouveaux projets car elle est plus moderne, plus puissante et utilise les Promises, ce qui facilite la gestion des opérations asynchrones.</p>
-            </div>
+        <div class="tip-box">
+            <p><strong>Astuce :</strong> L'API Fetch est généralement préférée pour les nouveaux projets car elle est plus moderne, plus puissante et utilise les Promises, ce qui facilite la gestion des opérations asynchrones.</p>
+        </div>
 
-            <h3>3. Avec des bibliothèques JavaScript (jQuery, Axios)</h3>
-            <p>De nombreuses bibliothèques JavaScript offrent des méthodes simplifiées pour effectuer des requêtes AJAX. Voici deux exemples populaires :</p>
+        <h3>3. Avec des bibliothèques JavaScript (jQuery, Axios)</h3>
+        <p>De nombreuses bibliothèques JavaScript offrent des méthodes simplifiées pour effectuer des requêtes AJAX. Voici deux exemples populaires :</p>
 
-            <div class="example">
-                <div class="example-header">Requête AJAX avec jQuery</div>
-                <div class="example-content">
-                    <pre><code class="language-javascript">
+        <div class="example">
+            <div class="example-header">Requête AJAX avec jQuery</div>
+            <div class="example-content">
+                <pre><code class="language-javascript">
 <span class="comment">// jQuery doit être inclus dans votre page</span>
 <span class="variable">$</span>(<span class="function">document</span>).<span class="function">ready</span>(<span class="keyword">function</span>() {
     <span class="variable">$</span>(<span class="string">'#boutonCharger'</span>).<span class="function">click</span>(<span class="keyword">function</span>() {
@@ -176,13 +176,13 @@
     });
 });
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <div class="example">
-                <div class="example-header">Requête AJAX avec Axios</div>
-                <div class="example-content">
-                    <pre><code class="language-javascript">
+        <div class="example">
+            <div class="example-header">Requête AJAX avec Axios</div>
+            <div class="example-content">
+                <pre><code class="language-javascript">
 <span class="comment">// Axios doit être inclus dans votre page</span>
 <span class="variable">document</span>.<span class="function">getElementById</span>(<span class="string">'boutonCharger'</span>).<span class="function">addEventListener</span>(<span class="string">'click'</span>, <span class="keyword">function</span>() {
     <span class="variable">axios</span>.<span class="function">get</span>(<span class="string">'getData.php'</span>)
@@ -197,90 +197,103 @@
         });
 });
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <h3>Tableau comparatif des méthodes AJAX</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Caractéristique</th>
-                        <th>XMLHttpRequest</th>
-                        <th>Fetch API</th>
-                        <th>jQuery Ajax</th>
-                        <th>Axios</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Natif au navigateur</td>
-                        <td>Oui</td>
-                        <td>Oui (moderne)</td>
-                        <td>Non (bibliothèque)</td>
-                        <td>Non (bibliothèque)</td>
-                    </tr>
-                    <tr>
-                        <td>Support des Promises</td>
-                        <td>Non</td>
-                        <td>Oui</td>
-                        <td>Via $.Deferred</td>
-                        <td>Oui</td>
-                    </tr>
-                    <tr>
-                        <td>Support async/await</td>
-                        <td>Non</td>
-                        <td>Oui</td>
-                        <td>Non (natif)</td>
-                        <td>Oui</td>
-                    </tr>
-                    <tr>
-                        <td>Gestion automatique JSON</td>
-                        <td>Non</td>
-                        <td>Via .json()</td>
-                        <td>Oui</td>
-                        <td>Oui</td>
-                    </tr>
-                    <tr>
-                        <td>Gestion des erreurs</td>
-                        <td>Manuelle</td>
-                        <td>Via .catch()</td>
-                        <td>Via error callback</td>
-                        <td>Via .catch()</td>
-                    </tr>
-                    <tr>
-                        <td>Annulation de requêtes</td>
-                        <td>Oui</td>
-                        <td>Via AbortController</td>
-                        <td>Oui</td>
-                        <td>Oui</td>
-                    </tr>
-                    <tr>
-                        <td>Verbosité du code</td>
-                        <td>Élevée</td>
-                        <td>Moyenne</td>
-                        <td>Faible</td>
-                        <td>Faible</td>
-                    </tr>
-                    <tr>
-                        <td>Support navigateurs</td>
-                        <td>Tous</td>
-                        <td>Modernes</td>
-                        <td>Tous (avec jQuery)</td>
-                        <td>Tous (avec polyfills)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <h3>Tableau comparatif des méthodes AJAX</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Caractéristique</th>
+                    <th>XMLHttpRequest</th>
+                    <th>Fetch API</th>
+                    <th>jQuery Ajax</th>
+                    <th>Axios</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <h3>Tableau comparatif des méthodes AJAX</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Caractéristique</th>
+                                <th>XMLHttpRequest</th>
+                                <th>Fetch API</th>
+                                <th>jQuery Ajax</th>
+                                <th>Axios</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Natif au navigateur</td>
+                                <td>Oui</td>
+                                <td>Oui (moderne)</td>
+                                <td>Non (bibliothèque)</td>
+                                <td>Non (bibliothèque)</td>
+                            </tr>
+                            <tr>
+                                <td>Support des Promises</td>
+                                <td>Non</td>
+                                <td>Oui</td>
+                                <td>Via $.Deferred</td>
+                                <td>Oui</td>
+                            </tr>
+                            <tr>
+                                <td>Support async/await</td>
+                                <td>Non</td>
+                                <td>Oui</td>
+                                <td>Non (natif)</td>
+                                <td>Oui</td>
+                            </tr>
+                            <tr>
+                                <td>Gestion automatique JSON</td>
+                                <td>Non</td>
+                                <td>Via .json()</td>
+                                <td>Oui</td>
+                                <td>Oui</td>
+                            </tr>
+                            <tr>
+                                <td>Gestion des erreurs</td>
+                                <td>Manuelle</td>
+                                <td>Via .catch()</td>
+                                <td>Via error callback</td>
+                                <td>Via .catch()</td>
+                            </tr>
+                            <tr>
+                                <td>Annulation de requêtes</td>
+                                <td>Oui</td>
+                                <td>Via AbortController</td>
+                                <td>Oui</td>
+                                <td>Oui</td>
+                            </tr>
+                            <tr>
+                                <td>Verbosité du code</td>
+                                <td>Élevée</td>
+                                <td>Moyenne</td>
+                                <td>Faible</td>
+                                <td>Faible</td>
+                            </tr>
+                            <tr>
+                                <td>Support navigateurs</td>
+                                <td>Tous</td>
+                                <td>Modernes</td>
+                                <td>Tous (avec jQuery)</td>
+                                <td>Tous (avec polyfills)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+    </section>
 
-        <section class="section">
-            <h2>Envoyer des données au serveur</h2>
-            <p>AJAX ne se limite pas à récupérer des données. Il permet également d'envoyer des données au serveur sans rechargement de page.</p>
+    <section class="section">
+        <h2>Envoyer des données au serveur</h2>
+        <p>AJAX ne se limite pas à récupérer des données. Il permet également d'envoyer des données au serveur sans rechargement de page.</p>
 
-            <h3>Envoi de données avec XMLHttpRequest</h3>
-            <div class="example">
-                <div class="example-header">Envoi de données par POST avec XMLHttpRequest</div>
-                <div class="example-content">
-                    <pre><code class="language-javascript">
+        <h3>Envoi de données avec XMLHttpRequest</h3>
+        <div class="example">
+            <div class="example-header">Envoi de données par POST avec XMLHttpRequest</div>
+            <div class="example-content">
+                <pre><code class="language-javascript">
 <span class="keyword">function</span> <span class="function">envoyerFormulaire</span>() {    <span class="keyword">var</span> <span class="variable">xhr</span> = <span class="keyword">new</span> <span class="class-name">XMLHttpRequest</span>();
     <span class="variable">xhr</span>.<span class="function">open</span>(<span class="string">"POST"</span>, <span class="string">"traiter.php"</span>, <span class="keyword">true</span>);
     <span class="variable">xhr</span>.<span class="function">setRequestHeader</span>(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);
@@ -296,14 +309,14 @@
     <span class="variable">xhr</span>.<span class="function">send</span>(<span class="string">"nom="</span> + <span class="function">encodeURIComponent</span>(<span class="variable">nom</span>) + <span class="string">"&email="</span> + <span class="function">encodeURIComponent</span>(<span class="variable">email</span>));
 }
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <h3>Envoi de données avec Fetch API</h3>
-            <div class="example">
-                <div class="example-header">Envoi de données JSON avec Fetch API</div>
-                <div class="example-content">
-                    <pre><code class="language-javascript">
+        <h3>Envoi de données avec Fetch API</h3>
+        <div class="example">
+            <div class="example-header">Envoi de données JSON avec Fetch API</div>
+            <div class="example-content">
+                <pre><code class="language-javascript">
 <span class="keyword">async</span> <span class="keyword">function</span> <span class="function">envoyerDonnees</span>() {    <span class="keyword">const</span> <span class="variable">donnees</span> = {
         nom: <span class="variable">document</span>.<span class="function">getElementById</span>(<span class="string">'nom'</span>).<span class="property">value</span>,
         email: <span class="variable">document</span>.<span class="function">getElementById</span>(<span class="string">'email'</span>).<span class="property">value</span>,
@@ -328,14 +341,14 @@
     }
 }
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <h3>Traitement côté serveur</h3>
-            <div class="example">
-                <div class="example-header">Traitement d'une requête POST JSON en PHP</div>
-                <div class="example-content">
-                    <pre><code class="language-php">
+        <h3>Traitement côté serveur</h3>
+        <div class="example">
+            <div class="example-header">Traitement d'une requête POST JSON en PHP</div>
+            <div class="example-content">
+                <pre><code class="language-php">
 <span class="comment">// traiter.php - Code côté serveur</span>
 <span class="keyword">header</span>(<span class="string">'Content-Type: application/json; charset=utf-8'</span>);
 
@@ -369,22 +382,22 @@
     <span class="string>'message'</span> => <span class="string">"Merci {$nom} ! Votre message a été envoyé."</span>
 ]);
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <div class="tip-box">
-                <p><strong>Conseil de sécurité :</strong> N'oubliez jamais de valider et de nettoyer les données reçues côté serveur, même si vous avez déjà validé les données côté client.</p>
-            </div>
-        </section>
+        <div class="tip-box">
+            <p><strong>Conseil de sécurité :</strong> N'oubliez jamais de valider et de nettoyer les données reçues côté serveur, même si vous avez déjà validé les données côté client.</p>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Exemple pratique : Système de recherche en temps réel</h2>
-            <p>Voici un exemple concret d'utilisation d'AJAX pour créer un système de recherche en temps réel qui affiche les résultats au fur et à mesure que l'utilisateur tape sa requête.</p>
+    <section class="section">
+        <h2>Exemple pratique : Système de recherche en temps réel</h2>
+        <p>Voici un exemple concret d'utilisation d'AJAX pour créer un système de recherche en temps réel qui affiche les résultats au fur et à mesure que l'utilisateur tape sa requête.</p>
 
-            <div class="server-client-diagram">
-                <div class="client">
-                    <h4>Côté client (JavaScript et HTML)</h4>
-                    <pre><code>
+        <div class="server-client-diagram">
+            <div class="client">
+                <h4>Côté client (JavaScript et HTML)</h4>
+                <pre><code>
 <span class="js-comment">// HTML</span>
 &lt;<span class="js-keyword">div</span> <span class="js-keyword">class</span>=<span class="js-string">"search-container"</span>&gt;
     &lt;<span class="js-keyword">input</span> <span class="js-keyword">type</span>=<span class="js-string">"text"</span> <span class="js-keyword">id</span>=<span class="js-string">"searchInput"</span> <span class="js-keyword">placeholder</span>=<span class="js-string">"Rechercher..."</span>&gt;
@@ -447,10 +460,10 @@
     <span class="variable">searchResults</span>.<span class="property">innerHTML</span> = <span class="variable">html</span>;
 }
 </code></pre>
-                </div>
-                <div class="server">
-                    <h4>Côté serveur (PHP)</h4>
-                    <pre><code class="language-php">
+            </div>
+            <div class="server">
+                <h4>Côté serveur (PHP)</h4>
+                <pre><code class="language-php">
 <span class="comment">// recherche.php</span>
 <span class="keyword">header</span>(<span class="string">'Content-Type: application/json; charset=utf-8'</span>);
 
@@ -490,31 +503,31 @@
 <span class="comment">// Renvoyer les résultats en JSON</span>
 <span class="keyword">echo</span> <span class="function">json_encode</span>(<span class="variable">$resultats</span>);
 </code></pre>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Bonnes pratiques pour PHP et AJAX</h2>
+    <section class="section">
+        <h2>Bonnes pratiques pour PHP et AJAX</h2>
 
-            <h3>Principes fondamentaux</h3>
-            <ul>
-                <li><strong>Sécurité :</strong> Validez toujours les données reçues côté serveur, même si une validation est faite côté client.</li>
-                <li><strong>Performance :</strong> Utilisez des techniques comme le "throttling" ou le "debouncing" pour limiter le nombre de requêtes AJAX.</li>
-                <li><strong>Expérience utilisateur :</strong> Fournissez des indicateurs visuels pendant le chargement des données (loaders, spinners, etc.).</li>
-                <li><strong>Gestion des erreurs :</strong> Traitez correctement les erreurs côté client et côté serveur, et informez l'utilisateur de façon appropriée.</li>
-                <li><strong>Accessibilité :</strong> Assurez-vous que votre site reste accessible même si JavaScript est désactivé.</li>
-                <li><strong>Caching :</strong> Utilisez le cache du navigateur pour réduire le nombre de requêtes pour les données statiques.</li>
-                <li><strong>Structure du code :</strong> Séparez clairement la logique AJAX du reste de votre code JavaScript.</li>
-            </ul>
+        <h3>Principes fondamentaux</h3>
+        <ul>
+            <li><strong>Sécurité :</strong> Validez toujours les données reçues côté serveur, même si une validation est faite côté client.</li>
+            <li><strong>Performance :</strong> Utilisez des techniques comme le "throttling" ou le "debouncing" pour limiter le nombre de requêtes AJAX.</li>
+            <li><strong>Expérience utilisateur :</strong> Fournissez des indicateurs visuels pendant le chargement des données (loaders, spinners, etc.).</li>
+            <li><strong>Gestion des erreurs :</strong> Traitez correctement les erreurs côté client et côté serveur, et informez l'utilisateur de façon appropriée.</li>
+            <li><strong>Accessibilité :</strong> Assurez-vous que votre site reste accessible même si JavaScript est désactivé.</li>
+            <li><strong>Caching :</strong> Utilisez le cache du navigateur pour réduire le nombre de requêtes pour les données statiques.</li>
+            <li><strong>Structure du code :</strong> Séparez clairement la logique AJAX du reste de votre code JavaScript.</li>
+        </ul>
 
-            <h3>Organisation du code côté serveur</h3>
-            <p>Une architecture bien conçue pour vos points d'entrée AJAX améliore la maintenabilité et la sécurité :</p>
+        <h3>Organisation du code côté serveur</h3>
+        <p>Une architecture bien conçue pour vos points d'entrée AJAX améliore la maintenabilité et la sécurité :</p>
 
-            <div class="example">
-                <div class="example-header">Structure de projet AJAX-PHP recommandée</div>
-                <div class="example-content">
-                    <pre><code class="language-text">
+        <div class="example">
+            <div class="example-header">Structure de projet AJAX-PHP recommandée</div>
+            <div class="example-content">
+                <pre><code class="language-text">
 project/
 ├── api/                  # Points d'entrée AJAX
 │   ├── index.php         # Routeur principal
@@ -534,16 +547,16 @@ project/
 │   └── css/
 └── index.php             # Point d'entrée principal
 </code></pre>
-                </div>
             </div>
+        </div>
 
-            <h3>Classe d'utilitaire pour les réponses AJAX</h3>
-            <p>Standardisez vos réponses AJAX avec une classe d'utilitaire :</p>
+        <h3>Classe d'utilitaire pour les réponses AJAX</h3>
+        <p>Standardisez vos réponses AJAX avec une classe d'utilitaire :</p>
 
-            <div class="example">
-                <div class="example-header">Classe ApiResponse pour standardiser les réponses</div>
-                <div class="example-content">
-                    <pre><code class="language-php">
+        <div class="example">
+            <div class="example-header">Classe ApiResponse pour standardiser les réponses</div>
+            <div class="example-content">
+                <pre><code class="language-php">
 <span class="comment">// includes/response.php</span>
 <span class="class-name">class</span> <span class="class">ApiResponse</span> {
     <span class="comment">/**
@@ -594,44 +607,44 @@ project/
     }
 }
 </code></pre>
-                </div>
             </div>
-
-            <h3>Conseils avancés</h3>
-            <ul>
-                <li><strong>Centralisation des requêtes AJAX</strong> : Créez une classe ou un module JavaScript pour gérer toutes vos requêtes AJAX.</li>
-                <li><strong>Utilisez des tokens JWT</strong> pour l'authentification des API sécurisées.</li>
-                <li><strong>Compression GZIP</strong> pour réduire la taille des données transférées.</li>
-                <li><strong>Assurez-vous d'inclure les en-têtes CORS</strong> pour permettre les requêtes cross-origin si nécessaire.</li>
-                <li><strong>Versionnez vos API</strong> : Utilisez des préfixes comme "/api/v1/" pour pouvoir faire évoluer votre API sans casser la compatibilité.</li>
-            </ul>
-
-            <h3>Pièges à éviter</h3>
-            <ol>
-                <li><strong>Ne pas gérer les erreurs</strong> : Assurez-vous de toujours avoir du code pour gérer les erreurs côté client.</li>
-                <li><strong>Trop de requêtes</strong> : Évitez les requêtes trop fréquentes qui surchargent le serveur.</li>
-                <li><strong>Requêtes bloquantes</strong> : Évitez de bloquer l'interface utilisateur pendant les requêtes AJAX.</li>
-                <li><strong>Ne pas informer l'utilisateur</strong> : Indiquez toujours à l'utilisateur qu'une action est en cours.</li>
-                <li><strong>Oublier la validation côté serveur</strong> : Ne faites jamais confiance aux données envoyées par le client.</li>
-            </ol>
-
-            <div class="info-box">
-                <p><strong>Ressources supplémentaires :</strong></p>
-                <ul>
-                    <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Fetch_API" target="_blank">MDN Web Docs - API Fetch</a></li>
-                    <li><a href="https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest" target="_blank">MDN Web Docs - XMLHttpRequest</a></li>
-                    <li><a href="https://www.php.net/manual/fr/book.json.php" target="_blank">Documentation PHP sur JSON</a></li>
-                    <li><a href="https://www.php.net/manual/fr/book.curl.php" target="_blank">Documentation PHP sur cURL</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=3l13qGLTgNw" target="_blank">Tutoriel vidéo : Applications web dynamiques avec AJAX et PHP</a></li>
-                    <li><a href="https://github.com/axios/axios" target="_blank">Axios - Bibliothèque JavaScript pour les requêtes HTTP</a></li>
-                </ul>
-            </div>
-        </section>
-        <div class="navigation">
-            <a href="12-bases-de-donnees.php" class="nav-button">← Module précédent</a>
-            <a href="../../index.php" class="nav-button">Accueil</a>
-            <a href="14-securite.php" class="nav-button">Module suivant →</a>
         </div>
-    </main>
 
-    <?php include __DIR__ . '/../includes/footer.php'; ?>
+        <h3>Conseils avancés</h3>
+        <ul>
+            <li><strong>Centralisation des requêtes AJAX</strong> : Créez une classe ou un module JavaScript pour gérer toutes vos requêtes AJAX.</li>
+            <li><strong>Utilisez des tokens JWT</strong> pour l'authentification des API sécurisées.</li>
+            <li><strong>Compression GZIP</strong> pour réduire la taille des données transférées.</li>
+            <li><strong>Assurez-vous d'inclure les en-têtes CORS</strong> pour permettre les requêtes cross-origin si nécessaire.</li>
+            <li><strong>Versionnez vos API</strong> : Utilisez des préfixes comme "/api/v1/" pour pouvoir faire évoluer votre API sans casser la compatibilité.</li>
+        </ul>
+
+        <h3>Pièges à éviter</h3>
+        <ol>
+            <li><strong>Ne pas gérer les erreurs</strong> : Assurez-vous de toujours avoir du code pour gérer les erreurs côté client.</li>
+            <li><strong>Trop de requêtes</strong> : Évitez les requêtes trop fréquentes qui surchargent le serveur.</li>
+            <li><strong>Requêtes bloquantes</strong> : Évitez de bloquer l'interface utilisateur pendant les requêtes AJAX.</li>
+            <li><strong>Ne pas informer l'utilisateur</strong> : Indiquez toujours à l'utilisateur qu'une action est en cours.</li>
+            <li><strong>Oublier la validation côté serveur</strong> : Ne faites jamais confiance aux données envoyées par le client.</li>
+        </ol>
+
+        <div class="info-box">
+            <p><strong>Ressources supplémentaires :</strong></p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Fetch_API" target="_blank">MDN Web Docs - API Fetch</a></li>
+                <li><a href="https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest" target="_blank">MDN Web Docs - XMLHttpRequest</a></li>
+                <li><a href="https://www.php.net/manual/fr/book.json.php" target="_blank">Documentation PHP sur JSON</a></li>
+                <li><a href="https://www.php.net/manual/fr/book.curl.php" target="_blank">Documentation PHP sur cURL</a></li>
+                <li><a href="https://www.youtube.com/watch?v=3l13qGLTgNw" target="_blank">Tutoriel vidéo : Applications web dynamiques avec AJAX et PHP</a></li>
+                <li><a href="https://github.com/axios/axios" target="_blank">Axios - Bibliothèque JavaScript pour les requêtes HTTP</a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="navigation">
+        <a href="12-bases-de-donnees.php" class="nav-button">← Module précédent</a>
+        <a href="../../index.php" class="nav-button">Accueil</a>
+        <a href="14-securite.php" class="nav-button">Module suivant →</a>
+    </div>
+</main>
+
+<?php include __DIR__ . '/../includes/footer.php'; ?>

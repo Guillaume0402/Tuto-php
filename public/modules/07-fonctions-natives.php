@@ -1,4 +1,6 @@
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+$moduleClass = 'module7';
+include __DIR__ . '/../includes/header.php'; ?>
 
 <body class="module7">
     <header>

@@ -1,14 +1,16 @@
-<?php include __DIR__ . '/../includes/header.php';
+<?php
+$moduleClass = 'module24';
+include __DIR__ . '/../includes/header.php';
 $titre = "Routeur PHP";
 $description = "Créez un système de routage efficace pour vos applications web PHP";
 ?>
 
 
 <body class="module24">
-    <header>
+    <div class="module-header">
         <h1><?= $titre ?></h1>
         <p class="subtitle"><?= $description ?></p>
-    </header>
+    </div>
     <div class="navigation">
         <a href="23-composer-autoloading.php" class="nav-button">← Module précédent</a>
         <a href="../../index.php" class="nav-button">Accueil</a>
@@ -323,6 +325,7 @@ $description = "Créez un système de routage efficace pour vos applications web
         }
         
         <span class="comment">// Si pas de correspondance exacte, cherchez des routes avec paramètres</span>
+        <span class="keyword">foreach</span> (<span class="variable">$this</span>->routes[<span class="variable">$method"] <span class="keyword">as</span> <span class="variable">$route</span> => <span class="variable">$callback</span>) {
         <span class="keyword">foreach</span> (<span class="variable">$this</span>->routes[<span class="variable">$method</span>] <span class="keyword">as</span> <span class="variable">$route</span> => <span class="variable">$callback</span>) {
             <span class="comment">// Vérifiez si la route contient des paramètres dynamiques</span>
             <span class="keyword">if</span> (<span class="function">strpos</span>(<span class="variable">$route</span>, <span class="string">':'</span>) !== <span class="keyword">false</span>) {

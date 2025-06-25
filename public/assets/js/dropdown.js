@@ -6,32 +6,47 @@ document.addEventListener("DOMContentLoaded", function () {
     const burger = document.querySelector(".header__burger");
     const nav = document.querySelector(".header__nav");
 
-    function openMenu() {
+    modulesMenu.classList.remove("open");
+    overlay.classList.remove("open");
+    if (modulesBtn) modulesBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    if (window.innerWidth <= 900 && nav) nav.style.display = "none";
+
+    function openModulesMenu() {
         modulesMenu.classList.add("open");
         overlay.classList.add("open");
-        modulesBtn.setAttribute("aria-expanded", "true");
+        if (modulesBtn) modulesBtn.setAttribute("aria-expanded", "true");
         document.body.style.overflow = "hidden";
     }
-    function closeMenu() {
+    function closeModulesMenu() {
         modulesMenu.classList.remove("open");
         overlay.classList.remove("open");
-        modulesBtn.setAttribute("aria-expanded", "false");
+        if (modulesBtn) modulesBtn.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
     }
-    modulesBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (modulesMenu.classList.contains("open")) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
-    });
-    closeBtn.addEventListener("click", closeMenu);
-    overlay.addEventListener("click", closeMenu);
+    if (modulesBtn) {
+        modulesBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (modulesMenu.classList.contains("open")) {
+                closeModulesMenu();
+            } else {
+                openModulesMenu();
+            }
+        });
+    }
+    if (burger && nav) {
+        burger.addEventListener("click", function () {
+            if (window.innerWidth > 900) return;
+            nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+        });
+    }
+    if (closeBtn) closeBtn.addEventListener("click", closeModulesMenu);
+    if (overlay) overlay.addEventListener("click", closeModulesMenu);
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") closeMenu();
+        if (e.key === "Escape") closeModulesMenu();
     });
-    burger.addEventListener("click", function () {
-        nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 900 && nav) nav.style.display = "flex";
+        if (window.innerWidth <= 900 && nav) nav.style.display = "none";
     });
 });

@@ -1,11 +1,13 @@
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+$moduleClass = 'module14';
+include __DIR__ . '/../includes/header.php'; ?>
 
 
 <body class="module14">
-    <header>
+    <div class="module-header">
         <h1>Sécurité en PHP</h1>
         <p class="subtitle">Protégez vos applications PHP contre les vulnérabilités courantes et mettez en œuvre les bonnes pratiques de sécurité.</p>
-    </header>
+    </div>
     <div class="navigation">
         <a href="13-php-ajax.php" class="nav-button">← Module précédent</a>
         <a href="../../index.php" class="nav-button">Accueil</a>

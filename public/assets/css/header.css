@@ -13,7 +13,7 @@
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
     height: 64px;
 }
 .header__logo {
@@ -161,6 +161,42 @@
     }
     .header__nav {
         display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100vw;
+        height: 40vh;
+        background: var(--header-bg, #232946);
+        position: fixed;
+        top: 150px;
+        left: 0;
+        right: 0;
+        z-index: 1300;
+        box-shadow: 0 8px 32px rgba(44, 62, 80, 0.1);
+        border-radius: 5px;
+        opacity: 0.98;
+    }
+    .header__nav[style*="display: flex"] {
+        display: flex !important;
+    }
+    .header__link,
+    .header__link--blue {
+        color: #ffffff !important;
+    }
+    .header__link {
+        padding: 1.2rem 2rem;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 1.08rem;
+        background: none;
+        text-align: left;
+        border-radius: 0;
+    }
+    .header__link:last-child {
+        border-bottom: none;
+    }
+    .header__link:hover,
+    .header__link:focus {
+        background: #f3f6fa;
+        color: #3a86ff;
     }
     .header__burger {
         display: flex;
@@ -179,11 +215,42 @@
         background: #fff;
         color: #232946;
         padding-bottom: 0;
+        flex-direction: column;
+        overflow-y: auto;
+        padding-top: 70px; /* espace pour le bouton de fermeture */
+        z-index: 1400;
     }
     .header__modules-header {
         background: #f8f9fa;
         color: #232946;
         border-bottom: 1px solid #e0e0e0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1300;
+        padding: 1rem 2rem 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header__close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        z-index: 1400;
+        background: none;
+        border: none;
+        font-size: 2.2rem;
+        color: #232946;
+        cursor: pointer;
+        padding: 0 8px;
+        line-height: 1;
+    }
+    .header__modules-list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
     }
     .header__module {
         color: #232946;

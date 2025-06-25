@@ -1,11 +1,13 @@
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php
+$moduleClass = 'module15';
+include __DIR__ . '/../includes/header.php'; ?>
 
 
 <body class="module15">
-    <header>
-        <h1>Architecture MVC en PHP</h1>
-        <p class="subtitle">Structurez vos applications PHP complexes grâce au pattern Model-View-Controller</p>
-    </header>
+    <div class="module-header">
+        <h1><?= $titre ?? 'Architecture MVC' ?></h1>
+        <p class="subtitle"><?= $description ?? '' ?></p>
+    </div>
     <div class="navigation">
         <a href="14-securite.php" class="nav-button">← Module précédent</a>
         <a href="../../index.php" class="nav-button">Accueil</a>
@@ -1278,7 +1280,7 @@ blog-mvc/
                     <span class="string">'article'</span> => [
                         <span class="string">'title'</span> => <span class="variable">$title</span>,
                         <span class="string">'content'</span> => <span class="variable">$content</span>,
-                        <span class="string>'category_id'</span> => <span class="variable">$categoryId</span>
+                        <span class="string">'category_id'</span> => <span class="variable">$categoryId</span>
                     ]
                 ]);
                 <span class="keyword">return</span>;
@@ -1305,7 +1307,7 @@ blog-mvc/
                 <span class="string">'article'</span> => [
                     <span class="string">'title'</span> => <span class="variable">$title</span>,
                     <span class="string">'content'</span> => <span class="variable">$content</span>,
-                    <span class="string>'category_id'</span> => <span class="variable">$categoryId</span>
+                    <span class="string">'category_id'</span> => <span class="variable">$categoryId</span>
                 ]
             ]);
         }

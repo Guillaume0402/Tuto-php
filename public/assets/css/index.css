@@ -1,22 +1,10 @@
 /* 
-   STYLES POUR LA PAGE D'INDEX
-   Styles spécifiques pour la page d'accueil du tutoriel
+STYLES POUR LA PAGE D'INDEX
+Styles spécifiques pour la page d'accueil du tutoriel
 */
 
 /* Style spécifique pour la page d'index */
-.index-page header {
-    background: linear-gradient(
-        135deg,
-        var(--module1-color) 0%,
-        var(--module7-dark) 100%
-    );
-    text-align: center;
-    padding: 60px 20px;
-    margin-bottom: 40px;
-    border-radius: var(--radius-card);
-    color: #fff;
-    box-shadow: var(--card-shadow);
-}
+/* SUPPRIMÉ : .index-page header { ... } car remplacé par .module-header */
 
 .index-page h1 {
     font-size: 2.8rem;

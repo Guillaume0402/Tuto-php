@@ -171,6 +171,22 @@
     border-radius: 4px;
 }
 
+.info-message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-radius: 4px;
+}
+
+.warning-message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #fff3cd;
+    color: #856404;
+    border-radius: 4px;
+}
+
 .error-message {
     padding: 1rem;
     margin-bottom: 1.5rem;

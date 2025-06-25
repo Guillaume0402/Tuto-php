@@ -1,35 +1,35 @@
 /*
-   STYLES SPÉCIFIQUES AUX MODULES (refactorisé)
-   - Mutualisation des styles communs
-   - Suppression des redondances
-   - Spécificités modules conservées
+STYLES SPÉCIFIQUES AUX MODULES (refactorisé)
+- Mutualisation des styles communs
+- Suppression des redondances
+- Spécificités modules conservées
 */
 
-/* Headers et titres de modules */
-[class^="module"] header {
-    background-color: var(--primary-color);
-    background-image: linear-gradient(
+/* Bloc titre dynamique du module */
+.module-header {
+    background: linear-gradient(
         135deg,
         var(--primary-color) 0%,
         var(--primary-dark) 100%
     );
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-    padding: 3rem 2rem;
-    border-radius: 0 0 10px 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--card-shadow);
 }
-[class^="module"] h1 {
-    color: white;
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
+.module-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
-[class^="module"] .subtitle {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1rem;
-    font-weight: 300;
+.module-header .subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
 }
 
 /* Exemples d'en-têtes colorés */
@@ -82,21 +82,12 @@
     font-size: 1.2rem;
 }
 
-/* Spécificités modules avancés (ex: routeur, diagrammes, etc.) */
-.route-diagram {
-    /* ... */
-}
-.flow-item {
-    /* ... */
-}
-/* Ajoute ici les vraies spécificités utiles */
-
 /* Responsive (exemple) */
 @media (max-width: 768px) {
-    [class^="module"] header {
+    .module-header {
         padding: 2rem 1rem;
     }
-    [class^="module"] h1 {
+    .module-header h1 {
         font-size: 2rem;
     }
 }

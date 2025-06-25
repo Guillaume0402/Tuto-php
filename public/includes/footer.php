@@ -125,6 +125,7 @@ if ($is_dev) {
     }
 }
 ?>
+</main>
 </body>
 
 </html>

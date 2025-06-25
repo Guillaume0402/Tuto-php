@@ -1,63 +1,63 @@
-<?php include __DIR__ . '/../includes/header.php';
+<?php
+$moduleClass = 'module20';
+include __DIR__ . '/../includes/header.php';
 $titre = "Gestion des sessions et authentification";
 $description = "Apprenez à gérer les sessions PHP, créer un système d'authentification sécurisé et mettre en place une gestion des droits utilisateurs.";
 ?>
 
+<div class="module-header">
+    <h1><?= $titre ?></h1>
+    <p class="subtitle"><?= $description ?></p>
+</div>
+<div class="navigation">
+    <a href="19-envoi-emails.php" class="nav-button">← Module précédent</a>
+    <a href="../../index.php" class="nav-button">Accueil</a>
+    <a href="21-internationalisation.php" class="nav-button">Module suivant →</a>
+</div>
+<main>
+    <section class="section">
+        <h2>Sessions PHP, cookies et sécurité</h2>
+        <p>Les sessions PHP permettent de stocker des informations spécifiques à un utilisateur sur plusieurs pages. Contrairement aux cookies, les données de session sont stockées sur le serveur, ce qui améliore la sécurité.</p>
 
-<body class="module20">
-    <header>
-        <h1><?= $titre ?></h1>
-        <p class="subtitle"><?= $description ?></p>
-    </header>
-    <div class="navigation">
-        <a href="19-envoi-emails.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="21-internationalisation.php" class="nav-button">Module suivant →</a>
-    </div>
-    <main>
-        <section class="section">
-            <h2>Sessions PHP, cookies et sécurité</h2>
-            <p>Les sessions PHP permettent de stocker des informations spécifiques à un utilisateur sur plusieurs pages. Contrairement aux cookies, les données de session sont stockées sur le serveur, ce qui améliore la sécurité.</p>
+        <div class="info-box">
+            <strong>Comprendre les sessions PHP</strong>
+            <p>Une session crée un identifiant unique (PHPSESSID) qui est envoyé au navigateur de l'utilisateur sous forme de cookie. Cet identifiant permet au serveur de retrouver les données stockées pour cet utilisateur spécifique.</p>
+            <ul>
+                <li><strong>Cycle de vie</strong> : Une session démarre avec <code>session_start()</code> et se termine quand le navigateur est fermé ou après expiration définie dans la configuration PHP.</li>
+                <li><strong>Stockage des données</strong> : Par défaut, les données sont sauvegardées dans des fichiers temporaires sur le serveur (dans le dossier défini par <code>session.save_path</code>).</li>
+                <li><strong>Alternative aux cookies</strong> : Dans les environnements où les cookies sont désactivés, les sessions peuvent utiliser l'URL pour transmettre l'identifiant de session (non recommandé pour des raisons de sécurité).</li>
+            </ul>
+        </div>
 
-            <div class="info-box">
-                <strong>Comprendre les sessions PHP</strong>
-                <p>Une session crée un identifiant unique (PHPSESSID) qui est envoyé au navigateur de l'utilisateur sous forme de cookie. Cet identifiant permet au serveur de retrouver les données stockées pour cet utilisateur spécifique.</p>
-                <ul>
-                    <li><strong>Cycle de vie</strong> : Une session démarre avec <code>session_start()</code> et se termine quand le navigateur est fermé ou après expiration définie dans la configuration PHP.</li>
-                    <li><strong>Stockage des données</strong> : Par défaut, les données sont sauvegardées dans des fichiers temporaires sur le serveur (dans le dossier défini par <code>session.save_path</code>).</li>
-                    <li><strong>Alternative aux cookies</strong> : Dans les environnements où les cookies sont désactivés, les sessions peuvent utiliser l'URL pour transmettre l'identifiant de session (non recommandé pour des raisons de sécurité).</li>
-                </ul>
-            </div>
-
-            <h3>Fonctionnement des sessions PHP</h3>
-            <div class="examples-list">
-                <div class="example">
-                    <div class="example-header">Démarrer une session</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="comment">// À placer au tout début du script, avant tout autre output</span>
+        <h3>Fonctionnement des sessions PHP</h3>
+        <div class="examples-list">
+            <div class="example">
+                <div class="example-header">Démarrer une session</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="comment">// À placer au tout début du script, avant tout autre output</span>
 <span class="function">session_start</span>();
 
 <span class="comment">// Stocker des données dans la session</span>
 <span class="variable">$_SESSION</span>[<span class="string">'user_id'</span>] = <span class="number">123</span>;
 <span class="variable">$_SESSION</span>[<span class="string">'username'</span>] = <span class="string">'jean_dupont'</span>;
 <span class="variable">$_SESSION</span>[<span class="string">'is_admin'</span>] = <span class="keyword">false</span>;</code></pre>
-                        <div class="result">
-                            <p><strong>Important :</strong> <code>session_start()</code> doit être appelé avant tout affichage HTML ou espace blanc, sinon une erreur "headers already sent" peut se produire.</p>
+                    <div class="result">
+                        <p><strong>Important :</strong> <code>session_start()</code> doit être appelé avant tout affichage HTML ou espace blanc, sinon une erreur "headers already sent" peut se produire.</p>
 
-                            <h4>Détails techniques</h4>
-                            <ul>
-                                <li>La fonction <code>session_start()</code> génère ou récupère l'identifiant de session existant</li>
-                                <li>PHP crée automatiquement la superglobale <code>$_SESSION</code> qui agit comme un tableau associatif</li>
-                                <li>Les données stockées dans $_SESSION sont automatiquement sérialisées pour le stockage côté serveur</li>
-                                <li>Vous pouvez stocker différents types de données : nombres, chaînes, booléens et même des tableaux ou objets (attention à la sérialisation des objets complexes)</li>
-                            </ul>
-                        </div>
+                        <h4>Détails techniques</h4>
+                        <ul>
+                            <li>La fonction <code>session_start()</code> génère ou récupère l'identifiant de session existant</li>
+                            <li>PHP crée automatiquement la superglobale <code>$_SESSION</code> qui agit comme un tableau associatif</li>
+                            <li>Les données stockées dans $_SESSION sont automatiquement sérialisées pour le stockage côté serveur</li>
+                            <li>Vous pouvez stocker différents types de données : nombres, chaînes, booléens et même des tableaux ou objets (attention à la sérialisation des objets complexes)</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="example">
-                    <div class="example-header">Accéder aux données de session</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="comment">// Récupérer une valeur de session</span>
+            </div>
+            <div class="example">
+                <div class="example-header">Accéder aux données de session</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="comment">// Récupérer une valeur de session</span>
 <span class="keyword">if</span> (<span class="function">isset</span>(<span class="variable">$_SESSION</span>[<span class="string">'username'</span>])) {
     <span class="keyword">echo</span> <span class="string">"Bonjour, {<span class="variable">$_SESSION</span>[<span class="string>'username'</span>]} !"</span>;
 }
@@ -70,25 +70,25 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
     <span class="function">header</span>(<span class="string">'Location: login.php'</span>);
     <span class="keyword">exit</span>;
 }</code></pre>
-                        <div class="result">
-                            <h4>Bonnes pratiques pour accéder aux données de session</h4>
-                            <ul>
-                                <li><strong>Vérification préalable</strong> : Toujours utiliser <code>isset()</code> pour vérifier l'existence d'une clé avant d'y accéder</li>
-                                <li><strong>Redirection sécurisée</strong> : Appeler <code>exit</code> après <code>header('Location: ...')</code> pour arrêter l'exécution du script</li>
-                                <li><strong>Protection des routes</strong> : Intégrer la vérification de session dans un système de middleware pour protéger les routes qui nécessitent une connexion</li>
-                                <li><strong>Utilisation des types stricts</strong> : Caster les valeurs au besoin car toutes les données de session sont sérialisées puis désérialisées</li>
-                            </ul>
-                            <p>Les opérateurs de coalescence null peuvent simplifier la récupération de données de session avec des valeurs par défaut : <code>$username = $_SESSION['username'] ?? 'Invité';</code></p>
-                        </div>
+                    <div class="result">
+                        <h4>Bonnes pratiques pour accéder aux données de session</h4>
+                        <ul>
+                            <li><strong>Vérification préalable</strong> : Toujours utiliser <code>isset()</code> pour vérifier l'existence d'une clé avant d'y accéder</li>
+                            <li><strong>Redirection sécurisée</strong> : Appeler <code>exit</code> après <code>header('Location: ...')</code> pour arrêter l'exécution du script</li>
+                            <li><strong>Protection des routes</strong> : Intégrer la vérification de session dans un système de middleware pour protéger les routes qui nécessitent une connexion</li>
+                            <li><strong>Utilisation des types stricts</strong> : Caster les valeurs au besoin car toutes les données de session sont sérialisées puis désérialisées</li>
+                        </ul>
+                        <p>Les opérateurs de coalescence null peuvent simplifier la récupération de données de session avec des valeurs par défaut : <code>$username = $_SESSION['username'] ?? 'Invité';</code></p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <h3>Destruction de session et déconnexion</h3>
-            <div class="example">
-                <div class="example-header">Déconnexion d'un utilisateur</div>
-                <div class="example-content">
-                    <pre><code class="language-php"><span class="comment">// logout.php</span>
+        <h3>Destruction de session et déconnexion</h3>
+        <div class="example">
+            <div class="example-header">Déconnexion d'un utilisateur</div>
+            <div class="example-content">
+                <pre><code class="language-php"><span class="comment">// logout.php</span>
 <span class="function">session_start</span>();
 
 <span class="comment">// Effacer toutes les variables de session</span>
@@ -114,6 +114,34 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="comment">// Rediriger vers la page d'accueil</span>
 <span class="function">header</span>(<span class="string">'Location: index.php'</span>);
 <span class="keyword">exit</span>;</code></pre>
+                <div class="result">
+                    <p>Cette méthode complète permet d'assurer une déconnexion sécurisée en :</p>
+                    <ol>
+                        <li>Vidant les données de session</li>
+                        <li>Supprimant le cookie de session</li>
+                        <li>Détruisant la session côté serveur</li>
+                    </ol>
+
+                    <h4>Pourquoi cette approche en trois étapes ?</h4>
+                    <ul>
+                        <li><code>$_SESSION = []</code> : Efface immédiatement les données en mémoire pour l'exécution actuelle</li>
+                        <li><code>setcookie(session_name(), '', ...)</code> : Force le navigateur à supprimer le cookie PHPSESSID, empêchant sa réutilisation</li>
+                        <li><code>session_destroy()</code> : Supprime le fichier de session physique sur le serveur, mais n'affecte pas la variable superglobale $_SESSION</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>Astuce de sécurité</strong>
+                        <p>Pour renforcer encore cette déconnexion, considérez l'ajout d'un jeton de session unique dans la base de données qui est vérifié à chaque requête et invalidé lors de la déconnexion. Cela permet de déconnecter immédiatement un utilisateur sur tous ses appareils.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Configuration et sécurité des sessions</h3>
+        <div class="info-box">
+            <strong>Paramètres de sécurité des sessions</strong>
+            <pre><code class="language-php"><span class="comment">// Configurer les sessions avant de les démarrer</span>
+<span class="function">ini_set</span>(<span class="string">'session.use_only_cookies'</span>, <span class="number">1</span>); <span class="comment">// Forcer l'utilisation de cookies</span>
                     <div class="result">
                         <p>Cette méthode complète permet d'assurer une déconnexion sécurisée en :</p>
                         <ol>
@@ -155,93 +183,93 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 
 <span class="function">session_set_cookie_params</span>(<span class="variable">$sessionParams</span>);
 <span class="function">session_start</span>();</code></pre>
-                <div class="explanation">
-                    <h4>Explication des paramètres de sécurité</h4>
-                    <table class="data-table">
-                        <tr>
-                            <th>Paramètre</th>
-                            <th>Description</th>
-                            <th>Impact sécurité</th>
-                        </tr>
-                        <tr>
-                            <td><code>session.use_only_cookies</code></td>
-                            <td>Force l'utilisation exclusive des cookies pour l'ID de session</td>
-                            <td>Empêche les attaques par injection d'ID de session dans l'URL</td>
-                        </tr>
-                        <tr>
-                            <td><code>session.use_strict_mode</code></td>
-                            <td>Accepte uniquement les IDs générés par le serveur</td>
-                            <td>Empêche la fixation de session par des ID arbitraires</td>
-                        </tr>
-                        <tr>
-                            <td><code>secure</code></td>
-                            <td>Cookie envoyé uniquement via HTTPS</td>
-                            <td>Prévient l'interception de l'ID sur un réseau non sécurisé</td>
-                        </tr>
-                        <tr>
-                            <td><code>httponly</code></td>
-                            <td>Cookie inaccessible via JavaScript</td>
-                            <td>Protège contre les attaques XSS ciblant les cookies</td>
-                        </tr>
-                        <tr>
-                            <td><code>samesite</code></td>
-                            <td>Contrôle l'envoi du cookie lors de requêtes cross-origin</td>
-                            <td>Protège contre les attaques CSRF</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="info-box warning-box">
-                <strong>Menaces courantes et contre-mesures</strong>
-                <ul>
-                    <li><strong>Fixation de session</strong> : Régénérer l'ID de session à la connexion avec <code>session_regenerate_id(true)</code></li>
-                    <li><strong>Vol de session</strong> : Utiliser les flags httpOnly, secure et SameSite pour les cookies</li>
-                    <li><strong>CSRF</strong> (Cross-Site Request Forgery) : Générer et vérifier des tokens CSRF pour les formulaires</li>
-                    <li><strong>Expiration</strong> : Définir une durée de vie raisonnable pour les sessions et cookies</li>
-                </ul>
-            </div>
-            <h3>Cookies en PHP</h3>
-            <div class="info-box">
-                <strong>Différence entre Cookies et Sessions</strong>
+            <div class="explanation">
+                <h4>Explication des paramètres de sécurité</h4>
                 <table class="data-table">
                     <tr>
-                        <th>Aspect</th>
-                        <th>Cookies</th>
-                        <th>Sessions</th>
+                        <th>Paramètre</th>
+                        <th>Description</th>
+                        <th>Impact sécurité</th>
                     </tr>
                     <tr>
-                        <td>Stockage</td>
-                        <td>Stockés dans le navigateur du client</td>
-                        <td>Stockés sur le serveur</td>
+                        <td><code>session.use_only_cookies</code></td>
+                        <td>Force l'utilisation exclusive des cookies pour l'ID de session</td>
+                        <td>Empêche les attaques par injection d'ID de session dans l'URL</td>
                     </tr>
                     <tr>
-                        <td>Sécurité</td>
-                        <td>Moins sécurisé (accessible au client)</td>
-                        <td>Plus sécurisé (seul l'ID est envoyé au client)</td>
+                        <td><code>session.use_strict_mode</code></td>
+                        <td>Accepte uniquement les IDs générés par le serveur</td>
+                        <td>Empêche la fixation de session par des ID arbitraires</td>
                     </tr>
                     <tr>
-                        <td>Durée de vie</td>
-                        <td>Peut persister longtemps (jours, mois)</td>
-                        <td>Généralement limitée à la session du navigateur</td>
+                        <td><code>secure</code></td>
+                        <td>Cookie envoyé uniquement via HTTPS</td>
+                        <td>Prévient l'interception de l'ID sur un réseau non sécurisé</td>
                     </tr>
                     <tr>
-                        <td>Taille</td>
-                        <td>Limitée (~4KB par domaine)</td>
-                        <td>Plus grande (limitée par la configuration serveur)</td>
+                        <td><code>httponly</code></td>
+                        <td>Cookie inaccessible via JavaScript</td>
+                        <td>Protège contre les attaques XSS ciblant les cookies</td>
                     </tr>
                     <tr>
-                        <td>Cas d'usage</td>
-                        <td>Préférences, suivi à long terme</td>
-                        <td>Authentification, données temporaires</td>
+                        <td><code>samesite</code></td>
+                        <td>Contrôle l'envoi du cookie lors de requêtes cross-origin</td>
+                        <td>Protège contre les attaques CSRF</td>
                     </tr>
                 </table>
             </div>
+        </div>
+        <div class="info-box warning-box">
+            <strong>Menaces courantes et contre-mesures</strong>
+            <ul>
+                <li><strong>Fixation de session</strong> : Régénérer l'ID de session à la connexion avec <code>session_regenerate_id(true)</code></li>
+                <li><strong>Vol de session</strong> : Utiliser les flags httpOnly, secure et SameSite pour les cookies</li>
+                <li><strong>CSRF</strong> (Cross-Site Request Forgery) : Générer et vérifier des tokens CSRF pour les formulaires</li>
+                <li><strong>Expiration</strong> : Définir une durée de vie raisonnable pour les sessions et cookies</li>
+            </ul>
+        </div>
+        <h3>Cookies en PHP</h3>
+        <div class="info-box">
+            <strong>Différence entre Cookies et Sessions</strong>
+            <table class="data-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>Cookies</th>
+                    <th>Sessions</th>
+                </tr>
+                <tr>
+                    <td>Stockage</td>
+                    <td>Stockés dans le navigateur du client</td>
+                    <td>Stockés sur le serveur</td>
+                </tr>
+                <tr>
+                    <td>Sécurité</td>
+                    <td>Moins sécurisé (accessible au client)</td>
+                    <td>Plus sécurisé (seul l'ID est envoyé au client)</td>
+                </tr>
+                <tr>
+                    <td>Durée de vie</td>
+                    <td>Peut persister longtemps (jours, mois)</td>
+                    <td>Généralement limitée à la session du navigateur</td>
+                </tr>
+                <tr>
+                    <td>Taille</td>
+                    <td>Limitée (~4KB par domaine)</td>
+                    <td>Plus grande (limitée par la configuration serveur)</td>
+                </tr>
+                <tr>
+                    <td>Cas d'usage</td>
+                    <td>Préférences, suivi à long terme</td>
+                    <td>Authentification, données temporaires</td>
+                </tr>
+            </table>
+        </div>
 
-            <div class="examples-list">
-                <div class="example">
-                    <div class="example-header">Créer un cookie</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="comment">// Créer un cookie qui expire dans 30 jours</span>
+        <div class="examples-list">
+            <div class="example">
+                <div class="example-header">Créer un cookie</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="comment">// Créer un cookie qui expire dans 30 jours</span>
 <span class="function">setcookie</span>(
     <span class="string">'user_preference'</span>,       <span class="comment">// Nom du cookie</span>
     <span class="string>'dark_theme'</span>,            <span class="comment">// Valeur</span>
@@ -254,35 +282,35 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         <span class="string">'samesite'</span> => <span class="string>'Strict'</span>          <span class="comment">// Protection CSRF</span>
     ]
 );</code></pre>
-                        <div class="result">
-                            <p>Cette syntaxe d'options sous forme de tableau est disponible à partir de PHP 7.3. Pour les versions antérieures, utilisez les paramètres individuels de <code>setcookie()</code>.</p>
+                    <div class="result">
+                        <p>Cette syntaxe d'options sous forme de tableau est disponible à partir de PHP 7.3. Pour les versions antérieures, utilisez les paramètres individuels de <code>setcookie()</code>.</p>
 
-                            <h4>Explication des paramètres du cookie</h4>
-                            <ul>
-                                <li><strong>expires</strong> : Date d'expiration du cookie (timestamp Unix). Si non défini ou 0, le cookie expire à la fin de la session.</li>
-                                <li><strong>path</strong> : Chemin sur le serveur où le cookie sera disponible. <code>'/'</code> signifie disponible sur tout le site.</li>
-                                <li><strong>domain</strong> : Domaine pour lequel le cookie est disponible. Vide signifie domaine actuel uniquement.</li>
-                                <li><strong>secure</strong> : Si <code>true</code>, le cookie est envoyé uniquement sur une connexion HTTPS sécurisée.</li>
-                                <li><strong>httponly</strong> : Si <code>true</code>, le cookie est inaccessible via JavaScript (protection XSS).</li>
-                                <li><strong>samesite</strong> : Contrôle l'envoi du cookie lors de requêtes cross-origin :
-                                    <ul>
-                                        <li><code>'Strict'</code> : Cookie envoyé uniquement pour les requêtes du même site.</li>
-                                        <li><code>'Lax'</code> : Cookie envoyé pour les navigations top-level et requêtes GET.</li>
-                                        <li><code>'None'</code> : Cookie envoyé pour toutes les requêtes (nécessite secure=true).</li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <h4>Explication des paramètres du cookie</h4>
+                        <ul>
+                            <li><strong>expires</strong> : Date d'expiration du cookie (timestamp Unix). Si non défini ou 0, le cookie expire à la fin de la session.</li>
+                            <li><strong>path</strong> : Chemin sur le serveur où le cookie sera disponible. <code>'/'</code> signifie disponible sur tout le site.</li>
+                            <li><strong>domain</strong> : Domaine pour lequel le cookie est disponible. Vide signifie domaine actuel uniquement.</li>
+                            <li><strong>secure</strong> : Si <code>true</code>, le cookie est envoyé uniquement sur une connexion HTTPS sécurisée.</li>
+                            <li><strong>httponly</strong> : Si <code>true</code>, le cookie est inaccessible via JavaScript (protection XSS).</li>
+                            <li><strong>samesite</strong> : Contrôle l'envoi du cookie lors de requêtes cross-origin :
+                                <ul>
+                                    <li><code>'Strict'</code> : Cookie envoyé uniquement pour les requêtes du même site.</li>
+                                    <li><code>'Lax'</code> : Cookie envoyé pour les navigations top-level et requêtes GET.</li>
+                                    <li><code>'None'</code> : Cookie envoyé pour toutes les requêtes (nécessite secure=true).</li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                            <div class="warning-box">
-                                <strong>Important</strong> : <code>setcookie()</code> doit être appelé avant tout affichage HTML, comme <code>session_start()</code>.
-                            </div>
+                        <div class="warning-box">
+                            <strong>Important</strong> : <code>setcookie()</code> doit être appelé avant tout affichage HTML, comme <code>session_start()</code>.
                         </div>
                     </div>
                 </div>
-                <div class="example">
-                    <div class="example-header">Lire et supprimer un cookie</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="comment">// Lire un cookie</span>
+            </div>
+            <div class="example">
+                <div class="example-header">Lire et supprimer un cookie</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="comment">// Lire un cookie</span>
 <span class="keyword">if</span> (<span class="function">isset</span>(<span class="variable">$_COOKIE</span>[<span class="string">'user_preference'</span>])) {
     <span class="variable">$theme</span> = <span class="variable">$_COOKIE</span>[<span class="string">'user_preference'</span>];
     <span class="keyword">echo</span> <span class="string">"Thème choisi : {<span class="variable">$theme</span>}"</span>;
@@ -297,23 +325,23 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         <span class="string>'path'</span>    => <span class="string">'/'</span>
     ]
 );</code></pre>
-                        <div class="result">
-                            <h4>Points importants sur la gestion des cookies</h4>
-                            <ol>
-                                <li><strong>Lecture</strong> : Les cookies sont disponibles dans la superglobale <code>$_COOKIE</code> sous forme de tableau associatif.</li>
-                                <li><strong>Validation</strong> : Toujours vérifier l'existence du cookie avec <code>isset()</code> avant d'y accéder.</li>
-                                <li><strong>Suppression</strong> : Pour supprimer un cookie, il faut le remplacer par un cookie vide avec une date d'expiration dans le passé.</li>
-                                <li><strong>Paramètres identiques</strong> : Lors de la suppression, le path et le domain doivent être identiques à ceux utilisés lors de la création.</li>
-                            </ol>
+                    <div class="result">
+                        <h4>Points importants sur la gestion des cookies</h4>
+                        <ol>
+                            <li><strong>Lecture</strong> : Les cookies sont disponibles dans la superglobale <code>$_COOKIE</code> sous forme de tableau associatif.</li>
+                            <li><strong>Validation</strong> : Toujours vérifier l'existence du cookie avec <code>isset()</code> avant d'y accéder.</li>
+                            <li><strong>Suppression</strong> : Pour supprimer un cookie, il faut le remplacer par un cookie vide avec une date d'expiration dans le passé.</li>
+                            <li><strong>Paramètres identiques</strong> : Lors de la suppression, le path et le domain doivent être identiques à ceux utilisés lors de la création.</li>
+                        </ol>
 
-                            <div class="tip-box">
-                                <strong>Astuce pratique</strong>
-                                <p>Pour déboguer les cookies, utilisez les outils de développement du navigateur (F12) puis allez dans l'onglet "Application" > "Cookies". Vous y verrez tous les cookies, leurs valeurs et propriétés.</p>
-                            </div>
+                        <div class="tip-box">
+                            <strong>Astuce pratique</strong>
+                            <p>Pour déboguer les cookies, utilisez les outils de développement du navigateur (F12) puis allez dans l'onglet "Application" > "Cookies". Vous y verrez tous les cookies, leurs valeurs et propriétés.</p>
+                        </div>
 
-                            <div class="example-code">
-                                <strong>Exemple d'utilisation sécurisée des cookies pour le consentement</strong>
-                                <pre><code class="language-php"><span class="comment">// Créer un cookie de consentement sécurisé</span>
+                        <div class="example-code">
+                            <strong>Exemple d'utilisation sécurisée des cookies pour le consentement</strong>
+                            <pre><code class="language-php"><span class="comment">// Créer un cookie de consentement sécurisé</span>
 <span class="keyword">function</span> <span class="function">setConsentCookie</span>(<span class="variable">$consentements</span>) {
     <span class="comment">// Sérialiser les données dans un format sécurisé</span>
     <span class="variable">$data</span> = <span class="function">json_encode</span>(<span class="variable">$consentements</span>);
@@ -334,22 +362,22 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         ]
     );
 }</code></pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Création d'un système de connexion/déconnexion</h2>
-            <p>Un système d'authentification sécurisé est essentiel pour toute application web qui nécessite des utilisateurs identifiés. Voici les composants clés :</p>
+    <section class="section">
+        <h2>Création d'un système de connexion/déconnexion</h2>
+        <p>Un système d'authentification sécurisé est essentiel pour toute application web qui nécessite des utilisateurs identifiés. Voici les composants clés :</p>
 
-            <h3>Structure de la base de données</h3>
-            <div class="example">
-                <div class="example-header">Table des utilisateurs</div>
-                <div class="example-content">
-                    <pre><code class="language-sql"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (
+        <h3>Structure de la base de données</h3>
+        <div class="example">
+            <div class="example-header">Table des utilisateurs</div>
+            <div class="example-content">
+                <pre><code class="language-sql"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (
     id <span class="type">INT</span> <span class="keyword">AUTO_INCREMENT</span> <span class="keyword">PRIMARY KEY</span>,
     username <span class="type">VARCHAR</span>(50) <span class="keyword">NOT NULL</span> <span class="keyword">UNIQUE</span>,
     email <span class="type">VARCHAR</span>(100) <span class="keyword">NOT NULL</span> <span class="keyword">UNIQUE</span>,
@@ -361,23 +389,23 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
     reset_token <span class="type">VARCHAR</span>(100) <span class="keyword">NULL</span>,
     reset_token_expires_at <span class="type">DATETIME</span> <span class="keyword">NULL</span>
 );</code></pre>
-                    <div class="result">
-                        <p>Cette structure inclut les champs nécessaires pour :</p>
-                        <ul>
-                            <li>Informations d'identification (nom d'utilisateur, email, mot de passe)</li>
-                            <li>Gestion des rôles (role)</li>
-                            <li>Suivi de l'activité (is_active, created_at, last_login)</li>
-                            <li>Réinitialisation de mot de passe (reset_token, reset_token_expires_at)</li>
-                        </ul>
-                    </div>
+                <div class="result">
+                    <p>Cette structure inclut les champs nécessaires pour :</p>
+                    <ul>
+                        <li>Informations d'identification (nom d'utilisateur, email, mot de passe)</li>
+                        <li>Gestion des rôles (role)</li>
+                        <li>Suivi de l'activité (is_active, created_at, last_login)</li>
+                        <li>Réinitialisation de mot de passe (reset_token, reset_token_expires_at)</li>
+                    </ul>
                 </div>
             </div>
-            <h3>Inscription d'un utilisateur</h3>
-            <div class="examples-list">
-                <div class="example">
-                    <div class="example-header">Formulaire d'inscription</div>
-                    <div class="example-content">
-                        <pre><code class="language-html"><span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"register.php"</span><span class="tag">&gt;</span>
+        </div>
+        <h3>Inscription d'un utilisateur</h3>
+        <div class="examples-list">
+            <div class="example">
+                <div class="example-header">Formulaire d'inscription</div>
+                <div class="example-content">
+                    <pre><code class="language-html"><span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"register.php"</span><span class="tag">&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"form-group"</span><span class="tag">&gt;</span>
         <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="string">"username"</span><span class="tag">&gt;</span>Nom d'utilisateur :<span class="tag">&lt;/label&gt;</span>
         <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">required</span><span class="tag">&gt;</span>
@@ -400,13 +428,13 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
     
     <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span><span class="tag">&gt;</span>S'inscrire<span class="tag">&lt;/button&gt;</span>
 <span class="tag">&lt;/form&gt;</span></code></pre>
-                    </div>
                 </div>
+            </div>
 
-                <div class="example">
-                    <div class="example-header">Traitement de l'inscription</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="comment">// register.php</span>
+            <div class="example">
+                <div class="example-header">Traitement de l'inscription</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="comment">// register.php</span>
 <span class="keyword">if</span> (<span class="variable">$_SERVER</span>[<span class="string>'REQUEST_METHOD'</span>] == <span class="string">'POST'</span>) {
     <span class="comment">// Récupérer et assainir les données</span>
     <span class="variable">$username</span> = <span class="function">filter_input</span>(INPUT_POST, <span class="string">'username'</span>, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -471,23 +499,23 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         }
     }
 }</code></pre>
-                        <div class="result">
-                            <p><strong>Points clés de sécurité :</strong></p>
-                            <ul>
-                                <li>Validation et assainissement des entrées utilisateur</li>
-                                <li>Vérification des doublons (username/email)</li>
-                                <li>Hachage du mot de passe avec <code>password_hash()</code></li>
-                            </ul>
-                        </div>
+                    <div class="result">
+                        <p><strong>Points clés de sécurité :</strong></p>
+                        <ul>
+                            <li>Validation et assainissement des entrées utilisateur</li>
+                            <li>Vérification des doublons (username/email)</li>
+                            <li>Hachage du mot de passe avec <code>password_hash()</code></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <h3>Connexion d'un utilisateur</h3>
-            <div class="examples-list">
-                <div class="example">
-                    <div class="example-header">Formulaire de connexion</div>
-                    <div class="example-content">
-                        <pre><code class="language-html"><span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"login.php"</span><span class="tag">&gt;</span>
+        </div>
+        <h3>Connexion d'un utilisateur</h3>
+        <div class="examples-list">
+            <div class="example">
+                <div class="example-header">Formulaire de connexion</div>
+                <div class="example-content">
+                    <pre><code class="language-html"><span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"login.php"</span><span class="tag">&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"form-group"</span><span class="tag">&gt;</span>
         <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="string">"username"</span><span class="tag">&gt;</span>Identifiant (nom ou email) :<span class="tag">&lt;/label&gt;</span>
         <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">name</span>=<span class="string">"identifier"</span> <span class="attr">required</span><span class="tag">&gt;</span>
@@ -508,13 +536,13 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="tag">&lt;/form&gt;</span>
 
 <span class="tag">&lt;p&gt;</span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"forgot_password.php"</span><span class="tag">&gt;</span>Mot de passe oublié ?<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/p&gt;</span></code></pre>
-                    </div>
                 </div>
+            </div>
 
-                <div class="example">
-                    <div class="example-header">Traitement de la connexion</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="comment">// login.php</span>
+            <div class="example">
+                <div class="example-header">Traitement de la connexion</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="comment">// login.php</span>
 <span class="function">session_start</span>();
 
 <span class="comment">// Rediriger si déjà connecté</span>
@@ -599,24 +627,24 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         }
     }
 }</code></pre>
-                        <div class="result">
-                            <p><strong>Points clés de sécurité :</strong></p>
-                            <ul>
-                                <li>Vérification du mot de passe avec <code>password_verify()</code></li>
-                                <li>Régénération de l'ID de session pour prévenir la fixation de session</li>
-                                <li>Stockage sécurisé du token "Se souvenir de moi"</li>
-                                <li>Protection contre les attaques par force brute avec <code>sleep()</code></li>
-                            </ul>
-                        </div>
+                    <div class="result">
+                        <p><strong>Points clés de sécurité :</strong></p>
+                        <ul>
+                            <li>Vérification du mot de passe avec <code>password_verify()</code></li>
+                            <li>Régénération de l'ID de session pour prévenir la fixation de session</li>
+                            <li>Stockage sécurisé du token "Se souvenir de moi"</li>
+                            <li>Protection contre les attaques par force brute avec <code>sleep()</code></li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <h3>Protection contre les attaques CSRF</h3>
-            <div class="example">
-                <div class="example-header">Génération et vérification de token CSRF</div>
-                <div class="example-content">
-                    <pre><code class="language-php"><span class="comment">// Générer un token CSRF</span>
+        <h3>Protection contre les attaques CSRF</h3>
+        <div class="example">
+            <div class="example-header">Génération et vérification de token CSRF</div>
+            <div class="example-content">
+                <pre><code class="language-php"><span class="comment">// Générer un token CSRF</span>
 <span class="keyword">function</span> <span class="function">generateCsrfToken</span>() {
     <span class="keyword">if</span> (<span class="function">empty</span>(<span class="variable">$_SESSION</span>[<span class="string">'csrf_token'</span>])) {
         <span class="variable">$_SESSION</span>[<span class="string">'csrf_token'</span>] = <span class="function">bin2hex</span>(<span class="function">random_bytes</span>(<span class="number">32</span>));
@@ -639,22 +667,22 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 
 <span class="comment">// Lors du traitement du formulaire</span>
 <span class="function">verifyCsrfToken</span>(<span class="variable">$_POST</span>[<span class="string">'csrf_token'</span>] ?? <span class="string">''</span>);</code></pre>
-                    <div class="result">
-                        <p>Le token CSRF (Cross-Site Request Forgery) est une mesure de protection cruciale pour empêcher les attaques où un site malveillant pourrait forcer votre navigateur à effectuer des actions non autorisées sur un site où vous êtes authentifié.</p>
-                    </div>
+                <div class="result">
+                    <p>Le token CSRF (Cross-Site Request Forgery) est une mesure de protection cruciale pour empêcher les attaques où un site malveillant pourrait forcer votre navigateur à effectuer des actions non autorisées sur un site où vous êtes authentifié.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Gestion des droits utilisateurs</h2>
-            <p>La mise en place d'un système de gestion des droits (ou contrôle d'accès) permet de limiter ce que différents types d'utilisateurs peuvent faire dans votre application.</p>
-            <h3>Modèle de contrôle d'accès basé sur les rôles (RBAC)</h3>
-            <div class="examples-list">
-                <div class="example">
-                    <div class="example-header">Structure de la base de données</div>
-                    <div class="example-content">
-                        <pre><code class="language-sql"><span class="comment">-- Table des rôles</span>
+    <section class="section">
+        <h2>Gestion des droits utilisateurs</h2>
+        <p>La mise en place d'un système de gestion des droits (ou contrôle d'accès) permet de limiter ce que différents types d'utilisateurs peuvent faire dans votre application.</p>
+        <h3>Modèle de contrôle d'accès basé sur les rôles (RBAC)</h3>
+        <div class="examples-list">
+            <div class="example">
+                <div class="example-header">Structure de la base de données</div>
+                <div class="example-content">
+                    <pre><code class="language-sql"><span class="comment">-- Table des rôles</span>
 <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> roles (
     id <span class="type">INT</span> <span class="keyword">AUTO_INCREMENT</span> <span class="keyword">PRIMARY KEY</span>,
     name <span class="type">VARCHAR</span>(50) <span class="keyword">NOT NULL</span> <span class="keyword">UNIQUE</span>,
@@ -680,13 +708,13 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="comment">-- Colonne role_id dans la table users</span>
 <span class="keyword">ALTER TABLE</span> users <span class="keyword">ADD COLUMN</span> role_id <span class="type">INT</span>;
 <span class="keyword">ALTER TABLE</span> users <span class="keyword">ADD</span> <span class="keyword">FOREIGN KEY</span> (role_id) <span class="keyword">REFERENCES</span> roles(id);</code></pre>
-                    </div>
                 </div>
+            </div>
 
-                <div class="example">
-                    <div class="example-header">Vérification des permissions</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="keyword">class</span> <span class="class-name">Authorization</span> {
+            <div class="example">
+                <div class="example-header">Vérification des permissions</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="keyword">class</span> <span class="class-name">Authorization</span> {
     <span class="keyword">private</span> <span class="variable">$pdo</span>;
     
     <span class="keyword">public function</span> <span class="function">__construct</span>(<span class="class-name">PDO</span> <span class="variable">$pdo</span>) {
@@ -721,15 +749,15 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         <span class="keyword">return</span> <span class="variable">$stmt</span>-><span class="function">fetchAll</span>(<span class="class-name">PDO</span>::FETCH_COLUMN);
     }
 }</code></pre>
-                    </div>
                 </div>
             </div>
-            <h3>Mise en pratique du contrôle d'accès</h3>
-            <div class="examples-list">
-                <div class="example">
-                    <div class="example-header">Middleware pour vérifier les permissions</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="comment">// auth_middleware.php</span>
+        </div>
+        <h3>Mise en pratique du contrôle d'accès</h3>
+        <div class="examples-list">
+            <div class="example">
+                <div class="example-header">Middleware pour vérifier les permissions</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="comment">// auth_middleware.php</span>
 <span class="keyword">function</span> <span class="function">requireLogin</span>() {
     <span class="function">session_start</span>();
     
@@ -767,12 +795,12 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         <span class="keyword">exit</span>;
     }
 }</code></pre>
-                    </div>
                 </div>
-                <div class="example">
-                    <div class="example-header">Utilisation dans une page d'administration</div>
-                    <div class="example-content">
-                        <pre><code class="language-php"><span class="comment">// admin_users.php</span>
+            </div>
+            <div class="example">
+                <div class="example-header">Utilisation dans une page d'administration</div>
+                <div class="example-content">
+                    <pre><code class="language-php"><span class="comment">// admin_users.php</span>
 <span class="keyword">require_once</span> <span class="string">'auth_middleware.php'</span>;
 
 <span class="comment">// Vérifier que l'utilisateur a la permission de gérer les utilisateurs</span>
@@ -788,18 +816,18 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="comment">// Afficher la liste des utilisateurs</span>
 <span class="keyword">include</span> <span class="string">'header.php'</span>;
 </code></pre>
-                        <div class="result">
-                            <p>Cette approche permet de centraliser la logique de contrôle d'accès et de l'appliquer facilement à différentes parties de votre application.</p>
-                        </div>
+                    <div class="result">
+                        <p>Cette approche permet de centraliser la logique de contrôle d'accès et de l'appliquer facilement à différentes parties de votre application.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <h3>Contrôle d'accès dans les vues et l'interface</h3>
-            <div class="example">
-                <div class="example-header">Affichage conditionnel des éléments d'interface</div>
-                <div class="example-content">
-                    <pre><code class="language-php"><span class="comment">// Dans un fichier de fonctions helper</span>
+        <h3>Contrôle d'accès dans les vues et l'interface</h3>
+        <div class="example">
+            <div class="example-header">Affichage conditionnel des éléments d'interface</div>
+            <div class="example-content">
+                <pre><code class="language-php"><span class="comment">// Dans un fichier de fonctions helper</span>
 <span class="keyword">function</span> <span class="function">canUserAccess</span>(<span class="variable">$permissionName</span>) {
     <span class="keyword">if</span> (!<span class="function">isset</span>(<span class="variable">$_SESSION</span>[<span class="string">'user_id'</span>])) {
         <span class="keyword">return</span> <span class="keyword">false</span>;
@@ -818,28 +846,28 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
 <span class="keyword">if</span> (<span class="function">canUserAccess</span>(<span class="string">'view_reports'</span>)) {
     <span class="keyword">echo</span> <span class="string">'&lt;li&gt;&lt;a href="reports.php"&gt;Rapports&lt;/a&gt;&lt;/li&gt;'</span>;
 }</code></pre>
-                    <div class="result">
-                        <p>En adaptant l'interface en fonction des permissions, vous créez une expérience utilisateur sur mesure et vous renforcez la sécurité de votre application.</p>
-                    </div>
+                <div class="result">
+                    <p>En adaptant l'interface en fonction des permissions, vous créez une expérience utilisateur sur mesure et vous renforcez la sécurité de votre application.</p>
                 </div>
             </div>
-
-            <div class="info-box">
-                <strong>Bonnes pratiques pour la gestion des droits</strong>
-                <ol>
-                    <li><strong>Principe du moindre privilège</strong> : accordez uniquement les permissions minimales nécessaires</li>
-                    <li><strong>Vérifications côté serveur</strong> : ne vous fiez jamais uniquement aux contrôles côté client</li>
-                    <li><strong>Journalisation des accès</strong> : enregistrez les tentatives d'accès non autorisées</li>
-                    <li><strong>Séparation des responsabilités</strong> : divisez les permissions pour limiter les risques</li>
-                    <li><strong>Vérifications à plusieurs niveaux</strong> : validez les permissions à chaque étape critique</li>
-                </ol>
-            </div>
-        </section>
-        <div class="navigation">
-            <a href="19-envoi-emails.php" class="nav-button">← Module précédent</a>
-            <a href="../../index.php" class="nav-button">Accueil</a>
-            <a href="21-internationalisation.php" class="nav-button">Module suivant →</a>
         </div>
-    </main>
 
-    <?php include __DIR__ . '/../includes/footer.php'; ?>
+        <div class="info-box">
+            <strong>Bonnes pratiques pour la gestion des droits</strong>
+            <ol>
+                <li><strong>Principe du moindre privilège</strong> : accordez uniquement les permissions minimales nécessaires</li>
+                <li><strong>Vérifications côté serveur</strong> : ne vous fiez jamais uniquement aux contrôles côté client</li>
+                <li><strong>Journalisation des accès</strong> : enregistrez les tentatives d'accès non autorisées</li>
+                <li><strong>Séparation des responsabilités</strong> : divisez les permissions pour limiter les risques</li>
+                <li><strong>Vérifications à plusieurs niveaux</strong> : validez les permissions à chaque étape critique</li>
+            </ol>
+        </div>
+    </section>
+    <div class="navigation">
+        <a href="19-envoi-emails.php" class="nav-button">← Module précédent</a>
+        <a href="../../index.php" class="nav-button">Accueil</a>
+        <a href="21-internationalisation.php" class="nav-button">Module suivant →</a>
+    </div>
+</main>
+
+<?php include __DIR__ . '/../includes/footer.php'; ?>

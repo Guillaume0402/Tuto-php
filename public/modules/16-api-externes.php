@@ -1,4 +1,6 @@
-<?php include __DIR__ . '/../includes/header.php';
+<?php
+$moduleClass = 'module16';
+include __DIR__ . '/../includes/header.php';
 
 
 
@@ -14,54 +16,53 @@ $description = $pageInfo['description'];
 ?>
 
 
-<body class="module16">
-    <header>
-        <h1><?php echo $titre; ?></h1>
-        <p class="subtitle"><?php echo $description; ?></p>
-    </header>
-    <div class="navigation">
-        <a href="15-architecture-mvc.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="17-gestion-fichiers.php" class="nav-button">Module suivant →</a>
-    </div>
-    <main>
-        <section class="section">
-            <h2>Avant de commencer : Qu'est-ce qu'une API ?</h2>
-            <p>Une <strong>API</strong> (Application Programming Interface) est une interface qui permet à deux applications de communiquer entre elles. Les API REST sont les plus courantes sur le web : elles utilisent le protocole HTTP et échangent des données (souvent en JSON).</p>
-            <div class="info-box">
-                <strong>Schéma d'une requête API :</strong>
-                <div class="api-flow">
-                    <div class="flow-step"><strong>Votre code PHP</strong> → <span class="url">https://api.exemple.com/...</span></div>
-                    <div class="flow-step"><strong>Serveur distant</strong> → Réponse JSON</div>
-                </div>
+<div class="module-header">
+    <h1><?= $titre ?></h1>
+    <p class="subtitle"><?= $description ?></p>
+</div>
+<div class="navigation">
+    <a href="15-architecture-mvc.php" class="nav-button">← Module précédent</a>
+    <a href="../../index.php" class="nav-button">Accueil</a>
+    <a href="17-gestion-fichiers.php" class="nav-button">Module suivant →</a>
+</div>
+<main>
+    <section class="section">
+        <h2>Avant de commencer : Qu'est-ce qu'une API ?</h2>
+        <p>Une <strong>API</strong> (Application Programming Interface) est une interface qui permet à deux applications de communiquer entre elles. Les API REST sont les plus courantes sur le web : elles utilisent le protocole HTTP et échangent des données (souvent en JSON).</p>
+        <div class="info-box">
+            <strong>Schéma d'une requête API :</strong>
+            <div class="api-flow">
+                <div class="flow-step"><strong>Votre code PHP</strong> → <span class="url">https://api.exemple.com/...</span></div>
+                <div class="flow-step"><strong>Serveur distant</strong> → Réponse JSON</div>
             </div>
-            <p>Pour chaque API, consultez toujours la documentation officielle : elle précise les endpoints, les paramètres, les méthodes HTTP à utiliser, les formats de réponse, etc.</p>
-        </section>
+        </div>
+        <p>Pour chaque API, consultez toujours la documentation officielle : elle précise les endpoints, les paramètres, les méthodes HTTP à utiliser, les formats de réponse, etc.</p>
+    </section>
 
-        <section class="section">
-            <h2>1. Consommer une API REST en PHP</h2>
-            <p>La plupart des API modernes utilisent le protocole HTTP et échangent des données au format JSON. Pour consommer une API, on utilise généralement <code>file_get_contents</code> ou <code>cURL</code>.</p>
-            <h3>Exemple simple avec <code>file_get_contents</code></h3>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Appel d'une API publique (ex : OpenWeatherMap)</span>
+    <section class="section">
+        <h2>1. Consommer une API REST en PHP</h2>
+        <p>La plupart des API modernes utilisent le protocole HTTP et échangent des données au format JSON. Pour consommer une API, on utilise généralement <code>file_get_contents</code> ou <code>cURL</code>.</p>
+        <h3>Exemple simple avec <code>file_get_contents</code></h3>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Appel d'une API publique (ex : OpenWeatherMap)</span>
 <span class="variable">$url</span> = <span class="string">'https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&current_weather=true'</span>;
 <span class="variable">$json</span> = <span class="function">file_get_contents</span>(<span class="variable">$url</span>);
 <span class="variable">$data</span> = <span class="function">json_decode</span>(<span class="variable">$json</span>, <span class="keyword">true</span>);
 <span class="comment">// Afficher la température actuelle</span>
 <span class="keyword">echo</span> <span class="string">'Température à Paris : '</span> . <span class="variable">$data</span>[<span class="string">'current_weather'</span>][<span class="string">'temperature'</span>] . <span class="string">'°C'</span>;
 </code></pre>
-            </div>
-            <div class="tip-box">
-                <strong>Astuce :</strong> <code>file_get_contents</code> fonctionne pour les API publiques sans authentification. Pour des API sécurisées ou des requêtes avancées, utilisez <strong>cURL</strong>.
-            </div>
-        </section>
+        </div>
+        <div class="tip-box">
+            <strong>Astuce :</strong> <code>file_get_contents</code> fonctionne pour les API publiques sans authentification. Pour des API sécurisées ou des requêtes avancées, utilisez <strong>cURL</strong>.
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>2. Utiliser cURL en PHP</h2>
-            <p>cURL est une bibliothèque très puissante pour faire des requêtes HTTP (GET, POST, PUT, DELETE) avec gestion des headers, authentification, etc.</p>
-            <h3>Exemple : Requête GET avec cURL</h3>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Initialiser cURL</span>
+    <section class="section">
+        <h2>2. Utiliser cURL en PHP</h2>
+        <p>cURL est une bibliothèque très puissante pour faire des requêtes HTTP (GET, POST, PUT, DELETE) avec gestion des headers, authentification, etc.</p>
+        <h3>Exemple : Requête GET avec cURL</h3>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Initialiser cURL</span>
 <span class="variable">$ch</span> = <span class="function">curl_init</span>(<span class="string">'https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&current_weather=true'</span>);
 <span class="function">curl_setopt</span>(<span class="variable">$ch</span>, <span class="constant">CURLOPT_RETURNTRANSFER</span>, <span class="keyword">true</span>);
 <span class="variable">$json</span> = <span class="function">curl_exec</span>(<span class="variable">$ch</span>);
@@ -69,10 +70,10 @@ $description = $pageInfo['description'];
 <span class="variable">$data</span> = <span class="function">json_decode</span>(<span class="variable">$json</span>, <span class="keyword">true</span>);
 <span class="keyword">echo</span> <span class="string">'Température à Paris : '</span> . <span class="variable">$data</span>[<span class="string">'current_weather'</span>][<span class="string">'temperature'</span>] . <span class="string">'°C'</span>;
 </code></pre>
-            </div>
-            <h3>Exemple : Requête POST avec cURL</h3>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Exemple d'envoi de données en POST (ex : API fictive)</span>
+        </div>
+        <h3>Exemple : Requête POST avec cURL</h3>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Exemple d'envoi de données en POST (ex : API fictive)</span>
 <span class="variable">$ch</span> = <span class="function">curl_init</span>(<span class="string">'https://jsonplaceholder.typicode.com/posts'</span>);
 <span class="function">curl_setopt</span>(<span class="variable">$ch</span>, <span class="constant">CURLOPT_POST</span>, <span class="keyword">true</span>);
 <span class="function">curl_setopt</span>(<span class="variable">$ch</span>, <span class="constant">CURLOPT_POSTFIELDS</span>, <span class="function">http_build_query</span>([
@@ -86,17 +87,17 @@ $description = $pageInfo['description'];
 <span class="comment">// Afficher la réponse JSON</span>
 <span class="keyword">echo</span> <span class="variable">$response</span>;
 </code></pre>
-            </div>
-            <div class="info-box">
-                <strong>À retenir :</strong> cURL permet de gérer les headers, l'authentification, les méthodes HTTP, les erreurs, etc. Consultez la <a href="https://www.php.net/manual/fr/book.curl.php" target="_blank">doc officielle</a> pour plus d'options.
-            </div>
-        </section>
+        </div>
+        <div class="info-box">
+            <strong>À retenir :</strong> cURL permet de gérer les headers, l'authentification, les méthodes HTTP, les erreurs, etc. Consultez la <a href="https://www.php.net/manual/fr/book.curl.php" target="_blank">doc officielle</a> pour plus d'options.
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>3. Authentification et tokens OAuth</h2>
-            <p>De nombreuses API nécessitent une authentification via un token (clé API, Bearer token, OAuth2...). Voici un exemple d'appel d'API avec un token Bearer :</p>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Appel d'une API avec un token Bearer</span>
+    <section class="section">
+        <h2>3. Authentification et tokens OAuth</h2>
+        <p>De nombreuses API nécessitent une authentification via un token (clé API, Bearer token, OAuth2...). Voici un exemple d'appel d'API avec un token Bearer :</p>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Appel d'une API avec un token Bearer</span>
 <span class="variable">$token</span> = <span class="string">'VOTRE_TOKEN_ICI'</span>;
 <span class="variable">$ch</span> = <span class="function">curl_init</span>(<span class="string">'https://api.exemple.com/data'</span>);
 <span class="function">curl_setopt</span>(<span class="variable">$ch</span>, <span class="constant">CURLOPT_HTTPHEADER</span>, [<span class="string">'Authorization: Bearer ' . $token</span>]);
@@ -105,18 +106,18 @@ $description = $pageInfo['description'];
 <span class="function">curl_close</span>(<span class="variable">$ch</span>);
 <span class="keyword">echo</span> <span class="variable">$response</span>;
 </code></pre>
-            </div>
-            <div class="tip-box">
-                <strong>OAuth2 :</strong> Pour des API comme Google, GitHub, Stripe, il faut suivre le flow OAuth2 (autorisation, récupération du token, etc.). Utilisez des librairies comme <a href="https://oauth2-client.thephpleague.com/" target="_blank">league/oauth2-client</a> pour simplifier l'intégration.
-            </div>
-        </section>
+        </div>
+        <div class="tip-box">
+            <strong>OAuth2 :</strong> Pour des API comme Google, GitHub, Stripe, il faut suivre le flow OAuth2 (autorisation, récupération du token, etc.). Utilisez des librairies comme <a href="https://oauth2-client.thephpleague.com/" target="_blank">league/oauth2-client</a> pour simplifier l'intégration.
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>4. Webhooks : recevoir des notifications d'une API</h2>
-            <p>Un webhook est une URL de votre application appelée par un service externe lorsqu'un événement se produit (paiement, push GitHub, etc.).</p>
-            <h3>Exemple de réception d'un webhook Stripe</h3>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Fichier : webhook.php</span>
+    <section class="section">
+        <h2>4. Webhooks : recevoir des notifications d'une API</h2>
+        <p>Un webhook est une URL de votre application appelée par un service externe lorsqu'un événement se produit (paiement, push GitHub, etc.).</p>
+        <h3>Exemple de réception d'un webhook Stripe</h3>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Fichier : webhook.php</span>
 <span class="variable">$payload</span> = <span class="function">file_get_contents</span>(<span class="string">'php://input'</span>);
 <span class="variable">$event</span> = <span class="function">json_decode</span>(<span class="variable">$payload</span>, <span class="keyword">true</span>);
 <span class="comment">// Vérifier le type d'événement</span>
@@ -126,23 +127,23 @@ $description = $pageInfo['description'];
 <span class="comment">// Répondre à Stripe</span>
 <span class="function">http_response_code</span>(200);
 </code></pre>
-            </div>
-            <div class="info-box">
-                <strong>Bonnes pratiques :</strong>
-                <ul>
-                    <li>Vérifiez la signature du webhook (voir doc Stripe, GitHub...)</li>
-                    <li>Répondez rapidement (200 OK)</li>
-                    <li>Logguez les événements reçus</li>
-                </ul>
-            </div>
-        </section>
+        </div>
+        <div class="info-box">
+            <strong>Bonnes pratiques :</strong>
+            <ul>
+                <li>Vérifiez la signature du webhook (voir doc Stripe, GitHub...)</li>
+                <li>Répondez rapidement (200 OK)</li>
+                <li>Logguez les événements reçus</li>
+            </ul>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>5. Gérer les réponses et les erreurs d'API</h2>
-            <p>Il est essentiel de vérifier le code de réponse HTTP et de gérer les erreurs lors de l'appel à une API.</p>
-            <h3>Exemple : gestion des erreurs avec cURL</h3>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Exemple de gestion d'erreur avec cURL</span>
+    <section class="section">
+        <h2>5. Gérer les réponses et les erreurs d'API</h2>
+        <p>Il est essentiel de vérifier le code de réponse HTTP et de gérer les erreurs lors de l'appel à une API.</p>
+        <h3>Exemple : gestion des erreurs avec cURL</h3>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Exemple de gestion d'erreur avec cURL</span>
 <span class="variable">$ch</span> = <span class="function">curl_init</span>(<span class="string">'https://api.exemple.com/data'</span>);
 <span class="function">curl_setopt</span>(<span class="variable">$ch</span>, <span class="constant">CURLOPT_RETURNTRANSFER</span>, <span class="keyword">true</span>);
 <span class="variable">$response</span> = <span class="function">curl_exec</span>(<span class="variable">$ch</span>);
@@ -155,17 +156,17 @@ $description = $pageInfo['description'];
 }
 <span class="function">curl_close</span>(<span class="variable">$ch</span>);
 </code></pre>
-            </div>
-            <div class="warning-box">
-                <strong>Attention :</strong> Toujours vérifier le code HTTP et le contenu de la réponse pour éviter les bugs et sécuriser votre application.
-            </div>
-        </section>
+        </div>
+        <div class="warning-box">
+            <strong>Attention :</strong> Toujours vérifier le code HTTP et le contenu de la réponse pour éviter les bugs et sécuriser votre application.
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Exemple complet : Consommer une API météo et afficher le résultat</h2>
-            <p>Voici un exemple complet qui récupère la météo d'une ville et affiche la température et la description du temps :</p>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Exemple avec l'API OpenWeatherMap (clé API requise)</span>
+    <section class="section">
+        <h2>Exemple complet : Consommer une API météo et afficher le résultat</h2>
+        <p>Voici un exemple complet qui récupère la météo d'une ville et affiche la température et la description du temps :</p>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Exemple avec l'API OpenWeatherMap (clé API requise)</span>
 <span class="variable">$apiKey</span> = <span class="string">'VOTRE_CLE_API'</span>;
 <span class="variable">$city</span> = <span class="string>'Paris'</span>;
 <span class="variable">$url</span> = <span class="string">"https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey&units=metric&lang=fr"</span>;
@@ -179,17 +180,17 @@ $description = $pageInfo['description'];
     <span class="keyword">echo</span> <span class="string">"Impossible de récupérer la météo."</span>;
 }
 </code></pre>
-            </div>
-            <div class="tip-box">
-                <strong>Conseil :</strong> Pour tester, inscrivez-vous sur <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a> pour obtenir une clé API gratuite.
-            </div>
-        </section>
+        </div>
+        <div class="tip-box">
+            <strong>Conseil :</strong> Pour tester, inscrivez-vous sur <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a> pour obtenir une clé API gratuite.
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Décoder et manipuler une réponse JSON</h2>
-            <p>La plupart des API REST renvoient des données au format <strong>JSON</strong>. En PHP, on utilise <code>json_decode</code> pour transformer la réponse en tableau ou objet.</p>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Exemple de réponse JSON</span>
+    <section class="section">
+        <h2>Décoder et manipuler une réponse JSON</h2>
+        <p>La plupart des API REST renvoient des données au format <strong>JSON</strong>. En PHP, on utilise <code>json_decode</code> pour transformer la réponse en tableau ou objet.</p>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Exemple de réponse JSON</span>
 <span class="string">'{"name":"Paris","main":{"temp":22.5},"weather":[{"description":"ciel dégagé"}]}'</span>
 
 <span class="comment">// Décodage en tableau associatif</span>
@@ -197,17 +198,17 @@ $description = $pageInfo['description'];
 <span class="keyword">echo</span> <span class="string">$data['main']['temp']</span>; <span class="comment">// 22.5</span>
 <span class="keyword">echo</span> <span class="string">$data['weather'][0]['description']</span>; <span class="comment">// ciel dégagé</span>
 </code></pre>
-            </div>
-            <div class="info-box">
-                <strong>À savoir :</strong> <code>json_decode($json, true)</code> retourne un tableau associatif, <code>json_decode($json)</code> retourne un objet PHP.
-            </div>
-        </section>
+        </div>
+        <div class="info-box">
+            <strong>À savoir :</strong> <code>json_decode($json, true)</code> retourne un tableau associatif, <code>json_decode($json)</code> retourne un objet PHP.
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Aller plus loin avec cURL : headers, timeout, erreurs</h2>
-            <p>cURL permet de personnaliser vos requêtes HTTP : ajouter des headers, gérer le timeout, suivre les redirections, etc.</p>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Exemple avancé avec headers et timeout</span>
+    <section class="section">
+        <h2>Aller plus loin avec cURL : headers, timeout, erreurs</h2>
+        <p>cURL permet de personnaliser vos requêtes HTTP : ajouter des headers, gérer le timeout, suivre les redirections, etc.</p>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Exemple avancé avec headers et timeout</span>
 <span class="variable">$ch</span> = <span class="function">curl_init</span>(<span class="string">'https://api.exemple.com/data'</span>);
 <span class="function">curl_setopt</span>(<span class="variable">$ch</span>, <span class="constant">CURLOPT_RETURNTRANSFER</span>, <span class="keyword">true</span>);
 <span class="function">curl_setopt</span>(<span class="variable">$ch</span>, <span class="constant">CURLOPT_HTTPHEADER</span>, [<span class="string">'Accept: application/json'</span>, <span class="string">'Authorization: Bearer VOTRE_TOKEN'</span>]);
@@ -221,87 +222,87 @@ $description = $pageInfo['description'];
 }
 <span class="function">curl_close</span>(<span class="variable">$ch</span>);
 </code></pre>
-            </div>
-            <div class="tip-box">
-                <strong>Conseil :</strong> Utilisez toujours un timeout pour éviter que votre script ne reste bloqué si l'API ne répond pas.
-            </div>
-        </section>
+        </div>
+        <div class="tip-box">
+            <strong>Conseil :</strong> Utilisez toujours un timeout pour éviter que votre script ne reste bloqué si l'API ne répond pas.
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Tester une API en local : outils pratiques</h2>
-            <p>Pour tester vos appels API, vous pouvez utiliser des outils comme <a href="https://www.postman.com/" target="_blank">Postman</a> ou <a href="https://httpie.io/" target="_blank">HTTPie</a>. Ils permettent de simuler des requêtes, voir les réponses, tester différents headers, etc.</p>
-            <div class="info-box">
-                <strong>Astuce :</strong> Utilisez <code>php -S localhost:8000</code> pour lancer un serveur local et tester vos webhooks ou endpoints API.
-            </div>
-        </section>
+    <section class="section">
+        <h2>Tester une API en local : outils pratiques</h2>
+        <p>Pour tester vos appels API, vous pouvez utiliser des outils comme <a href="https://www.postman.com/" target="_blank">Postman</a> ou <a href="https://httpie.io/" target="_blank">HTTPie</a>. Ils permettent de simuler des requêtes, voir les réponses, tester différents headers, etc.</p>
+        <div class="info-box">
+            <strong>Astuce :</strong> Utilisez <code>php -S localhost:8000</code> pour lancer un serveur local et tester vos webhooks ou endpoints API.
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Utiliser Postman pour tester une API</h2>
-            <p><a href="https://www.postman.com/" target="_blank">Postman</a> est un outil graphique gratuit qui permet de tester facilement des requêtes API sans écrire de code. Il est très utilisé par les développeurs pour explorer, documenter et automatiser les tests d'API.</p>
-            <ol>
-                <li><strong>Téléchargez et installez Postman</strong> depuis <a href="https://www.postman.com/downloads/" target="_blank">le site officiel</a>.</li>
-                <li><strong>Créez une nouvelle requête</strong> :<br>
-                    <ul>
-                        <li>Cliquez sur <strong>New &gt; HTTP Request</strong>.</li>
-                        <li>Choisissez la méthode (GET, POST, etc.) et saisissez l'URL de l'API (ex : <code>https://jsonplaceholder.typicode.com/posts</code>).</li>
-                    </ul>
-                </li>
-                <li><strong>Ajoutez des paramètres ou un corps de requête</strong> :<br>
-                    <ul>
-                        <li>Pour une requête GET, ajoutez les paramètres dans l'onglet <strong>Params</strong>.</li>
-                        <li>Pour une requête POST, allez dans l'onglet <strong>Body</strong>, sélectionnez <strong>raw</strong> et choisissez <strong>JSON</strong> puis saisissez votre payload.</li>
-                    </ul>
-                </li>
-                <li><strong>Ajoutez des headers</strong> si besoin (ex : <code>Authorization</code>, <code>Content-Type: application/json</code>).</li>
-                <li><strong>Cliquez sur <em>Send</em></strong> pour envoyer la requête et visualiser la réponse (statut HTTP, en-têtes, corps JSON, etc.).</li>
-            </ol>
-            <div class="example-box">
-                <pre><code class="language-json">{
+    <section class="section">
+        <h2>Utiliser Postman pour tester une API</h2>
+        <p><a href="https://www.postman.com/" target="_blank">Postman</a> est un outil graphique gratuit qui permet de tester facilement des requêtes API sans écrire de code. Il est très utilisé par les développeurs pour explorer, documenter et automatiser les tests d'API.</p>
+        <ol>
+            <li><strong>Téléchargez et installez Postman</strong> depuis <a href="https://www.postman.com/downloads/" target="_blank">le site officiel</a>.</li>
+            <li><strong>Créez une nouvelle requête</strong> :<br>
+                <ul>
+                    <li>Cliquez sur <strong>New &gt; HTTP Request</strong>.</li>
+                    <li>Choisissez la méthode (GET, POST, etc.) et saisissez l'URL de l'API (ex : <code>https://jsonplaceholder.typicode.com/posts</code>).</li>
+                </ul>
+            </li>
+            <li><strong>Ajoutez des paramètres ou un corps de requête</strong> :<br>
+                <ul>
+                    <li>Pour une requête GET, ajoutez les paramètres dans l'onglet <strong>Params</strong>.</li>
+                    <li>Pour une requête POST, allez dans l'onglet <strong>Body</strong>, sélectionnez <strong>raw</strong> et choisissez <strong>JSON</strong> puis saisissez votre payload.</li>
+                </ul>
+            </li>
+            <li><strong>Ajoutez des headers</strong> si besoin (ex : <code>Authorization</code>, <code>Content-Type: application/json</code>).</li>
+            <li><strong>Cliquez sur <em>Send</em></strong> pour envoyer la requête et visualiser la réponse (statut HTTP, en-têtes, corps JSON, etc.).</li>
+        </ol>
+        <div class="example-box">
+            <pre><code class="language-json">{
   "title": "Test Postman",
   "body": "Ceci est un test via Postman",
   "userId": 1
 }</code></pre>
-            </div>
-            <div class="info-box">
-                <strong>Bonnes pratiques :</strong>
-                <ul>
-                    <li>Utilisez l'onglet <strong>History</strong> pour rejouer des requêtes.</li>
-                    <li>Enregistrez vos requêtes dans des <strong>collections</strong> pour les retrouver facilement.</li>
-                    <li>Exploitez l'onglet <strong>Tests</strong> pour automatiser la vérification des réponses.</li>
-                    <li>Vous pouvez générer du code PHP (ou autre) à partir d'une requête Postman via <strong>Code &gt; PHP cURL</strong>.</li>
-                </ul>
-            </div>
-            <div class="tip-box">
-                <strong>Astuce :</strong> Postman permet aussi de simuler des webhooks en lançant un serveur local ou en utilisant <a href="https://webhook.site/" target="_blank">webhook.site</a> pour recevoir des notifications d'API.
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Exemple pratique : API de covoiturage</h2>
-            <p>Imaginons que nous développons une application de covoiturage et que nous devons intégrer une API pour rechercher des trajets disponibles entre deux villes. Voici comment nous pourrions procéder :</p>
-
-            <h3>1. Présentation du cas d'usage</h3>
-            <p>Notre API fictive <strong>CarShare API</strong> permet de :</p>
+        </div>
+        <div class="info-box">
+            <strong>Bonnes pratiques :</strong>
             <ul>
-                <li>Rechercher des trajets entre deux villes</li>
-                <li>Filtrer par date, nombre de places, prix maximum</li>
-                <li>Obtenir les détails d'un trajet spécifique</li>
-                <li>Réserver un siège pour un trajet</li>
+                <li>Utilisez l'onglet <strong>History</strong> pour rejouer des requêtes.</li>
+                <li>Enregistrez vos requêtes dans des <strong>collections</strong> pour les retrouver facilement.</li>
+                <li>Exploitez l'onglet <strong>Tests</strong> pour automatiser la vérification des réponses.</li>
+                <li>Vous pouvez générer du code PHP (ou autre) à partir d'une requête Postman via <strong>Code &gt; PHP cURL</strong>.</li>
             </ul>
+        </div>
+        <div class="tip-box">
+            <strong>Astuce :</strong> Postman permet aussi de simuler des webhooks en lançant un serveur local ou en utilisant <a href="https://webhook.site/" target="_blank">webhook.site</a> pour recevoir des notifications d'API.
+        </div>
+    </section>
 
-            <div class="info-box">
-                <strong>Fonctionnement général d'une API de covoiturage :</strong>
-                <ol>
-                    <li>L'utilisateur saisit des critères de recherche (départ, arrivée, date...)</li>
-                    <li>Notre application PHP envoie ces critères à l'API</li>
-                    <li>L'API renvoie une liste de trajets correspondants</li>
-                    <li>Notre application affiche les résultats et permet à l'utilisateur d'interagir avec eux</li>
-                </ol>
-            </div>
+    <section class="section">
+        <h2>Exemple pratique : API de covoiturage</h2>
+        <p>Imaginons que nous développons une application de covoiturage et que nous devons intégrer une API pour rechercher des trajets disponibles entre deux villes. Voici comment nous pourrions procéder :</p>
 
-            <h3>2. Exemple : Recherche de trajets disponibles</h3>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">/**
+        <h3>1. Présentation du cas d'usage</h3>
+        <p>Notre API fictive <strong>CarShare API</strong> permet de :</p>
+        <ul>
+            <li>Rechercher des trajets entre deux villes</li>
+            <li>Filtrer par date, nombre de places, prix maximum</li>
+            <li>Obtenir les détails d'un trajet spécifique</li>
+            <li>Réserver un siège pour un trajet</li>
+        </ul>
+
+        <div class="info-box">
+            <strong>Fonctionnement général d'une API de covoiturage :</strong>
+            <ol>
+                <li>L'utilisateur saisit des critères de recherche (départ, arrivée, date...)</li>
+                <li>Notre application PHP envoie ces critères à l'API</li>
+                <li>L'API renvoie une liste de trajets correspondants</li>
+                <li>Notre application affiche les résultats et permet à l'utilisateur d'interagir avec eux</li>
+            </ol>
+        </div>
+
+        <h3>2. Exemple : Recherche de trajets disponibles</h3>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">/**
  * Exemple d'intégration d'une API de covoiturage
  * 
  * Cet exemple montre comment :
@@ -402,12 +403,12 @@ $description = $pageInfo['description'];
     <span class="keyword">echo</span> <span class="string">"&lt;div class='error'>Erreur API: $errorMessage&lt;/div>"</span>;
 }
 </code></pre>
-            </div>
+        </div>
 
-            <h3>3. Structure de la réponse JSON</h3>
-            <p>Voici un exemple de la structure de données que pourrait renvoyer notre API de covoiturage :</p>
-            <div class="example-box">
-                <pre><code class="language-json">{
+        <h3>3. Structure de la réponse JSON</h3>
+        <p>Voici un exemple de la structure de données que pourrait renvoyer notre API de covoiturage :</p>
+        <div class="example-box">
+            <pre><code class="language-json">{
   "meta": {
     "total_results": 42,
     "total_pages": 5,
@@ -449,12 +450,12 @@ $description = $pageInfo['description'];
     // ... autres trajets ...
   ]
 }</code></pre>
-            </div>
+        </div>
 
-            <h3>4. Récupérer les détails d'un trajet spécifique</h3>
-            <p>Une fois qu'un utilisateur sélectionne un trajet, vous pouvez récupérer ses détails complets pour afficher plus d'informations :</p>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Récupération des détails d'un trajet spécifique</span>
+        <h3>4. Récupérer les détails d'un trajet spécifique</h3>
+        <p>Une fois qu'un utilisateur sélectionne un trajet, vous pouvez récupérer ses détails complets pour afficher plus d'informations :</p>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Récupération des détails d'un trajet spécifique</span>
 <span class="keyword">function</span> <span class="function">getTripDetails</span>(<span class="variable">$tripId</span>, <span class="variable">$apiKey</span>, <span class="variable">$baseUrl</span>) {
     <span class="variable">$url</span> = <span class="string">"$baseUrl/trips/$tripId"</span>;
     
@@ -493,23 +494,23 @@ $description = $pageInfo['description'];
     }
 }
 </code></pre>
-            </div>
+        </div>
 
-            <h3>5. Effectuer une réservation</h3>
-            <p>Pour réserver une place sur un trajet, on utilise généralement une requête POST avec les informations du passager :</p>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// Fonction pour réserver un trajet</span>
+        <h3>5. Effectuer une réservation</h3>
+        <p>Pour réserver une place sur un trajet, on utilise généralement une requête POST avec les informations du passager :</p>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// Fonction pour réserver un trajet</span>
 <span class="keyword">function</span> <span class="function">bookTrip</span>(<span class="variable">$tripId</span>, <span class="variable">$userData</span>, <span class="variable">$apiKey</span>, <span class="variable">$baseUrl</span>) {
     <span class="variable">$url</span> = <span class="string">"$baseUrl/bookings"</span>;
     
     <span class="comment">// Préparation des données pour la réservation</span>
     <span class="variable">$postData</span> = [
         <span class="string>'trip_id'</span> => <span class="variable">$tripId</span>,
-        <span class="string>'passengers'</span> => <span class="variable">$userData</span>[<span class="string>'passengers'</span>],
-        <span class="string>'passenger_name'</span> => <span class="variable">$userData</span>[<span class="string>'name'</span>],
-        <span class="string>'passenger_email'</span> => <span class="variable">$userData</span>[<span class="string>'email'</span>],
-        <span class="string>'passenger_phone'</span> => <span class="variable">$userData</span>[<span class="string>'phone'</span>],
-        <span class="string>'message_to_driver'</span> => <span class="variable">$userData</span>[<span class="string>'message'</span>] ?? <span class="string">''</span>
+        <span class="string">'passengers'</span> => <span class="variable">$userData</span>[<span class="string">'passengers'</span>],
+        <span class="string">'passenger_name'</span> => <span class="variable">$userData</span>[<span class="string">'name'</span>],
+        <span class="string">'passenger_email'</span> => <span class="variable">$userData</span>[<span class="string">'email'</span>],
+        <span class="string">'passenger_phone'</span> => <span class="variable">$userData</span>[<span class="string">'phone'</span>],
+        <span class="string">'message_to_driver'</span> => <span class="variable">$userData</span>[<span class="string">'message'</span>] ?? <span class="string">''</span>
     ];
     
     <span class="variable">$ch</span> = <span class="function">curl_init</span>(<span class="variable">$url</span>);
@@ -530,7 +531,7 @@ $description = $pageInfo['description'];
     
     <span class="keyword">return</span> [
         <span class="string>'status'</span> => (<span class="variable">$httpCode</span> === 201), <span class="comment">// 201 Created pour une réservation réussie</span>
-        <span class="string>'data'</span> => <span class="function">json_decode</span>(<span class="variable">$response</span>, <span class="keyword">true</span>)
+        <span class="string">'data'</span> => <span class="function">json_decode</span>(<span class="variable">$response</span>, <span class="keyword">true</span>)
     ];
 }
 
@@ -564,43 +565,43 @@ $description = $pageInfo['description'];
     }
 }
 </code></pre>
-            </div>
+        </div>
 
-            <h3>6. Bonnes pratiques pour l'intégration d'une API de covoiturage</h3>
-            <div class="info-box">
-                <strong>Recommandations :</strong>
-                <ul>
-                    <li><strong>Mise en cache</strong> : Pour réduire le nombre d'appels API et améliorer les performances, mettez en cache les résultats de recherche pour une courte durée (ex : 1-5 minutes).</li>
-                    <li><strong>Temps réel</strong> : Pour les réservations, assurez-vous toujours d'avoir les données à jour (ne pas utiliser le cache).</li>
-                    <li><strong>Gestion des erreurs</strong> : Prévoyez tous les cas d'erreur possibles : API indisponible, plus de places disponibles, etc.</li>
-                    <li><strong>Expérience utilisateur</strong> : Affichez un indicateur de chargement pendant les appels API et proposez des actions alternatives en cas d'échec.</li>
-                    <li><strong>Sécurité</strong> : Ne stockez jamais la clé API côté client et validez toujours les données envoyées par l'utilisateur.</li>
-                </ul>
-            </div>
+        <h3>6. Bonnes pratiques pour l'intégration d'une API de covoiturage</h3>
+        <div class="info-box">
+            <strong>Recommandations :</strong>
+            <ul>
+                <li><strong>Mise en cache</strong> : Pour réduire le nombre d'appels API et améliorer les performances, mettez en cache les résultats de recherche pour une courte durée (ex : 1-5 minutes).</li>
+                <li><strong>Temps réel</strong> : Pour les réservations, assurez-vous toujours d'avoir les données à jour (ne pas utiliser le cache).</li>
+                <li><strong>Gestion des erreurs</strong> : Prévoyez tous les cas d'erreur possibles : API indisponible, plus de places disponibles, etc.</li>
+                <li><strong>Expérience utilisateur</strong> : Affichez un indicateur de chargement pendant les appels API et proposez des actions alternatives en cas d'échec.</li>
+                <li><strong>Sécurité</strong> : Ne stockez jamais la clé API côté client et validez toujours les données envoyées par l'utilisateur.</li>
+            </ul>
+        </div>
 
-            <div class="tip-box">
-                <strong>Astuce</strong> : Pour simuler une API de covoiturage en phase de développement, vous pouvez créer un simple fichier JSON contenant des trajets fictifs et le servir via PHP :
-                <pre><code class="language-php"><span class="comment">// fake-api.php</span>
+        <div class="tip-box">
+            <strong>Astuce</strong> : Pour simuler une API de covoiturage en phase de développement, vous pouvez créer un simple fichier JSON contenant des trajets fictifs et le servir via PHP :
+            <pre><code class="language-php"><span class="comment">// fake-api.php</span>
 <span class="variable">$trips</span> = [
     <span class="comment">/* Vos données de test */</span>
 ];
 <span class="function">header</span>(<span class="string">'Content-Type: application/json'</span>);
 <span class="keyword">echo</span> <span class="function">json_encode</span>([<span class="string">'trips'</span> => <span class="variable">$trips</span>, <span class="string">'meta'</span> => [...]);
 </code></pre>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Utilisation avancée : Webhooks pour les notifications en temps réel</h2>
-            <p>Dans le contexte d'une application de covoiturage, les webhooks sont particulièrement utiles pour recevoir des notifications importantes :</p>
-            <ul>
-                <li>Nouvelle demande de réservation</li>
-                <li>Annulation d'un trajet par le conducteur</li>
-                <li>Rappels avant le départ</li>
-                <li>Messages entre conducteurs et passagers</li>
-            </ul>
-            <div class="example-box">
-                <pre><code class="language-php"><span class="comment">// webhook-handler.php - Point d'entrée pour les webhooks envoyés par l'API</span>
+    <section class="section">
+        <h2>Utilisation avancée : Webhooks pour les notifications en temps réel</h2>
+        <p>Dans le contexte d'une application de covoiturage, les webhooks sont particulièrement utiles pour recevoir des notifications importantes :</p>
+        <ul>
+            <li>Nouvelle demande de réservation</li>
+            <li>Annulation d'un trajet par le conducteur</li>
+            <li>Rappels avant le départ</li>
+            <li>Messages entre conducteurs et passagers</li>
+        </ul>
+        <div class="example-box">
+            <pre><code class="language-php"><span class="comment">// webhook-handler.php - Point d'entrée pour les webhooks envoyés par l'API</span>
 <span class="comment">// Vérification de la signature du webhook pour la sécurité</span>
 <span class="variable">$payload</span> = <span class="function">file_get_contents</span>(<span class="string">'php://input'</span>);
 <span class="variable">$signature</span> = <span class="variable">$_SERVER</span>[<span class="string">'HTTP_X_CARSHARE_SIGNATURE'</span>] ?? <span class="string">''</span>;
@@ -634,17 +635,17 @@ $description = $pageInfo['description'];
 <span class="function">http_response_code</span>(200);
 <span class="keyword">echo</span> <span class="function">json_encode</span>([<span class="string">'status'</span> => <span class="string">'success'</span>]);
 </code></pre>
-            </div>
-            <div class="warning-box">
-                <strong>Important :</strong> Vérifiez toujours la signature d'un webhook pour éviter que des attaquants n'envoient de fausses données à votre application.
-            </div>
-        </section>
-
-        <div class="navigation">
-            <a href="15-architecture-mvc.php" class="nav-button">← Module précédent</a>
-            <a href="../../index.php" class="nav-button">Accueil</a>
-            <a href="17-gestion-fichiers.php" class="nav-button">Module suivant →</a>
         </div>
-    </main>
+        <div class="warning-box">
+            <strong>Important :</strong> Vérifiez toujours la signature d'un webhook pour éviter que des attaquants n'envoient de fausses données à votre application.
+        </div>
+    </section>
 
-    <?php include __DIR__ . '/../includes/footer.php'; ?>
+    <div class="navigation">
+        <a href="15-architecture-mvc.php" class="nav-button">← Module précédent</a>
+        <a href="../../index.php" class="nav-button">Accueil</a>
+        <a href="17-gestion-fichiers.php" class="nav-button">Module suivant →</a>
+    </div>
+</main>
+
+<?php include __DIR__ . '/../includes/footer.php'; ?>

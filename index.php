@@ -3,10 +3,10 @@ include __DIR__ . '/public/includes/header.php'; ?>
 
 
 <body class="index-page">
-    <header>
+    <div class="module-header">
         <h1>Tutoriel PHP</h1>
         <p class="subtitle">Découvrez les fondamentaux du développement web avec PHP à travers une série de tutoriels pratiques et exemples interactifs.</p>
-    </header>
+    </div>
     <section class="modules-grid">
         <a href="public/modules/01-script.php" class="module-card">
             <div class="card-header card-1">Module 1</div>
