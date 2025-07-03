@@ -40,7 +40,8 @@ if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'herokuapp.com
 } // Options : 'development' ou 'production'
 
 // ----- Configuration Google Analytics -----
-define('GA_TRACKING_ID', 'UA-XXXXXXXX-X'); // À remplacer par votre ID de suivi Google Analytics
+// Désactivé par défaut pour éviter les erreurs de cookies en développement
+// define('GA_TRACKING_ID', 'UA-XXXXXXXX-X'); // À remplacer par votre ID de suivi Google Analytics si nécessaire
 
 // ----- Métadonnées par défaut -----
 $default_auteur = "Guillaume Maignaut";
