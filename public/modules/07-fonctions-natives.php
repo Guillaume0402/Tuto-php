@@ -9,10 +9,8 @@ include __DIR__ . '/../includes/header.php'; ?>
     </header>
     <div class="navigation">
         <a href="<?= BASE_URL ?>/modules/06-les-tableaux.php" class="nav-button">← Module précédent</a>
-        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
-        <a href="06-les-tableaux.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="08-inclusions.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>     
+        <a href="<?= BASE_URL ?>/modules/08-inclusions.php" class="nav-button">Module suivant →</a>
     </div>
     <main>
         <section class="section">
