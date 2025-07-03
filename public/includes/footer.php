@@ -136,7 +136,7 @@ if ($is_dev) {
 </main>
 
 <!-- Script pour le bouton retour en haut -->
-<script src="<?= BASE_URL ?>assets/js/scroll-to-top.js"></script>
+<script src="<?= BASE_URL ?>/assets/js/scroll-to-top.js"></script>
 
 </body>
 
