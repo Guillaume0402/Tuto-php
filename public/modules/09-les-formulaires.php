@@ -58,9 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_demo'])) {
     <p class="subtitle"><?php echo $description; ?></p>
 </div>
 <div class="navigation">
-    <a href="08-inclusions.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="10-POO-les-classes.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/08-inclusions.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/10-POO-les-classes.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">

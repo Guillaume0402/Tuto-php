@@ -1,6 +1,5 @@
 <?php
-include __DIR__ . '/public/includes/header.php'; ?>
-
+include __DIR__ . '/includes/header.php'; ?>
 
 <body class="index-page">
     <div class="module-header">
@@ -8,7 +7,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
         <p class="subtitle">Découvrez les fondamentaux du développement web avec PHP à travers une série de tutoriels pratiques et exemples interactifs.</p>
     </div>
     <section class="modules-grid">
-        <a href="public/modules/01-script.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/01-script.php" class="module-card">
             <div class="card-header card-1">Module 1</div>
             <div class="card-content">
                 <h3 class="card-title">Un premier script PHP</h3>
@@ -16,8 +15,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/02-les-variables.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/02-les-variables.php" class="module-card">
             <div class="card-header card-2">Module 2</div>
             <div class="card-content">
                 <h3 class="card-title">Les Variables</h3>
@@ -25,8 +23,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/03-les-conditions.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/03-les-conditions.php" class="module-card">
             <div class="card-header card-3">Module 3</div>
             <div class="card-content">
                 <h3 class="card-title">Les Conditions</h3>
@@ -34,15 +31,15 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/04-les-boucles.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/04-les-boucles.php" class="module-card">
             <div class="card-header card-4">Module 4</div>
             <div class="card-content">
                 <h3 class="card-title">Les Boucles</h3>
                 <p class="card-description">Découvrez comment répéter des opérations avec les boucles for, while et foreach pour un code plus efficace.</p>
                 <span class="card-link">Explorer ce module</span>
             </div>
-        </a> <a href="public/modules/05-les-fonctions.php" class="module-card">
+        </a>
+        <a href="<?= BASE_URL ?>/modules/05-les-fonctions.php" class="module-card">
             <div class="card-header card-5">Module 5</div>
             <div class="card-content">
                 <h3 class="card-title">Les Fonctions</h3>
@@ -50,7 +47,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/06-les-tableaux.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/06-les-tableaux.php" class="module-card">
             <div class="card-header card-6">Module 6</div>
             <div class="card-content">
                 <h3 class="card-title">Les Tableaux</h3>
@@ -58,8 +55,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/07-fonctions-natives.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/07-fonctions-natives.php" class="module-card">
             <div class="card-header card-7">Module 7</div>
             <div class="card-content">
                 <h3 class="card-title">Les Fonctions Natives</h3>
@@ -67,7 +63,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/08-inclusions.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/08-inclusions.php" class="module-card">
             <div class="card-header card-8">Module 8</div>
             <div class="card-content">
                 <h3 class="card-title">Les Inclusions</h3>
@@ -75,7 +71,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/09-les-formulaires.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/09-les-formulaires.php" class="module-card">
             <div class="card-header card-9">Module 9</div>
             <div class="card-content">
                 <h3 class="card-title">Les Formulaires</h3>
@@ -83,7 +79,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/10-POO-les-classes.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/10-POO-les-classes.php" class="module-card">
             <div class="card-header card-10">Module 10</div>
             <div class="card-content">
                 <h3 class="card-title">POO - Les Classes</h3>
@@ -91,7 +87,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/11-POO-avancee.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/11-POO-avancee.php" class="module-card">
             <div class="card-header card-11">Module 11</div>
             <div class="card-content">
                 <h3 class="card-title">POO Avancée</h3>
@@ -99,7 +95,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/12-bases-de-donnees.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/12-bases-de-donnees.php" class="module-card">
             <div class="card-header card-12">Module 12</div>
             <div class="card-content">
                 <h3 class="card-title">Bases de données avec PHP</h3>
@@ -107,7 +103,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/13-php-ajax.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/13-php-ajax.php" class="module-card">
             <div class="card-header card-13">Module 13</div>
             <div class="card-content">
                 <h3 class="card-title">PHP et AJAX</h3>
@@ -115,7 +111,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/14-securite.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/14-securite.php" class="module-card">
             <div class="card-header card-14">Module 14</div>
             <div class="card-content">
                 <h3 class="card-title">Sécurité en PHP</h3>
@@ -123,8 +119,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/15-architecture-mvc.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/15-architecture-mvc.php" class="module-card">
             <div class="card-header card-15">Module 15</div>
             <div class="card-content">
                 <h3 class="card-title">Architecture MVC en PHP</h3>
@@ -132,8 +127,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/16-api-externes.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/16-api-externes.php" class="module-card">
             <div class="card-header card-16">Module 16</div>
             <div class="card-content">
                 <h3 class="card-title">PHP et les API externes</h3>
@@ -141,7 +135,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/17-gestion-fichiers.php" class="module-card card-17">
+        <a href="<?= BASE_URL ?>/modules/17-gestion-fichiers.php" class="module-card card-17">
             <div class="card-header card-17">Module 17</div>
             <div class="card-content">
                 <h3 class="card-title">Gestion des fichiers et images</h3>
@@ -149,7 +143,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-        <a href="public/modules/18-tests-unitaires.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/18-tests-unitaires.php" class="module-card">
             <div class="card-header card-18">Module 18</div>
             <div class="card-content">
                 <h3 class="card-title">Tests unitaires & Qualité de code</h3>
@@ -157,8 +151,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/19-envoi-emails.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/19-envoi-emails.php" class="module-card">
             <div class="card-header card-19">Module 19</div>
             <div class="card-content">
                 <h3 class="card-title">Envoi d'e-mails en PHP</h3>
@@ -166,8 +159,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/20-sessions-authentification.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/20-sessions-authentification.php" class="module-card">
             <div class="card-header card-20">Module 20</div>
             <div class="card-content">
                 <h3 class="card-title">Sessions et authentification</h3>
@@ -175,8 +167,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/21-internationalisation.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/21-internationalisation.php" class="module-card">
             <div class="card-header card-21">Module 21</div>
             <div class="card-content">
                 <h3 class="card-title">Internationalisation (i18n) et langues</h3>
@@ -184,15 +175,15 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/22-deploiement-hebergement.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/22-deploiement-hebergement.php" class="module-card">
             <div class="card-header card-22">Module 22</div>
             <div class="card-content">
                 <h3 class="card-title">Déploiement et hébergement</h3>
                 <p class="card-description">Préparez votre application PHP pour la production, choisissez le bon type d'hébergement et configurez correctement votre serveur.</p>
                 <span class="card-link">Explorer ce module</span>
             </div>
-        </a> <a href="public/modules/23-composer-autoloading.php" class="module-card">
+        </a>
+        <a href="<?= BASE_URL ?>/modules/23-composer-autoloading.php" class="module-card">
             <div class="card-header card-23">Module 23</div>
             <div class="card-content">
                 <h3 class="card-title">Utilisation de Composer et autoloading</h3>
@@ -200,8 +191,7 @@ include __DIR__ . '/public/includes/header.php'; ?>
                 <span class="card-link">Explorer ce module</span>
             </div>
         </a>
-
-        <a href="public/modules/24-routeur-php.php" class="module-card">
+        <a href="<?= BASE_URL ?>/modules/24-routeur-php.php" class="module-card">
             <div class="card-header card-24">Module 24</div>
             <div class="card-content">
                 <h3 class="card-title">Routeur PHP</h3>
@@ -211,6 +201,4 @@ include __DIR__ . '/public/includes/header.php'; ?>
         </a>
     </section>
 
-
-
-    <?php include __DIR__ . '/public/includes/footer.php';
+    <?php include __DIR__ . '/includes/footer.php';

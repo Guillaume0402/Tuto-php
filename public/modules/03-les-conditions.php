@@ -63,9 +63,9 @@ $accesAutorise = ($utilisateur['role'] === 'admin' && $utilisateur['statut'] ===
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="02-les-variables.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="04-les-boucles.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/02-les-variables.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/04-les-boucles.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">

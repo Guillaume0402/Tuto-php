@@ -13,14 +13,16 @@ include __DIR__ . '/../includes/header.php';
             <p>
                 Le site Tuto-PHP est édité par Maignaut Guillaume, travailleur indépendant.
                 <br>
-                Contact : g.maignaut@gmail.com / 0650428039
+                Contact : g.maignaut@gmail.com
                 <br>
                 Responsable de publication : Maignaut Guillaume
             </p>
 
             <h2>2. Hébergement</h2>
             <p>
-                Ce site est hébergé par [Nom de l'Hébergeur], [Adresse de l'Hébergeur], [Contact de l'Hébergeur].
+                Ce site est hébergé par <strong>Heroku (Salesforce.com, Inc.)</strong>, plateforme cloud américaine.<br>
+                Adresse : Salesforce Tower, 415 Mission Street, 3rd Floor, San Francisco, CA 94105, États-Unis.<br>
+                Plus d’informations sur <a href="https://www.heroku.com/" target="_blank" rel="noopener">www.heroku.com</a>
             </p>
 
             <h2>3. Propriété intellectuelle</h2>
@@ -36,7 +38,7 @@ include __DIR__ . '/../includes/header.php';
             <p>
                 Ce site respecte la vie privée des utilisateurs et se conforme au Règlement Général sur la Protection des
                 Données (RGPD). Pour plus d'informations, veuillez consulter notre page de
-                <a href="politique-confidentialite.php">Politique de confidentialité</a>.
+                <a href="<?= BASE_URL ?>/pages/politique-confidentialite.php">Politique de confidentialité</a>.
             </p>
 
             <h2>5. Cookies</h2>
@@ -53,9 +55,8 @@ include __DIR__ . '/../includes/header.php';
 
             <h2>7. Droit applicable</h2>
             <p>
-                Le présent site et ses mentions légales sont soumis au droit [français/de votre pays].
-                Tout litige relatif à l'utilisation du site sera soumis à la compétence exclusive des
-                tribunaux de [Votre Juridiction].
+                Le présent site et ses mentions légales sont soumis au droit français.<br>
+                Tout litige relatif à l'utilisation du site sera de la compétence exclusive des tribunaux français.
             </p>
         </article>
     </section>

@@ -12,8 +12,8 @@ $description = "Découvrir la syntaxe de base et l'intégration du PHP dans une 
 </div>
 <div class="navigation">
     <a class="nav-button" style="visibility: hidden;">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="02-les-variables.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/02-les-variables.php" class="nav-button">Module suivant →</a>
 </div>
 
 <main>
@@ -83,8 +83,8 @@ Ceci est un exemple de commentaire
 
 <div class="navigation">
     <a class="nav-button" style="visibility: hidden;">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="02-les-variables.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/02-les-variables.php" class="nav-button">Module suivant →</a>
 </div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

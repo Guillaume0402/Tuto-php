@@ -11,6 +11,8 @@ $description = "Découvrez comment écrire des tests unitaires en PHP avec PHPUn
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
+    <a href="<?= BASE_URL ?>/modules/17-gestion-fichiers.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
     <a href="17-gestion-fichiers.php" class="nav-button">← Module précédent</a>
     <a href="../../index.php" class="nav-button">Accueil</a>
     <a href="19-envoi-emails.php" class="nav-button">Module suivant →</a>

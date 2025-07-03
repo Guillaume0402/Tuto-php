@@ -10,9 +10,9 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="19-envoi-emails.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="21-internationalisation.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/19-envoi-emails.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/21-internationalisation.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
@@ -864,9 +864,9 @@ $description = "Apprenez à gérer les sessions PHP, créer un système d'authen
         </div>
     </section>
     <div class="navigation">
-        <a href="19-envoi-emails.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="21-internationalisation.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/19-envoi-emails.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/21-internationalisation.php" class="nav-button">Module suivant →</a>
     </div>
 </main>
 

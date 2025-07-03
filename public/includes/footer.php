@@ -11,10 +11,10 @@ if (!defined('SITE_VERSION')) {
             <h3>Navigation</h3>
             <nav class="footer-nav">
                 <ul>
-                    <li><a href="<?= SITE_ROOT ?>" class="no-module-color">Accueil</a></li>
-                    <li><a href="<?= BASE_URL ?>modules/01-script.php">Premiers pas</a></li>
-                    <li><a href="<?= BASE_URL ?>modules/12-bases-de-donnees.php">Bases de données</a></li>
-                    <li><a href="<?= BASE_URL ?>modules/24-routeur-php.php">Routeur PHP</a></li>
+                    <li><a href="<?= BASE_URL ?>/" class="no-module-color">Accueil</a></li>
+                    <li><a href="<?= BASE_URL ?>/modules/01-script.php">Premiers pas</a></li>
+                    <li><a href="<?= BASE_URL ?>/modules/12-bases-de-donnees.php">Bases de données</a></li>
+                    <li><a href="<?= BASE_URL ?>/modules/24-routeur-php.php">Routeur PHP</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,9 +31,9 @@ if (!defined('SITE_VERSION')) {
         <div class="footer-section">
             <h3>Informations</h3>
             <ul>
-                <li><a href="<?= BASE_URL ?>pages/mentions-legales.php" class="no-module-color">Mentions légales</a></li>
-                <li><a href="<?= BASE_URL ?>pages/politique-confidentialite.php" class="no-module-color">Politique de confidentialité</a></li>
-                <li><a href="<?= BASE_URL ?>pages/contact.php" class="no-module-color">Contact</a></li>
+                <li><a href="<?= BASE_URL ?>/pages/mentions-legales.php" class="no-module-color">Mentions légales</a></li>
+                <li><a href="<?= BASE_URL ?>/pages/politique-confidentialite.php" class="no-module-color">Politique de confidentialité</a></li>
+                <li><a href="<?= BASE_URL ?>/pages/contact.php" class="no-module-color">Contact</a></li>
             </ul>
         </div>
         <div class="footer-section author-credits">

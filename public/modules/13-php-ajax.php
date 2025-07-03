@@ -7,9 +7,9 @@ include __DIR__ . '/../includes/header.php'; ?>
     <p class="subtitle">Créez des applications web dynamiques en combinant PHP et AJAX pour des mises à jour sans rechargement de page.</p>
 </div>
 <div class="navigation">
-    <a href="12-bases-de-donnees.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="14-securite.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/12-bases-de-donnees.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/14-securite.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
@@ -641,9 +641,9 @@ project/
         </div>
     </section>
     <div class="navigation">
-        <a href="12-bases-de-donnees.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="14-securite.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/12-bases-de-donnees.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/14-securite.php" class="nav-button">Module suivant →</a>
     </div>
 </main>
 

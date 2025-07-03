@@ -17,7 +17,6 @@ include __DIR__ . '/../includes/header.php';
             <ul>
                 <li>Données de connexion et de navigation à des fins statistiques et techniques</li>
                 <li>Adresse e-mail si vous nous contactez via le formulaire de contact</li>
-                <li>[Ajoutez d'autres données si vous en collectez]</li>
             </ul>
 
             <h2>2. Utilisation des données</h2>
@@ -32,8 +31,8 @@ include __DIR__ . '/../includes/header.php';
 
             <h2>3. Conservation des données</h2>
             <p>
-                Les données de contact sont conservées pendant [durée] après votre dernière interaction avec nous.
-                Les données de navigation sont conservées sous forme anonymisée pour une durée de [durée].
+                Les données de contact sont conservées pendant 3 ans après votre dernière interaction avec nous.
+                Les données de navigation sont conservées sous forme anonymisée pour une durée de 12 mois.
             </p>
 
             <h2>4. Vos droits</h2>
@@ -49,16 +48,13 @@ include __DIR__ . '/../includes/header.php';
                 <li>Droit d'opposition</li>
             </ul>
             <p>
-                Pour exercer ces droits, contactez-nous à [votre adresse e-mail].
+                Pour exercer ces droits, contactez-nous à <a href="mailto:g.maignaut@gmail.com">g.maignaut@gmail.com</a>.
             </p>
 
             <h2>5. Cookies</h2>
             <p>
-                Notre site utilise des cookies techniques nécessaires à son fonctionnement. Nous n'utilisons pas de
+                Notre site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Nous n'utilisons pas de
                 cookies publicitaires ou de traçage sans votre consentement explicite.
-            </p>
-            <p>
-                [Détaillez votre politique de cookies si nécessaire]
             </p>
 
             <h2>6. Sécurité des données</h2>

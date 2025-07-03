@@ -10,9 +10,9 @@ $description = "Maîtrisez la gestion des dépendances avec Composer, implément
     <p class="subtitle"><?= $description ?></p>
 </div>
 <div class="navigation">
-    <a href="22-deploiement-hebergement.php" class="nav-button">← Module précédent</a>
-    <a href="../../index.php" class="nav-button">Accueil</a>
-    <a href="24-routeur-php.php" class="nav-button">Module suivant →</a>
+    <a href="<?= BASE_URL ?>/modules/22-deploiement-hebergement.php" class="nav-button">← Module précédent</a>
+    <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+    <a href="<?= BASE_URL ?>/modules/24-routeur-php.php" class="nav-button">Module suivant →</a>
 </div>
 <main>
     <section class="section">
@@ -677,9 +677,9 @@ $description = "Maîtrisez la gestion des dépendances avec Composer, implément
             </div>
     </section>
     <div class="navigation">
-        <a href="22-deploiement-hebergement.php" class="nav-button">← Module précédent</a>
-        <a href="../../index.php" class="nav-button">Accueil</a>
-        <a href="24-routeur-php.php" class="nav-button">Module suivant →</a>
+        <a href="<?= BASE_URL ?>/modules/22-deploiement-hebergement.php" class="nav-button">← Module précédent</a>
+        <a href="<?= BASE_URL ?>" class="nav-button">Accueil</a>
+        <a href="<?= BASE_URL ?>/modules/24-routeur-php.php" class="nav-button">Module suivant →</a>
     </div>
 </main>
 
