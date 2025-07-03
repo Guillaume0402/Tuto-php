@@ -106,23 +106,9 @@ if ($is_dev) {
             </div>
         </details>
     </div>
-    <?php } else {
-    // Mode production : inclure les scripts d'analyse
-    if (defined('GA_TRACKING_ID') && !empty(GA_TRACKING_ID)) {
-    ?>
-        <!-- Script Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=<?= GA_TRACKING_ID; ?>"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', '<?= GA_TRACKING_ID; ?>');
-        </script>
-<?php
-    }
+<?php } else {
+    // Mode production : Google Analytics désactivé pour éviter les erreurs de cookies
+    echo "<!-- Google Analytics désactivé -->";
 }
 ?>
 
@@ -133,10 +119,10 @@ if ($is_dev) {
     </svg>
 </button>
 
-</main>
-
 <!-- Script pour le bouton retour en haut -->
 <script src="<?= BASE_URL ?>/assets/js/scroll-to-top.js"></script>
+
+</main>
 
 </body>
 
